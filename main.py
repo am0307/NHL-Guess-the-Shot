@@ -12,13 +12,26 @@ Bootstrap5(app)
 def home():
 
     # Hard coded list of players for testing
-    player_names = ["Connor McDavid", "Tim Stutzle", "Auston Matthews", "Leon Draisaitl"]
+    player_dict = [{"Connor McDavid": {
+                        "team": "Edmonton Oilers", "division": "Pacific", "number": 97, "nation": "Canada", "age": 29
+                        }}, 
+                   {"Tim Stutzle": {
+                        "team": "Washington Capitals", "division": "Metropolitan", "number": 21, "nation": "Canada", "age": 24
+                        }}, 
+                   {"Auston Matthews": {
+                       "team": "Toronto Maple Leafs", "division": "Atlantic", "number": 14, "nation": "USA", "age": 29
+                       }}, 
+                   {"Leon Draisaitl": {
+                       "team": "Edmonton Oilers", "division": "Pacific", "number": 29, "nation": "Germany", "age": 30
+                       }}]
 
     # Form submission handling
     if request.method == "POST":
-        player = request.form.get("player")
-        return f"You submitted: {player}"
+        input_name = request.form.get("player")
+        return f"You submitted: {input_name}"
 
+    player_names = [list(player.keys())[0] for player in player_dict]
+        
     # Render homepage w/ player names
     return render_template("index.html", players=player_names)
 
