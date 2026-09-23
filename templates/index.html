@@ -1,0 +1,114 @@
+{% from "bootstrap5/form.html" import render_form %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Shot</title>
+
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+</head>
+<body>
+    <!-- Create player input form -->
+    <form class="form" method="POST" autocomplete="off" id="player-form">
+        <div class="row row-cols-5 mt-5 mb-2 justify-content-center">
+            <input class="col-4" type="text" id="player-input" name="player" list="players-list" placeholder="Guess the player">
+            <datalist id="players-list">
+                <!-- Display player options -->
+                {% for player in players %}
+                    <option value="{{ player }}"></option>
+                {% endfor %}
+            </datalist>
+            <button class="col-1 btn btn-primary mx-2" type="submit">Submit</button>
+        </div>
+    </form>
+    <!-- Show headers for each column's category -->
+    <div id="column-headers" class="container-fluid text-center col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-3">
+        <div class="row row-cols-5 flex-nowrap justify-content-center my-3">
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Team</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Division</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Num.</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Nation</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Age</h6>
+        </div>
+    </div>
+    <!-- Display guess rows -->
+    <div id="guess-rows" class="container-fluid text-center col-sm-12 col-md-10 col-lg-8 col-xl-6 col-xxl-4">
+        <div id="guess-1">
+            <div class="row flex-nowrap justify-content-center">
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+            </div>
+        </div>
+        <div id="guess-2">
+            <div class="row flex-nowrap justify-content-center">
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+            </div>
+        </div>
+        <div id="guess-3">
+            <div class="row flex-nowrap justify-content-center">
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+            </div>
+        </div>
+        <div id="guess-4">
+            <div class="row flex-nowrap justify-content-center">
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+            </div>
+        </div>
+        <div id="guess-5">
+            <div class="row flex-nowrap justify-content-center">
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+            </div>
+        </div>
+        <div id="guess-6">
+            <div class="row flex-nowrap justify-content-center">
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+                <div class="col m-2 px-2 py-3 border-2 bg-white border">Content</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Validate player input against datalist options
+        document.getElementById('player-form').addEventListener('submit', function(e) {
+
+            // Retrieve the input value and the datalist options
+            const input = document.getElementById('player-input');
+            const datalist = document.getElementById('players-list');
+            
+            // Create an array of valid options from the datalist
+            const validOptions = Array.from(datalist.options).map(option => option.value);
+            
+            // Check if the input value is in the list of valid options
+            if (!validOptions.includes(input.value)) {
+                e.preventDefault(); // Stop the form from submitting
+                alert('Please select a valid player from the dropdown list.'); 
+                input.focus();
+            }
+        });
+    </script>
+</body>
+</html>
