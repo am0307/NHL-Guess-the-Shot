@@ -30,11 +30,11 @@
     <!-- Show headers for each column's category -->
     <div id="column-headers" class="container-fluid text-center col-sm-10 col-md-10 col-lg-8 col-xl-6 col-xxl-4">
         <div class="row row-cols-5 flex-nowrap justify-content-center my-3">
-            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Team</h6>
-            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Division</h6>
-            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Num.</h6>
-            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Nation</h6>
-            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white;">Age</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white; min-width: 100px;">Team</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white; min-width: 100px;">Division</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white; min-width: 100px;">Num.</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white; min-width: 100px;">Birth Nation</h6>
+            <h6 class="col mx-1 m-3 mt-2 px-1 py-2 border rounded mb-0" style="background-color: #1434A4; color: white; min-width: 100px;">Age</h6>
         </div>
     </div>
     <!-- Display guess rows -->
@@ -176,16 +176,11 @@
 
         // Colour boxes based on the guessed player's info
         function colourBox(box, index, playerName) {
-            const conference_matcher = {
-                    "Pacific": "Western",
-                    "Central": "Western",
-                    "Metropolitan": "Eastern",
-                    "Atlantic": "Eastern"
-            };
+            const player_info = playerData[playerName];
 
             switch (index) {
                 case 0: // Team
-                    if (box.innerText === answerInfo.team) { // Correct team
+                    if (player_info.team === answerInfo.team) { // Correct team
                         box.style.backgroundColor = "#538D4E"; 
                         box.style.color = "white";
                     } else { // Incorrect team
@@ -194,10 +189,10 @@
                     }
                     break;
                 case 1:
-                    if (box.innerText === answerInfo.division) { // Correct division
+                    if (player_info.division === answerInfo.division) { // Correct division
                         box.style.backgroundColor = "#538D4E"; 
                         box.style.color = "white";
-                    } else if (conference_matcher[box.innerText] === answerInfo.conference) { // Correct conference
+                    } else if (player_info.conference === answerInfo.conference) { // Correct conference
                         box.style.backgroundColor = "#B59F3B"; 
                         box.style.color = "white";
                     } else { // Incorrect division and conference
@@ -206,10 +201,10 @@
                     }
                     break;
                 case 2:
-                    if (Number(box.innerText) === answerInfo.number) { // Correct number
+                    if (player_info.number === answerInfo.number) { // Correct number
                         box.style.backgroundColor = "#538D4E"; 
                         box.style.color = "white";
-                    } else if (Math.abs(Number(box.innerText) - answerInfo.number) <= 10) { // Within 10 of correct number
+                    } else if (Math.abs(player_info.number - answerInfo.number) <= 10) { // Within 10 of correct number
                         box.style.backgroundColor = "#B59F3B"; 
                         box.style.color = "white";
                     } else { // Incorrect number and not within 10
@@ -218,7 +213,7 @@
                     }
                     break;
                 case 3:
-                    if (box.innerText === answerInfo.nation) { // Correct nation
+                    if (player_info.nation === answerInfo.nation) { // Correct nation
                         box.style.backgroundColor = "#538D4E"; 
                         box.style.color = "white";
                     } else { // Incorrect nation
@@ -227,10 +222,10 @@
                     }
                     break;
                 case 4:
-                    if (Number(box.innerText) === answerInfo.age) { // Correct age
+                    if (player_info.age === answerInfo.age) { // Correct age
                         box.style.backgroundColor = "#538D4E"; 
                         box.style.color = "white";
-                    } else if (Math.abs(Number(box.innerText) - answerInfo.age) <= 3) { // Within 3 of correct age
+                    } else if (Math.abs(player_info.age - answerInfo.age) <= 3) { // Within 3 of correct age
                         box.style.backgroundColor = "#B59F3B"; 
                         box.style.color = "white";
                     } else { // Incorrect age and not within 3
