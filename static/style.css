@@ -1,4 +1,4 @@
-.player-info {
+[class^="player-info-"] {
     min-height: 60px;
     padding-block: 16px;
 }
@@ -7,8 +7,25 @@
     cursor: pointer;
 }
 
-
 .form-control::placeholder {
   font-weight: bold;
   opacity: 1; /* Ensures consistency across different browsers */
+}
+
+@keyframes flip {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.flip {
+  animation: flip 500ms ease forwards;
 }
