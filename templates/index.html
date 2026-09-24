@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- Create player input form -->
-    <form class="form" method="POST" autocomplete="off" id="player-form">
+    <form class="form" autocomplete="off" id="player-form">
         <div class="row row-cols-5 mt-5 mb-2 justify-content-center">
             <div class="col-4 px-0">
                 <input class="form-control" type="text" id="player-input" name="player" placeholder="Guess a player" autocomplete="off">
@@ -21,7 +21,7 @@
                 <!-- Player dropdown menu -->
                 <ul id="player-dropdown" class="dropdown-menu shadow-sm">
                     {% for player in players %}
-                        <li><a class="dropdown-item player-option" href="#" data-value="{{ player }}">{{ player }}</a></li>
+                        <li><a class="dropdown-item player-option" data-value="{{ player }}">{{ player }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -41,56 +41,56 @@
     <div id="guess-rows" class="container-fluid text-center col-sm-12 col-md-12 col-lg-10 col-xl-8 col-xxl-6">
         <div id="guess-1">
             <div class="row flex-nowrap justify-content-center">
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info team"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info division"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info number"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info nation"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info age"></div>
             </div>
         </div>
         <div id="guess-2">
             <div class="row flex-nowrap justify-content-center">
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info team"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info division"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info number"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info nation"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info age"></div>
             </div>
         </div>
         <div id="guess-3">
             <div class="row flex-nowrap justify-content-center">
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info team"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info division"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info number"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info nation"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info age"></div>
             </div>
         </div>
         <div id="guess-4">
             <div class="row flex-nowrap justify-content-center">
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info team"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info division"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info number"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info nation"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info age"></div>
             </div>
         </div>
         <div id="guess-5">
             <div class="row flex-nowrap justify-content-center">
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info team"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info division"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info number"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info nation"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info age"></div>
             </div>
         </div>
         <div id="guess-6">
             <div class="row flex-nowrap justify-content-center">
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
-                <div class="col m-2 px-2 border-2 bg-white border player-info"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info team"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info division"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info number"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info nation"></div>
+                <div class="col m-2 px-2 border-2 bg-white border player-info age"></div>
             </div>
         </div>
     </div>
@@ -101,17 +101,20 @@
         const dropdown = document.getElementById('player-dropdown');
         const form = document.getElementById('player-form');
         const items = dropdown.querySelectorAll('.player-option');
+        const playerData = {{ player_data | tojson }};
+
+        let guessCount = 0; // Guess number tracker
 
         // Show and filter dropdown as the user types
         input.addEventListener('input', function() {
 
-            const filter = input.value.toLowerCase();
+            const user_input = input.value.toLowerCase();
             let hasVisibleItems = false;
 
             // Loop through each item and show players based on the filter
             items.forEach(item => {
                 const text = item.textContent.toLowerCase();
-                if (text.includes(filter) && filter.length > 0) {
+                if (text.includes(user_input) && user_input.length > 0) {
                     item.parentElement.style.display = 'block';
                     hasVisibleItems = true;
                 } else {
@@ -120,16 +123,22 @@
             });
 
             // Show or hide the dropdown container based on matches
-            dropdown.style.display = (hasVisibleItems && filter.length > 0) ? 'block' : 'none';
+            dropdown.style.display = (hasVisibleItems && user_input.length > 0) ? 'block' : 'none';
         });
 
         // Handle click on a list item
         items.forEach(item => {
             item.addEventListener('click', function(e) {
                 e.preventDefault();
-                input.value = this.getAttribute('data-value');
+
+                let playerName = this.getAttribute('data-value'); // Get clicked player's name
+                input.value = playerName; // Set form input to clicked player's name
                 dropdown.style.display = 'none'; // Hide dropdown
-                form.submit(); // Submit form on list item click
+                
+                guessCount++; // Increment guess count
+                addGuessInfo(playerName); // Add player info in guess row
+                
+                input.value = ""; // Clear form
             });
         });
 
@@ -146,6 +155,31 @@
                 e.preventDefault();
             }
         });
+
+        // Add guess info to the next row of boxes
+        function addGuessInfo(playerName) {
+            // Limit guesses to 6
+            if (guessCount > 6)
+                return;
+
+            // Get guess row and its boxes
+            const guessRow = document.getElementById(`guess-${guessCount}`);
+            const team = guessRow.querySelector(".team");
+            const division = guessRow.querySelector(".division");
+            const number = guessRow.querySelector(".number");
+            const nation = guessRow.querySelector(".nation");
+            const age = guessRow.querySelector(".age");
+
+            // Retrieve the guessed player's info
+            const player_info = playerData[playerName];
+            if (player_info) {
+                team.innerText = player_info.team;
+                division.innerText = player_info.division;
+                number.innerText = player_info.number;
+                nation.innerText = player_info.nation;
+                age.innerText = player_info.age;
+            }
+        }
     </script>
 </body>
 </html>

@@ -2,3 +2,13 @@
     min-height: 60px;
     padding-block: 16px;
 }
+
+.player-option {
+    cursor: pointer;
+}
+
+
+.form-control::placeholder {
+  font-weight: bold;
+  opacity: 1; /* Ensures consistency across different browsers */
+}

@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap5
 
 # Initialise Flask and Bootstrap
@@ -11,29 +11,16 @@ Bootstrap5(app)
 @app.route("/", methods=["GET", "POST"])
 def home():
 
-    # Hard coded list of players for testing
-    player_dict = [{"Connor McDavid": {
-                        "team": "Edmonton Oilers", "division": "Pacific", "number": 97, "nation": "Canada", "age": 29
-                        }}, 
-                   {"Tim Stutzle": {
-                        "team": "Washington Capitals", "division": "Metropolitan", "number": 21, "nation": "Canada", "age": 24
-                        }}, 
-                   {"Auston Matthews": {
-                       "team": "Toronto Maple Leafs", "division": "Atlantic", "number": 14, "nation": "USA", "age": 29
-                       }}, 
-                   {"Leon Draisaitl": {
-                       "team": "Edmonton Oilers", "division": "Pacific", "number": 29, "nation": "Germany", "age": 30
-                       }}]
-
-    # Form submission handling
-    if request.method == "POST":
-        input_name = request.form.get("player")
-        return f"You submitted: {input_name}"
-
-    player_names = [list(player.keys())[0] for player in player_dict]
+    # Hard coded dictionary of players for testing
+    player_dict = {"Connor McDavid": {"team": "Oilers", "division": "Pacific", "number": 97, "nation": "Canada", "age": 29},
+                   "Tim Stutzle": {"team": "Senators", "division": "Atlantic", "number": 18, "nation": "Germany", "age": 24},
+                   "Auston Matthews": {"team": "Maple Leafs", "division": "Atlantic", "number": 34, "nation": "USA", "age": 29},
+                   "Leon Draisaitl": {"team": "Oilers", "division": "Pacific", "number": 29, "nation": "Germany", "age": 30}
+}
+    player_names = list(player_dict.keys())
         
     # Render homepage w/ player names
-    return render_template("index.html", players=player_names)
+    return render_template("index.html", players=player_names, player_data=player_dict)
 
 # Run the app
 if __name__ == "__main__":
