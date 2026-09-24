@@ -39,7 +39,7 @@ PLAYER_IDS = {"Alex Ovechkin":8471214, "Auston Matthews":8479318, "Cole Caufield
 def home():
 
     # Get all player data from API 
-    all_player_data = [get_player_info(player_id) for player_id in list(PLAYER_IDS.values())]
+    all_player_data = get_player_info(list(PLAYER_IDS.values()))
     
     # Create formatted dictionary with player data
     player_dict = {
