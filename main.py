@@ -13,19 +13,18 @@ app.config['SECRET_KEY'] = os.getenv("FLASK_KEY")
 Bootstrap5(app)
 
 # Dictionary of NHL team abbreviations and their division/conference
-TEAM_DIVISIONS_CONFERENCES = {
-    "ANA": ("Pacific", "Western"), "BOS": ("Atlantic", "Eastern"), "BUF": ("Atlantic", "Eastern"),
-    "CGY": ("Pacific", "Western"), "CAR": ("Metropolitan", "Eastern"), "CHI": ("Central", "Western"),
-    "COL": ("Central", "Western"), "CBJ": ("Metropolitan", "Eastern"), "DAL": ("Central", "Western"),
-    "DET": ("Atlantic", "Eastern"), "EDM": ("Pacific", "Western"), "FLA": ("Atlantic", "Eastern"),
-    "LAK": ("Pacific", "Western"), "MIN": ("Central", "Western"), "MTL": ("Atlantic", "Eastern"),
-    "NSH": ("Central", "Western"), "NJD": ("Metropolitan", "Eastern"), "NYI": ("Metropolitan", "Eastern"),
-    "NYR": ("Metropolitan", "Eastern"), "OTT": ("Atlantic", "Eastern"), "PHI": ("Metropolitan", "Eastern"),
-    "PIT": ("Metropolitan", "Eastern"), "SJS": ("Pacific", "Western"), "SEA": ("Pacific", "Western"),
-    "STL": ("Central", "Western"), "TBL": ("Atlantic", "Eastern"), "TOR": ("Atlantic", "Eastern"),
-    "UTA": ("Central", "Western"), "VAN": ("Pacific", "Western"), "VGK": ("Pacific", "Western"),
-    "WSH": ("Metropolitan", "Eastern"), "WPG": ("Central", "Western")
-}
+TEAM_DIVISIONS_CONFERENCES = {"ANA": ("Pacific", "Western"), "BOS": ("Atlantic", "Eastern"), "BUF": ("Atlantic", "Eastern"),
+                              "CGY": ("Pacific", "Western"), "CAR": ("Metropolitan", "Eastern"), "CHI": ("Central", "Western"),
+                              "COL": ("Central", "Western"), "CBJ": ("Metropolitan", "Eastern"), "DAL": ("Central", "Western"),
+                              "DET": ("Atlantic", "Eastern"), "EDM": ("Pacific", "Western"), "FLA": ("Atlantic", "Eastern"),
+                              "LAK": ("Pacific", "Western"), "MIN": ("Central", "Western"), "MTL": ("Atlantic", "Eastern"),
+                              "NSH": ("Central", "Western"), "NJD": ("Metropolitan", "Eastern"), "NYI": ("Metropolitan", "Eastern"),
+                              "NYR": ("Metropolitan", "Eastern"), "OTT": ("Atlantic", "Eastern"), "PHI": ("Metropolitan", "Eastern"),
+                              "PIT": ("Metropolitan", "Eastern"), "SJS": ("Pacific", "Western"), "SEA": ("Pacific", "Western"),
+                              "STL": ("Central", "Western"), "TBL": ("Atlantic", "Eastern"), "TOR": ("Atlantic", "Eastern"),
+                              "UTA": ("Central", "Western"), "VAN": ("Pacific", "Western"), "VGK": ("Pacific", "Western"),
+                              "WSH": ("Metropolitan", "Eastern"), "WPG": ("Central", "Western")
+                              }
 
 # Players available to guess
 PLAYER_IDS = {"Alex Ovechkin":8471214, "Auston Matthews":8479318, "Cole Caufield":8481540, 
@@ -34,7 +33,8 @@ PLAYER_IDS = {"Alex Ovechkin":8471214, "Auston Matthews":8479318, "Cole Caufield
               "Leon Draisaitl":8477934, "Linus Ullmark":8476999, "Macklin Celebrini":8484801, 
               "Matthew Tkachuk":8479314, "Mitch Marner":8478483, "Nathan MacKinnon":8477492,
               "Patrick Kane":8474141, "Sidney Crosby":8471675, "Tage Thompson":8479420, 
-              "Tim Stutzle":8482116, "William Nylander":8477939}
+              "Tim Stutzle":8482116, "William Nylander":8477939
+              }
 
 # Path to API cache file
 CACHE_PATH = "api_cache.json"
