@@ -12,9 +12,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- Show video -->
+     <div class="d-flex justify-content-center">
+        <video width="640" height="480" src="{{ url_for('static', filename='videos/' + answer_name + ' Mask.mp4') }}" autoplay loop muted playsinline>
+    </div>
     <!-- Create player input form -->
     <form class="form" autocomplete="off" id="player-form">
-        <div class="row row-cols-5 mt-5 mb-2 justify-content-center">
+        <div class="row row-cols-5 mt-3 mb-2 justify-content-center">
             <div class="col-4 px-0">
                 <input class="form-control" type="text" id="player-input" name="player" placeholder="Guess a player" autocomplete="off">
                 
