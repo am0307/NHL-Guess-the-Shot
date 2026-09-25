@@ -47,7 +47,7 @@ def retrieve_player_dict():
     if os.path.isfile(CACHE_PATH): # Verify file's existence
         
         # Open and verify file's currency
-        with open(CACHE_PATH) as file: 
+        with open(CACHE_PATH, "r", encoding="utf-8") as file: 
             cache_dictionary = json.load(file)
             if cache_dictionary["updated"] == today_est:
                 return cache_dictionary["players"] # Return dictionary if current
@@ -57,7 +57,7 @@ def retrieve_player_dict():
     
     # Create formatted dictionary with player data
     player_dict = {
-        f"{player_data['firstName']['default']} {player_data['lastName']['default']}": {
+        name: {
             "team": player_data["teamCommonName"]["default"],
             "division": TEAM_DIVISIONS_CONFERENCES[player_data["currentTeamAbbrev"]][0],
             "number": player_data["sweaterNumber"],
@@ -65,12 +65,12 @@ def retrieve_player_dict():
             "age": find_age(player_data["birthDate"]),
             "conference": TEAM_DIVISIONS_CONFERENCES[player_data["currentTeamAbbrev"]][1],
         }
-        for player_data in all_player_data
+        for name, player_data in zip(PLAYER_IDS.keys(), all_player_data) # Use hard coded name spellings to avoid accents
     }
     
     # Update file with new date and player dictionary
-    with open(CACHE_PATH, "w") as file: 
-        json.dump({"updated": today_est, "players":player_dict}, file)
+    with open(CACHE_PATH, "w", encoding="utf-8") as file: 
+        json.dump({"updated": today_est, "players":player_dict}, file, ensure_ascii=False)
     
     return player_dict
 
