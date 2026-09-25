@@ -6,11 +6,9 @@ def get_player_info(player_ids):
     
     data = []
     
-    # Session for more efficient requests
-    with requests.Session() as session:
+    with requests.Session() as session: # Session for more efficient requests
         
-        # Identifying header
-        session.headers.update({"User-Agent": "NHL Guess the Shot Game"})
+        session.headers.update({"User-Agent": "NHL Guess the Shot Game"}) # Identifying header
         
         # Loop through IDs to receive data from all playhers
         for player_id in player_ids:

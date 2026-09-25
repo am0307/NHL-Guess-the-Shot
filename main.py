@@ -1,9 +1,11 @@
-import os
+import os, json
 from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap5
 from nhl_api import get_player_info
 from age_calculator import find_age
 from random import choice
+from zoneinfo import ZoneInfo
+from datetime import datetime
 
 # Initialise Flask and Bootstrap
 app = Flask(__name__)
@@ -34,11 +36,23 @@ PLAYER_IDS = {"Alex Ovechkin":8471214, "Auston Matthews":8479318, "Cole Caufield
               "Patrick Kane":8474141, "Sidney Crosby":8471675, "Tage Thompson":8479420, 
               "Tim Stutzle":8482116, "William Nylander":8477939}
 
-# Homepage route
-@app.route("/", methods=["GET", "POST"])
-def home():
+# Path to API cache file
+CACHE_PATH = "api_cache.json"
 
-    # Get all player data from API 
+# Retrieve the player dictionary, either by refreshing from API or from cached file
+def retrieve_player_dict():
+    est = ZoneInfo("America/New_York") # To ignore user timezone
+    today_est = datetime.now(tz=est).strftime("%Y-%m-%d")
+    
+    if os.path.isfile(CACHE_PATH): # Verify file's existence
+        
+        # Open and verify file's currency
+        with open(CACHE_PATH) as file: 
+            cache_dictionary = json.load(file)
+            if cache_dictionary["updated"] == today_est:
+                return cache_dictionary["players"] # Return dictionary if current
+            
+    # If file DNE or is not current, get new data
     all_player_data = get_player_info(list(PLAYER_IDS.values()))
     
     # Create formatted dictionary with player data
@@ -53,13 +67,30 @@ def home():
         }
         for player_data in all_player_data
     }
+    
+    # Update file with new date and player dictionary
+    with open(CACHE_PATH, "w") as file: 
+        json.dump({"updated": today_est, "players":player_dict}, file)
+    
+    return player_dict
+
+
+# Homepage route
+@app.route("/", methods=["GET", "POST"])
+def home():
                                
+    player_dict = retrieve_player_dict() # Retrieve player dictionary
+    
     # Player to guess is randomly selected
     answer_name = choice(list(PLAYER_IDS.keys()))
     answer_info = player_dict[answer_name]
             
     # Render homepage w/ player names
-    return render_template("index.html", players=list(PLAYER_IDS.keys()), player_data=player_dict, answer_info=answer_info, answer_name=answer_name)
+    return render_template("index.html", 
+                           players=list(PLAYER_IDS.keys()), 
+                           player_data=player_dict, 
+                           answer_info=answer_info, 
+                           answer_name=answer_name)
 
 # Run the app
 if __name__ == "__main__":
