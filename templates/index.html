@@ -13,8 +13,22 @@
 </head>
 <body>
     <!-- Show video -->
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center align-items-center">
         <video width="640" height="480" src="{{ url_for('static', filename='videos/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline>
+    </div>
+    <!-- Correct guess alert -->
+    <div id="win-alert-container" class="d-flex justify-content-center mb-0">
+        <div id="win-alert" class="alert alert-success d-none row col-4" role="alert">
+            <h4 class="text-center mb-0">Correct!</h4>
+            <h5 class="text-center mb-0">The answer was {{ answer_name }}!</h5>
+        </div>
+    </div>
+    <!-- Loss alert -->
+    <div id="loss-alert-container" class="d-flex justify-content-center mb-0">
+        <div id="loss-alert" class="alert alert-danger d-none row col-4" role="alert">
+            <h4 class="text-center mb-0">You lose!</h4>
+            <h5 class="text-center mb-0">The answer was {{ answer_name }}!</h5>
+        </div>
     </div>
     <!-- Create player input form -->
     <form class="form" autocomplete="off" id="player-form">
@@ -34,8 +48,8 @@
     <!-- Show headers for each column's category -->
     <div class="container-fluid text-center col-sm-12 col-md-12 col-lg-10 col-xl-8 col-xxl-6">
         <div class="row row-cols-5 flex-nowrap justify-content-center my-3">
-            <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 border rounded mb-0" data-bs-placement="top" title="The player's division, appears yellow when player conferences match.">Division</h6>
             <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 border rounded mb-0" data-bs-placement="top" title="The player's current team.">Team</h6>
+            <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 border rounded mb-0" data-bs-placement="top" title="The player's division, appears yellow when player conferences match.">Division</h6>
             <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 border rounded mb-0" data-bs-placement="top" title="The player's number, appears yellow when within 10 of the correct answer.">Num.</h6>
             <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 border rounded mb-0" data-bs-placement="top" title="The player's country of birth.">Birth Nation</h6>
             <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 border rounded mb-0" data-bs-placement="top" title="The player's age, appears yellow when within 3 of the correct answer.">Age</h6>
@@ -109,6 +123,7 @@
         const items = dropdown.querySelectorAll(".player-option");
         const playerData = {{ player_data | tojson }};
         const answerInfo = {{ answer_info | tojson }};
+        const answerName = {{ answer_name | tojson }};
         const tooltips = document.querySelectorAll(".column-tooltip")
 
         let guessCount = 0; // Guess number tracker
@@ -186,7 +201,28 @@
                 setTimeout(() => {
                     colourBox(box, i, playerName);
                 }, (i * 250) + 250); // Wait for the flip to finish before colouring
+
+                // Check if win/loss needs to be shown after flips are done
+                setTimeout(() => {
+                    displayAnswer(playerName)
+                }, (5 * 250) + 250); // Wait for all flips to finish
             });
+
+        }
+        
+        // Display answer on correct guess/loss
+        function displayAnswer(playerName) {
+            if (playerName === answerName) { // Win
+                let successAlert = document.getElementById("win-alert");
+                let successAlertContainer = document.getElementById("win-alert-container");
+                successAlertContainer.classList.add("mb-5");
+                successAlert.classList.remove("d-none");
+            } else if (guessCount == 6) { // Loss
+                let lossAlert = document.getElementById("loss-alert");
+                let lossAlertContainer = document.getElementById("loss-alert-container");
+                lossAlertContainer.classList.add("mb-5");
+                lossAlert.classList.remove("d-none");
+            }
         }
 
         // Colour boxes based on the guessed player's info
@@ -253,10 +289,7 @@
 
         // Add guess info to the next row of boxes
         function addGuessInfo(playerName) {
-            // Limit guesses to 6
-            if (guessCount > 6)
-                return;
-
+            
             // Get guess row and its boxes
             const guessRow = document.getElementById(`guess-${guessCount}`);
             const team = guessRow.querySelector(".team");
@@ -274,6 +307,10 @@
                 nation.innerText = player_info.nation;
                 age.innerText = player_info.age;
             }
+
+            // Limit guesses to 6
+            if (guessCount >= 6)
+                return;
         }
     </script>
 </body>
