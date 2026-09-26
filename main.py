@@ -1,11 +1,14 @@
 import os, json
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, session
 from flask_bootstrap import Bootstrap5
 from nhl_api import get_player_info
 from age_calculator import find_age
 from random import choice
 from zoneinfo import ZoneInfo
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv("secrets.env") # Load env file
 
 # Initialise Flask and Bootstrap
 app = Flask(__name__)
@@ -79,19 +82,27 @@ def retrieve_player_dict():
 # Homepage route
 @app.route("/", methods=["GET", "POST"])
 def home():
-                               
+    
     player_dict = retrieve_player_dict() # Retrieve player dictionary
     
-    # Player to guess is randomly selected
-    answer_name = choice(list(PLAYER_IDS.keys()))
+    # Check and, if necessary, create an unused players list to avoid repeats
+    if "players_to_use" not in session or not session["players_to_use"]: # Checks if list DNE or ran out of players
+        session["players_to_use"] = list(PLAYER_IDS.keys())
+    
+    # Player to guess is randomly selected from players yet to be used
+    answer_name = choice(session["players_to_use"])
     answer_info = player_dict[answer_name]
+    
+    session["players_to_use"].remove(answer_name) # Remove player from unused list
+    session.modified = True # Force Flask to save change to unused list
             
     # Render homepage w/ player names
     return render_template("index.html", 
                            players=list(PLAYER_IDS.keys()), 
                            player_data=player_dict, 
                            answer_info=answer_info, 
-                           answer_name=answer_name)
+                           answer_name=answer_name,
+                           players_to_use=session["players_to_use"])
 
 # Run the app
 if __name__ == "__main__":
