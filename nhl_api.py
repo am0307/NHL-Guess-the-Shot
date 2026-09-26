@@ -10,7 +10,7 @@ def get_player_info(player_ids):
         
         session.headers.update({"User-Agent": "NHL Guess the Shot Game"}) # Identifying header
         
-        # Loop through IDs to receive data from all playhers
+        # Loop through IDs to receive data from all players
         for player_id in player_ids:
             url = f"https://api-web.nhle.com/v1/player/{player_id}/landing"
 

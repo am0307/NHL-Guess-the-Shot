@@ -42,10 +42,13 @@ PLAYER_IDS = {"Alex Ovechkin":8471214, "Auston Matthews":8479318, "Cole Caufield
 # Path to API cache file
 CACHE_PATH = "api_cache.json"
 
-# Retrieve the player dictionary, either by refreshing from API or from cached file
-def retrieve_player_dict():
+# Retrieve API information from file, passing either full dictionary or daily player
+def retrieve_API_info(desired_info):
     est = ZoneInfo("America/New_York") # To ignore user timezone
     today_est = datetime.now(tz=est).strftime("%Y-%m-%d")
+    
+    # In case cache file DNE
+    cache_dictionary = {"unused_daily_players": []}
     
     if os.path.isfile(CACHE_PATH): # Verify file's existence
         
@@ -53,7 +56,7 @@ def retrieve_player_dict():
         with open(CACHE_PATH, "r", encoding="utf-8") as file: 
             cache_dictionary = json.load(file)
             if cache_dictionary["updated"] == today_est:
-                return cache_dictionary["players"] # Return dictionary if current
+                return cache_dictionary[desired_info] # Return desired info if current
             
     # If file DNE or is not current, get new data
     all_player_data = get_player_info(list(PLAYER_IDS.values()))
@@ -72,18 +75,61 @@ def retrieve_player_dict():
         for name, player_data in zip(PLAYER_IDS.keys(), all_player_data) # Use hard coded name spellings to avoid accents
     }
     
+    # Check if unused daily players are in file
+    if cache_dictionary["unused_daily_players"]:
+        # Daily player to guess is randomly selected from players yet to be used
+        daily_name = choice(cache_dictionary["unused_daily_players"])
+        cache_dictionary["unused_daily_players"].remove(daily_name)
+    else:
+        # Daily player to guess is randomly selected from all players
+        cache_dictionary["unused_daily_players"] = list(PLAYER_IDS.keys())
+        daily_name = choice(list(PLAYER_IDS.keys()))
+        cache_dictionary["unused_daily_players"].remove(daily_name)
+            
     # Update file with new date and player dictionary
     with open(CACHE_PATH, "w", encoding="utf-8") as file: 
-        json.dump({"updated": today_est, "players":player_dict}, file, ensure_ascii=False)
+        json.dump({"updated": today_est, 
+                   "players":player_dict, 
+                   "unused_daily_players":cache_dictionary["unused_daily_players"],
+                   "daily_name":daily_name}, file, ensure_ascii=False)     
     
-    return player_dict
-
+    if desired_info == "daily_name":
+        return daily_name
+    else:
+        return player_dict    
 
 # Homepage route
 @app.route("/", methods=["GET", "POST"])
 def home():
     
-    player_dict = retrieve_player_dict() # Retrieve player dictionary
+    daily_name = retrieve_API_info("daily_name") # Retrieve daily name
+    player_dict = retrieve_API_info("players") # Retrieve player dictionary
+    
+    # Check and, if necessary, create an unused players list to avoid repeats
+    if "players_to_use" not in session or not session["players_to_use"]: # Checks if list DNE or ran out of players
+        session["players_to_use"] = list(PLAYER_IDS.keys())
+    
+    # Player to guess is randomly selected from players yet to be used
+    daily_info = player_dict[daily_name]
+    
+    if daily_name in session["players_to_use"]: # Safety check
+        session["players_to_use"].remove(daily_name) # Remove player from unused list
+    
+    session.modified = True # Force Flask to save change to unused list
+            
+    # Render homepage w/ player names
+    return render_template("index.html", 
+                           players=list(PLAYER_IDS.keys()), 
+                           player_data=player_dict, 
+                           answer_info=daily_info, 
+                           answer_name=daily_name,
+                           players_to_use=session["players_to_use"])
+
+# Endless mode route
+@app.route("/endless", methods=["GET", "POST"])
+def endless_mode():
+    
+    player_dict = retrieve_API_info("players") # Retrieve player dictionary
     
     # Check and, if necessary, create an unused players list to avoid repeats
     if "players_to_use" not in session or not session["players_to_use"]: # Checks if list DNE or ran out of players
@@ -93,11 +139,13 @@ def home():
     answer_name = choice(session["players_to_use"])
     answer_info = player_dict[answer_name]
     
-    session["players_to_use"].remove(answer_name) # Remove player from unused list
+    if answer_name in session["players_to_use"]: # Safety check
+        session["players_to_use"].remove(answer_name) # Remove player from unused list
+    
     session.modified = True # Force Flask to save change to unused list
             
     # Render homepage w/ player names
-    return render_template("index.html", 
+    return render_template("endless.html", 
                            players=list(PLAYER_IDS.keys()), 
                            player_data=player_dict, 
                            answer_info=answer_info, 
