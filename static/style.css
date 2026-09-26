@@ -1,3 +1,25 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #22242a;
+  }
+  [class^="player-info-"] {
+    border-color: #C0C0C0 !important;
+  }
+
+  .column-headers {
+    background-color: #4682B4 !important; 
+  }
+
+  .form-control {
+    border-color: #4682B4 !important; 
+  }
+
+  .win-loss-btn {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
 [class^="player-info-"] {
     min-height: 60px;
     padding-block: 16px;
