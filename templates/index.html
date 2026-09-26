@@ -162,7 +162,7 @@
             item.addEventListener("click", function(e) {
                 e.preventDefault();
 
-                let playerName = this.getAttribute("data-value"); // Get clicked player's name
+                const playerName = this.getAttribute("data-value"); // Get clicked player's name
                 input.value = playerName; // Set form input to clicked player's name
                 dropdown.style.display = "none"; // Hide dropdown
                 
@@ -213,15 +213,17 @@
         // Display answer on correct guess/loss
         function displayAnswer(playerName) {
             if (playerName === answerName) { // Win
-                let successAlert = document.getElementById("win-alert");
-                let successAlertContainer = document.getElementById("win-alert-container");
-                successAlertContainer.classList.add("mb-5");
+                const successAlert = document.getElementById("win-alert");
+                const successAlertContainer = document.getElementById("win-alert-container");
+                successAlertContainer.classList.add("mb-3");
                 successAlert.classList.remove("d-none");
+                form.classList.add("d-none");
             } else if (guessCount == 6) { // Loss
-                let lossAlert = document.getElementById("loss-alert");
-                let lossAlertContainer = document.getElementById("loss-alert-container");
-                lossAlertContainer.classList.add("mb-5");
+                const lossAlert = document.getElementById("loss-alert");
+                const lossAlertContainer = document.getElementById("loss-alert-container");
+                lossAlertContainer.classList.add("mb-3");
                 lossAlert.classList.remove("d-none");
+                form.classList.add("d-none");
             }
         }
 
