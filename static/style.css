@@ -18,6 +18,18 @@
     background-color: white !important;
     color: black !important;
   }
+
+  .alert-success {
+    background-color: #228B22 !important;
+    border-color: #002B00 !important;
+    color: #002B00 !important;
+  }
+
+  .alert-danger {
+    background-color: #E55451 !important;
+    border-color: #65000B !important;
+    color: #65000B !important;
+  }
 }
 
 [class^="player-info-"] {
