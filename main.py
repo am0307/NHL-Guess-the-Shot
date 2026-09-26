@@ -91,7 +91,7 @@ def retrieve_API_info(desired_info):
         json.dump({"updated": today_est, 
                    "players":player_dict, 
                    "unused_daily_players":cache_dictionary["unused_daily_players"],
-                   "daily_name":daily_name}, file, ensure_ascii=False)     
+                   "daily_name":daily_name}, file, ensure_ascii=False, indent=4)     
     
     if desired_info == "daily_name":
         return daily_name
