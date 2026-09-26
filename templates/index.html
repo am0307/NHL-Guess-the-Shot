@@ -14,7 +14,7 @@
 <body>
     <!-- Show video -->
     <div class="d-flex justify-content-center">
-        <video width="640" height="480" src="{{ url_for('static', filename='videos/' + answer_name + ' Mask.mp4') }}" autoplay loop muted playsinline>
+        <video width="640" height="480" src="{{ url_for('static', filename='videos/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline>
     </div>
     <!-- Create player input form -->
     <form class="form" autocomplete="off" id="player-form">

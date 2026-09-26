@@ -64,6 +64,7 @@ def retrieve_player_dict():
             "nation": player_data["birthCountry"],
             "age": find_age(player_data["birthDate"]),
             "conference": TEAM_DIVISIONS_CONFERENCES[player_data["currentTeamAbbrev"]][1],
+            "id": PLAYER_IDS[name]
         }
         for name, player_data in zip(PLAYER_IDS.keys(), all_player_data) # Use hard coded name spellings to avoid accents
     }
