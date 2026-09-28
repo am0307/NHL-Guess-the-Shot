@@ -36,7 +36,7 @@ PLAYER_IDS = {"Alex Ovechkin":8471214, "Auston Matthews":8479318, "Cole Caufield
               "Leon Draisaitl":8477934, "Linus Ullmark":8476999, "Macklin Celebrini":8484801, 
               "Matthew Tkachuk":8479314, "Mitch Marner":8478483, "Nathan MacKinnon":8477492,
               "Patrick Kane":8474141, "Sidney Crosby":8471675, "Tage Thompson":8479420, 
-              "Tim Stutzle":8482116, "William Nylander":8477939
+              "Tim Stützle":8482116, "William Nylander":8477939
               }
 
 # Path to API cache file
