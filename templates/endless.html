@@ -12,9 +12,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <!-- Show video -->
+    <!-- Show mask video -->
     <div class="d-flex justify-content-center align-items-center">
-        <video width="640" height="480" src="{{ url_for('static', filename='videos/masks/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+        <video id="mask-vid" width="640" height="480" src="{{ url_for('static', filename='videos/masks/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+    </div>
+    <!-- Show original video -->
+    <div class="d-flex justify-content-center align-items-center">
+        <video id="org-vid" class="d-none" width="640" height="480" src="{{ url_for('static', filename='videos/original/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
     </div>
     <!-- Correct guess alert -->
     <div id="win-alert-container" class="d-flex justify-content-center mb-0">
@@ -215,17 +219,34 @@
         // Display answer on correct guess/loss
         function displayAnswer(playerName) {
             if (playerName === answerName) { // Win
+
+                // Retrieve elements that must be altered
                 const successAlert = document.getElementById("win-alert");
                 const successAlertContainer = document.getElementById("win-alert-container");
+                const maskVideo = document.getElementById("mask-vid");
+                const originalVideo = document.getElementById("org-vid");
+
+                // Alter elements, mostly by revealing/hiding them
                 successAlertContainer.classList.add("mb-3");
                 successAlert.classList.remove("d-none");
+                originalVideo.classList.remove("d-none");
                 form.classList.add("d-none");
+                maskVideo.classList.add("d-none");
+
             } else if (guessCount == 6) { // Loss
+
+                // Retrieve elements that must be altered
                 const lossAlert = document.getElementById("loss-alert");
                 const lossAlertContainer = document.getElementById("loss-alert-container");
+                const maskVideo = document.getElementById("mask-vid");
+                const originalVideo = document.getElementById("org-vid");
+
+                // Alter elements, mostly by revealing/hiding them
                 lossAlertContainer.classList.add("mb-3");
                 lossAlert.classList.remove("d-none");
+                originalVideo.classList.remove("d-none");
                 form.classList.add("d-none");
+                maskVideo.classList.add("d-none");
             }
         }
 
