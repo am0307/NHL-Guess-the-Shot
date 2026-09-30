@@ -12,7 +12,9 @@
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}" 
-                        {% if request.endpoint == 'home' %}aria-current="page"{% endif %}>
+                        {% if request.endpoint == 'home' %}
+                            aria-current="page"
+                        {% endif %}>
                         Daily
                     </a>
                 </li>
