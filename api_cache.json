@@ -1,5 +1,5 @@
 {
-    "updated": "2026-09-28",
+    "updated": "2026-09-30",
     "players": {
         "Alex Ovechkin": {
             "team": "Capitals",
@@ -186,7 +186,6 @@
         "Alex Ovechkin",
         "Auston Matthews",
         "Cole Caufield",
-        "Connor Bedard",
         "Connor McDavid",
         "David Pastrnak",
         "Evan Bouchard",
@@ -202,5 +201,5 @@
         "Tim Stutzle",
         "William Nylander"
     ],
-    "daily_name": "Tage Thompson"
+    "daily_name": "Connor Bedard"
 }

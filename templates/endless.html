@@ -14,7 +14,7 @@
 <body>
     <!-- Show video -->
     <div class="d-flex justify-content-center align-items-center">
-        <video width="640" height="480" src="{{ url_for('static', filename='videos/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+        <video width="640" height="480" src="{{ url_for('static', filename='videos/masks/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
     </div>
     <!-- Correct guess alert -->
     <div id="win-alert-container" class="d-flex justify-content-center mb-0">
