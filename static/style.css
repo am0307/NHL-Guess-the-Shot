@@ -1,35 +1,50 @@
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #22242a;
-  }
-  [class^="player-info-"] {
-    border-color: #C0C0C0 !important;
-  }
+[data-bs-theme="dark"] body {
+  background-color: #22242a;
+}
 
-  .column-headers {
-    background-color: #4682B4 !important; 
-  }
+[data-bs-theme="dark"] [class^="player-info-"] {
+  border-color: #C0C0C0 !important;
+}
 
-  .form-control {
-    border-color: #4682B4 !important; 
-  }
+[data-bs-theme="dark"] .column-headers {
+  background-color: #4682B4 !important; 
+}
 
-  .win-loss-btn {
-    background-color: white !important;
-    color: black !important;
-  }
+[data-bs-theme="dark"] .form-control {
+  border-color: #4682B4 !important; 
+}
 
-  .alert-success {
-    background-color: #228B22 !important;
-    border-color: #002B00 !important;
-    color: #002B00 !important;
-  }
+[data-bs-theme="dark"] .win-loss-btn {
+  background-color: white !important;
+  color: black !important;
+}
 
-  .alert-danger {
-    background-color: #E55451 !important;
-    border-color: #65000B !important;
-    color: #65000B !important;
-  }
+[data-bs-theme="dark"] .alert-success {
+  background-color: #228B22 !important;
+  border-color: #002B00 !important;
+  color: #002B00 !important;
+}
+
+[data-bs-theme="dark"] .alert-danger {
+  background-color: #E55451 !important;
+  border-color: #65000B !important;
+  color: #65000B !important;
+}
+
+#theme-switch svg {
+  fill: currentColor;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+[data-bs-theme="dark"] #theme-switch svg:first-child {
+  display: none;
+}
+
+[data-bs-theme="dark"] #theme-switch svg:last-child {
+  display: block;
 }
 
 [class^="player-info-"] {
