@@ -84,25 +84,27 @@ video {
 }
 
 [class^="player-info-"] {
-    height: 60px;           
-    display: flex !important;
-    align-items: center;    
-    justify-content: center;
-    text-align: center;     
-    line-height: 1.15;      
-    padding: 4px !important;
-    font-size: 0.875rem;    
-    word-break: break-word; 
-    overflow-wrap: anywhere;
+  height: 60px;           
+  display: flex !important;
+  align-items: center;    
+  justify-content: center;
+  text-align: center;     
+  line-height: 1.15;      
+  padding: 4px !important;
+  font-size: 0.875rem;    
+  word-break: break-word; 
+  overflow-wrap: anywhere;
+  padding-left: 0.15rem !important;
+  padding-right: 0.15rem !important;
 }
 
 [class^="player-info-"] * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .player-option {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .form-control {
