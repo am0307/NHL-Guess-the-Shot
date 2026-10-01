@@ -17,16 +17,16 @@ Bootstrap5(app)
 
 # Dictionary of NHL team abbreviations and their division/conference
 TEAM_DIVISIONS_CONFERENCES = {"ANA": ("Pacific", "Western"), "BOS": ("Atlantic", "Eastern"), "BUF": ("Atlantic", "Eastern"),
-                              "CGY": ("Pacific", "Western"), "CAR": ("Metropolitan", "Eastern"), "CHI": ("Central", "Western"),
-                              "COL": ("Central", "Western"), "CBJ": ("Metropolitan", "Eastern"), "DAL": ("Central", "Western"),
+                              "CGY": ("Pacific", "Western"), "CAR": ("Metro", "Eastern"), "CHI": ("Central", "Western"),
+                              "COL": ("Central", "Western"), "CBJ": ("Metro", "Eastern"), "DAL": ("Central", "Western"),
                               "DET": ("Atlantic", "Eastern"), "EDM": ("Pacific", "Western"), "FLA": ("Atlantic", "Eastern"),
                               "LAK": ("Pacific", "Western"), "MIN": ("Central", "Western"), "MTL": ("Atlantic", "Eastern"),
-                              "NSH": ("Central", "Western"), "NJD": ("Metropolitan", "Eastern"), "NYI": ("Metropolitan", "Eastern"),
-                              "NYR": ("Metropolitan", "Eastern"), "OTT": ("Atlantic", "Eastern"), "PHI": ("Metropolitan", "Eastern"),
-                              "PIT": ("Metropolitan", "Eastern"), "SJS": ("Pacific", "Western"), "SEA": ("Pacific", "Western"),
+                              "NSH": ("Central", "Western"), "NJD": ("Metro", "Eastern"), "NYI": ("Metro", "Eastern"),
+                              "NYR": ("Metro", "Eastern"), "OTT": ("Atlantic", "Eastern"), "PHI": ("Metro", "Eastern"),
+                              "PIT": ("Metro", "Eastern"), "SJS": ("Pacific", "Western"), "SEA": ("Pacific", "Western"),
                               "STL": ("Central", "Western"), "TBL": ("Atlantic", "Eastern"), "TOR": ("Atlantic", "Eastern"),
                               "UTA": ("Central", "Western"), "VAN": ("Pacific", "Western"), "VGK": ("Pacific", "Western"),
-                              "WSH": ("Metropolitan", "Eastern"), "WPG": ("Central", "Western")
+                              "WSH": ("Metro", "Eastern"), "WPG": ("Central", "Western")
                               }
 
 # Players available to guess

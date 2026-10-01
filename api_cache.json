@@ -1,9 +1,9 @@
 {
-    "updated": "2026-09-30",
+    "updated": "2026-10-01",
     "players": {
         "Alex Ovechkin": {
             "team": "Capitals",
-            "division": "Metropolitan",
+            "division": "Metro",
             "number": 8,
             "nation": "RUS",
             "age": 41,
@@ -147,7 +147,7 @@
         },
         "Sidney Crosby": {
             "team": "Penguins",
-            "division": "Metropolitan",
+            "division": "Metro",
             "number": 87,
             "nation": "CAN",
             "age": 39,
@@ -186,7 +186,6 @@
         "Alex Ovechkin",
         "Auston Matthews",
         "Cole Caufield",
-        "Connor McDavid",
         "David Pastrnak",
         "Evan Bouchard",
         "Kirill Kaprizov",
@@ -201,5 +200,5 @@
         "Tim Stutzle",
         "William Nylander"
     ],
-    "daily_name": "Connor Bedard"
+    "daily_name": "Connor McDavid"
 }

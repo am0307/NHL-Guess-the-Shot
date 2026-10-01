@@ -35,11 +35,11 @@
 
     <!-- Show mask video -->
     <div class="d-flex justify-content-center align-items-center">
-        <video id="mask-vid" class="my-lg-5 my-sm-2" style="max-width: 100%;" width="1024" height="576" src="{{ url_for('static', filename='videos/masks/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+        <video id="mask-vid" class="my-5" width="889" height="500" src="{{ url_for('static', filename='videos/masks/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
     </div>
     <!-- Show original video -->
     <div class="d-flex justify-content-center align-items-center">
-        <video id="org-vid" class="d-none my-lg-5 my-sm-2" style="max-width: 100%;" width="1024" height="576" src="{{ url_for('static', filename='videos/original/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+        <video id="org-vid" class="d-none my-5" width="889" height="500" src="{{ url_for('static', filename='videos/original/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
     </div>
     <!-- Correct guess alert -->
     <div id="win-alert-container" class="d-flex justify-content-center mb-0">
@@ -66,8 +66,8 @@
     <!-- Create player input form -->
     <div class="container">
         <form class="form" autocomplete="off" id="player-form">
-            <div class="row row-cols-5 mb-2 justify-content-center">
-                <div class="col-4 px-0">
+            <div class="row row-cols-10 mb-2 justify-content-center">
+                <div class="col-lg-4 col-6 px-0">
                     <input class="form-control" type="text" id="player-input" name="player" placeholder="Guess a player" autocomplete="off">
                     
                     <!-- Player dropdown menu -->
@@ -80,73 +80,78 @@
             </div>
         </form>
     </div>
-    <!-- Show headers for each column's category -->
-    <div class="container-fluid text-center col-sm-12 col-md-12 col-lg-10 col-xl-8 col-xxl-6">
-        <div class="row row-cols-5 flex-nowrap justify-content-center my-3">
-            <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0" data-bs-placement="top" title="The player's current team.">Team</h6>
-            <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0" data-bs-placement="top" title="The player's division, appears yellow when player conferences match.">Division</h6>
-            <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0" data-bs-placement="top" title="The player's number, appears yellow when within 10 of the correct answer.">Num.</h6>
-            <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0" data-bs-placement="top" title="The player's country of birth.">Birth Nation</h6>
-            <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0" data-bs-placement="top" title="The player's age, appears yellow when within 3 of the correct answer.">Age</h6>
-        </div>
-    </div>
-    <!-- Display guess rows -->
-    <div id="guess-rows" class="container-fluid text-center col-sm-12 col-md-12 col-lg-10 col-xl-8 col-xxl-6">
-        <div id="guess-1">
-            <div class="row row-cols-5 flex-nowrap justify-content-center">
-                <div class="player-info-1 shadow-sm col m-2 px-2 border-2 border team"></div>
-                <div class="player-info-1 shadow-sm col m-2 px-2 border-2 border division"></div>
-                <div class="player-info-1 shadow-sm col m-2 px-2 border-2 border number"></div>
-                <div class="player-info-1 shadow-sm col m-2 px-2 border-2 border nation"></div>
-                <div class="player-info-1 shadow-sm col m-2 px-2 border-2 border age"></div>
+    <div class="container-fluid text-center my-3">
+        <div class="row justify-content-center">
+            <!-- Outer wrapper controlling grid width across screen breakpoints -->
+            <div class="col-10 col-md-8 col-xxl-6">
+
+                <!-- Headers -->
+                <div class="row row-cols-5 flex-nowrap justify-content-center my-3 d-flex align-items-stretch">
+                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's current team.">Team</h6>
+                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's division, appears yellow when player conferences match.">Division</h6>
+                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's number, appears yellow when within 10 of the correct answer.">Num.</h6>
+                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's country of birth.">Birth Nation</h6>
+                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's age, appears yellow when within 3 of the correct answer.">Age</h6>
+                </div>
+
+                <!-- Display guess rows -->
+                <div id="guess-1">
+                    <div class="row row-cols-5 flex-nowrap justify-content-center">
+                        <div class="player-info-1 shadow-sm col m-2 px-1 border-2 border team"></div>
+                        <div class="player-info-1 shadow-sm col m-2 px-1 border-2 border division"></div>
+                        <div class="player-info-1 shadow-sm col m-2 px-1 border-2 border number"></div>
+                        <div class="player-info-1 shadow-sm col m-2 px-1 border-2 border nation"></div>
+                        <div class="player-info-1 shadow-sm col m-2 px-1 border-2 border age"></div>
+                    </div>
+                </div>
+                <div id="guess-2">
+                    <div class="row row-cols-5 flex-nowrap justify-content-center">
+                        <div class="player-info-2 shadow-sm col m-2 px-1 border-2 border team"></div>
+                        <div class="player-info-2 shadow-sm col m-2 px-1 border-2 border division"></div>
+                        <div class="player-info-2 shadow-sm col m-2 px-1 border-2 border number"></div>
+                        <div class="player-info-2 shadow-sm col m-2 px-1 border-2 border nation"></div>
+                        <div class="player-info-2 shadow-sm col m-2 px-1 border-2 border age"></div>
+                    </div>
+                </div>
+                <div id="guess-3">
+                    <div class="row row-cols-5 flex-nowrap justify-content-center">
+                        <div class="player-info-3 shadow-sm col m-2 px-1 border-2 border team"></div>
+                        <div class="player-info-3 shadow-sm col m-2 px-1 border-2 border division"></div>
+                        <div class="player-info-3 shadow-sm col m-2 px-1 border-2 border number"></div>
+                        <div class="player-info-3 shadow-sm col m-2 px-1 border-2 border nation"></div>
+                        <div class="player-info-3 shadow-sm col m-2 px-1 border-2 border age"></div>
+                    </div>
+                </div>
+                <div id="guess-4">
+                    <div class="row row-cols-5 flex-nowrap justify-content-center">
+                        <div class="player-info-4 shadow-sm col m-2 px-1 border-2 border team"></div>
+                        <div class="player-info-4 shadow-sm col m-2 px-1 border-2 border division"></div>
+                        <div class="player-info-4 shadow-sm col m-2 px-1 border-2 border number"></div>
+                        <div class="player-info-4 shadow-sm col m-2 px-1 border-2 border nation"></div>
+                        <div class="player-info-4 shadow-sm col m-2 px-1 border-2 border age"></div>
+                    </div>
+                </div>
+                <div id="guess-5">
+                    <div class="row row-cols-5 flex-nowrap justify-content-center">
+                        <div class="player-info-5 shadow-sm col m-2 px-1 border-2 border team"></div>
+                        <div class="player-info-5 shadow-sm col m-2 px-1 border-2 border division"></div>
+                        <div class="player-info-5 shadow-sm col m-2 px-1 border-2 border number"></div>
+                        <div class="player-info-5 shadow-sm col m-2 px-1 border-2 border nation"></div>
+                        <div class="player-info-5 shadow-sm col m-2 px-1 border-2 border age"></div>
+                    </div>
+                </div>
+                <div id="guess-6">
+                    <div class="row row-cols-5 flex-nowrap justify-content-center">
+                        <div class="player-info-6 shadow-sm col m-2 mb-5 px-1 border-2 border team"></div>
+                        <div class="player-info-6 shadow-sm col m-2 mb-5 px-1 border-2 border division"></div>
+                        <div class="player-info-6 shadow-sm col m-2 mb-5 px-1 border-2 border number"></div>
+                        <div class="player-info-6 shadow-sm col m-2 mb-5 px-1 border-2 border nation"></div>
+                        <div class="player-info-6 shadow-sm col m-2 mb-5 px-1 border-2 border age"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="guess-2">
-            <div class="row row-cols-5 flex-nowrap justify-content-center">
-                <div class="player-info-2 shadow-sm col m-2 px-2 border-2 border team"></div>
-                <div class="player-info-2 shadow-sm col m-2 px-2 border-2 border division"></div>
-                <div class="player-info-2 shadow-sm col m-2 px-2 border-2 border number"></div>
-                <div class="player-info-2 shadow-sm col m-2 px-2 border-2 border nation"></div>
-                <div class="player-info-2 shadow-sm col m-2 px-2 border-2 border age"></div>
-            </div>
-        </div>
-        <div id="guess-3">
-            <div class="row row-cols-5 flex-nowrap justify-content-center">
-                <div class="player-info-3 shadow-sm col m-2 px-2 border-2 border team"></div>
-                <div class="player-info-3 shadow-sm col m-2 px-2 border-2 border division"></div>
-                <div class="player-info-3 shadow-sm col m-2 px-2 border-2 border number"></div>
-                <div class="player-info-3 shadow-sm col m-2 px-2 border-2 border nation"></div>
-                <div class="player-info-3 shadow-sm col m-2 px-2 border-2 border age"></div>
-            </div>
-        </div>
-        <div id="guess-4">
-            <div class="row row-cols-5 flex-nowrap justify-content-center">
-                <div class="player-info-4 shadow-sm col m-2 px-2 border-2 border team"></div>
-                <div class="player-info-4 shadow-sm col m-2 px-2 border-2 border division"></div>
-                <div class="player-info-4 shadow-sm col m-2 px-2 border-2 border number"></div>
-                <div class="player-info-4 shadow-sm col m-2 px-2 border-2 border nation"></div>
-                <div class="player-info-4 shadow-sm col m-2 px-2 border-2 border age"></div>
-            </div>
-        </div>
-        <div id="guess-5">
-            <div class="row row-cols-5 flex-nowrap justify-content-center">
-                <div class="player-info-5 shadow-sm col m-2 px-2 border-2 border team"></div>
-                <div class="player-info-5 shadow-sm col m-2 px-2 border-2 border division"></div>
-                <div class="player-info-5 shadow-sm col m-2 px-2 border-2 border number"></div>
-                <div class="player-info-5 shadow-sm col m-2 px-2 border-2 border nation"></div>
-                <div class="player-info-5 shadow-sm col m-2 px-2 border-2 border age"></div>
-            </div>
-        </div>
-        <div id="guess-6">
-            <div class="row row-cols-5 flex-nowrap justify-content-center">
-                <div class="player-info-6 shadow-sm col m-2 mb-5 px-2 border-2 border team"></div>
-                <div class="player-info-6 shadow-sm col m-2 mb-5 px-2 border-2 border division"></div>
-                <div class="player-info-6 shadow-sm col m-2 mb-5 px-2 border-2 border number"></div>
-                <div class="player-info-6 shadow-sm col m-2 mb-5 px-2 border-2 border nation"></div>
-                <div class="player-info-6 shadow-sm col m-2 mb-5 px-2 border-2 border age"></div>
-            </div>
-        </div>
-    </div>
+</div>
 
     <!-- Load Bootstrap js -->
     {{ bootstrap.load_js() }}

@@ -38,13 +38,18 @@
 
 .nav-pills .nav-link {
   color: #1434A4;
-  margin-right: 8px;
+  margin-left: 8px;
 }
 
 .nav-pills .nav-link:hover:not(.active) {
   background-color: #1434A4 !important;
   color: white !important;
   opacity: 0.7; 
+}
+
+video {
+  max-width: 90%;
+  height: auto;
 }
 
 [data-bs-theme="dark"] .nav-pills .nav-link.active {
@@ -79,8 +84,21 @@
 }
 
 [class^="player-info-"] {
-    min-height: 60px;
-    padding-block: 16px;
+    height: 60px;           
+    display: flex !important;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;     
+    line-height: 1.15;      
+    padding: 4px !important;
+    font-size: 0.875rem;    
+    word-break: break-word; 
+    overflow-wrap: anywhere;
+}
+
+[class^="player-info-"] * {
+    margin: 0;
+    padding: 0;
 }
 
 .player-option {
