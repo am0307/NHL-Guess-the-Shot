@@ -99,7 +99,7 @@
 
 .form-control::placeholder {
   font-weight: bold;
-  opacity: 1; /* Ensures consistency across different browsers */
+  opacity: 1;
 }
 
 @keyframes flip {

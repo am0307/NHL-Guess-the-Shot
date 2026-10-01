@@ -22,8 +22,8 @@ input.addEventListener("input", function() {
     // Loop through each item and show players based on the filter
     items.forEach(item => {
         var player_text = item.textContent.toLowerCase();
-        const player_text_deaccent = player_text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        const user_input_deaccent = user_input.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const player_text_deaccent = player_text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const user_input_deaccent = user_input.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         
         if (player_text_deaccent.includes(user_input_deaccent) && user_input_deaccent.length > 0 && num_displayed < max_displayed) {
             item.parentElement.style.display = "block";

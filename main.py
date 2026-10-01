@@ -12,7 +12,7 @@ load_dotenv("secrets.env") # Load env file
 
 # Initialise Flask and Bootstrap
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv("FLASK_KEY")
+app.config["SECRET_KEY"] = os.getenv("FLASK_KEY")
 Bootstrap5(app)
 
 # Dictionary of NHL team abbreviations and their division/conference
