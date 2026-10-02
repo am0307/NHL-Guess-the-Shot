@@ -1,8 +1,8 @@
 {
-    "updated": "2026-10-01",
+    "updated": "2026-10-02",
     "players": {
         "Alex Ovechkin": {
-            "team": "Capitals",
+            "team": "WSH",
             "division": "Metro",
             "number": 8,
             "nation": "RUS",
@@ -11,7 +11,7 @@
             "id": 8471214
         },
         "Auston Matthews": {
-            "team": "Maple Leafs",
+            "team": "TOR",
             "division": "Atlantic",
             "number": 34,
             "nation": "USA",
@@ -20,7 +20,7 @@
             "id": 8479318
         },
         "Cole Caufield": {
-            "team": "Canadiens",
+            "team": "MTL",
             "division": "Atlantic",
             "number": 13,
             "nation": "USA",
@@ -29,7 +29,7 @@
             "id": 8481540
         },
         "Connor Bedard": {
-            "team": "Blackhawks",
+            "team": "CHI",
             "division": "Central",
             "number": 98,
             "nation": "CAN",
@@ -38,7 +38,7 @@
             "id": 8484144
         },
         "Connor McDavid": {
-            "team": "Oilers",
+            "team": "EDM",
             "division": "Pacific",
             "number": 97,
             "nation": "CAN",
@@ -47,7 +47,7 @@
             "id": 8478402
         },
         "David Pastrnak": {
-            "team": "Bruins",
+            "team": "BOS",
             "division": "Atlantic",
             "number": 88,
             "nation": "CZE",
@@ -56,7 +56,7 @@
             "id": 8477956
         },
         "Evan Bouchard": {
-            "team": "Oilers",
+            "team": "EDM",
             "division": "Pacific",
             "number": 2,
             "nation": "CAN",
@@ -65,7 +65,7 @@
             "id": 8480803
         },
         "Jason Robertson": {
-            "team": "Stars",
+            "team": "DAL",
             "division": "Central",
             "number": 21,
             "nation": "USA",
@@ -74,7 +74,7 @@
             "id": 8480027
         },
         "Kirill Kaprizov": {
-            "team": "Wild",
+            "team": "MIN",
             "division": "Central",
             "number": 97,
             "nation": "RUS",
@@ -83,7 +83,7 @@
             "id": 8478864
         },
         "Leon Draisaitl": {
-            "team": "Oilers",
+            "team": "EDM",
             "division": "Pacific",
             "number": 29,
             "nation": "DEU",
@@ -92,7 +92,7 @@
             "id": 8477934
         },
         "Linus Ullmark": {
-            "team": "Senators",
+            "team": "OTT",
             "division": "Atlantic",
             "number": 35,
             "nation": "SWE",
@@ -101,7 +101,7 @@
             "id": 8476999
         },
         "Macklin Celebrini": {
-            "team": "Sharks",
+            "team": "SJS",
             "division": "Pacific",
             "number": 71,
             "nation": "CAN",
@@ -110,7 +110,7 @@
             "id": 8484801
         },
         "Matthew Tkachuk": {
-            "team": "Panthers",
+            "team": "FLA",
             "division": "Atlantic",
             "number": 19,
             "nation": "USA",
@@ -119,7 +119,7 @@
             "id": 8479314
         },
         "Mitch Marner": {
-            "team": "Golden Knights",
+            "team": "VGK",
             "division": "Pacific",
             "number": 93,
             "nation": "CAN",
@@ -128,7 +128,7 @@
             "id": 8478483
         },
         "Nathan MacKinnon": {
-            "team": "Avalanche",
+            "team": "COL",
             "division": "Central",
             "number": 29,
             "nation": "CAN",
@@ -137,7 +137,7 @@
             "id": 8477492
         },
         "Patrick Kane": {
-            "team": "Blackhawks",
+            "team": "CHI",
             "division": "Central",
             "number": 88,
             "nation": "USA",
@@ -146,7 +146,7 @@
             "id": 8474141
         },
         "Sidney Crosby": {
-            "team": "Penguins",
+            "team": "PIT",
             "division": "Metro",
             "number": 87,
             "nation": "CAN",
@@ -155,7 +155,7 @@
             "id": 8471675
         },
         "Tage Thompson": {
-            "team": "Sabres",
+            "team": "BUF",
             "division": "Atlantic",
             "number": 72,
             "nation": "USA",
@@ -164,7 +164,7 @@
             "id": 8479420
         },
         "Tim Stützle": {
-            "team": "Senators",
+            "team": "OTT",
             "division": "Atlantic",
             "number": 18,
             "nation": "DEU",
@@ -173,7 +173,7 @@
             "id": 8482116
         },
         "William Nylander": {
-            "team": "Maple Leafs",
+            "team": "TOR",
             "division": "Atlantic",
             "number": 88,
             "nation": "CAN",
@@ -186,8 +186,11 @@
         "Alex Ovechkin",
         "Auston Matthews",
         "Cole Caufield",
+        "Connor Bedard",
+        "Connor McDavid",
         "David Pastrnak",
         "Evan Bouchard",
+        "Jason Robertson",
         "Kirill Kaprizov",
         "Leon Draisaitl",
         "Linus Ullmark",
@@ -195,10 +198,10 @@
         "Matthew Tkachuk",
         "Mitch Marner",
         "Nathan MacKinnon",
-        "Patrick Kane",
         "Sidney Crosby",
-        "Tim Stutzle",
+        "Tage Thompson",
+        "Tim Stützle",
         "William Nylander"
     ],
-    "daily_name": "Connor McDavid"
+    "daily_name": "Patrick Kane"
 }

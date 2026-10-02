@@ -64,7 +64,7 @@ def retrieve_API_info(desired_info):
     # Create formatted dictionary with player data
     player_dict = {
         name: {
-            "team": player_data["teamCommonName"]["default"],
+            "team": player_data["currentTeamAbbrev"],
             "division": TEAM_DIVISIONS_CONFERENCES[player_data["currentTeamAbbrev"]][0],
             "number": player_data["sweaterNumber"],
             "nation": player_data["birthCountry"],
