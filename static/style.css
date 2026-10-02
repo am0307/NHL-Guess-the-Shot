@@ -6,7 +6,7 @@
   border-color: #C0C0C0 !important;
 }
 
-[data-bs-theme="dark"] .column-headers {
+[data-bs-theme="dark"] .colour-changing {
   background-color: #4682B4 !important; 
 }
 
@@ -50,6 +50,8 @@
 video {
   max-width: 90%;
   height: auto;
+  margin-top: 36px; 
+  margin-bottom: 36px;
 }
 
 [data-bs-theme="dark"] .nav-pills .nav-link.active {
@@ -112,7 +114,7 @@ video {
   border-width: 2px;
 }
 
-.column-headers {
+.colour-changing {
   background-color: #1434A4; 
   color: white;
 }

@@ -90,11 +90,9 @@ function flipBoxes(playerName) {
 function displayAnswer(playerName) {
     if (playerName === window.answerName) { // Win
         const successAlert = document.getElementById("win-alert");
-        const successAlertContainer = document.getElementById("win-alert-container");
         const maskVideo = document.getElementById("mask-vid");
         const originalVideo = document.getElementById("org-vid");
 
-        successAlertContainer.classList.add("mb-3");
         successAlert.classList.remove("d-none");
         originalVideo.classList.remove("d-none");
         form.classList.add("d-none");
@@ -102,11 +100,9 @@ function displayAnswer(playerName) {
 
     } else if (guessCount == 6) { // Loss
         const lossAlert = document.getElementById("loss-alert");
-        const lossAlertContainer = document.getElementById("loss-alert-container");
         const maskVideo = document.getElementById("mask-vid");
         const originalVideo = document.getElementById("org-vid");
 
-        lossAlertContainer.classList.add("mb-3");
         lossAlert.classList.remove("d-none");
         originalVideo.classList.remove("d-none");
         form.classList.add("d-none");

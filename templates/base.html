@@ -35,22 +35,44 @@
 
     <!-- Show mask video -->
     <div class="d-flex justify-content-center align-items-center">
-        <video id="mask-vid" class="my-5" width="889" height="500" src="{{ url_for('static', filename='videos/masks/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+        <video id="mask-vid" width="889" height="500" src="{{ url_for('static', filename='videos/masks/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
     </div>
     <!-- Show original video -->
     <div class="d-flex justify-content-center align-items-center">
-        <video id="org-vid" class="d-none my-5" width="889" height="500" src="{{ url_for('static', filename='videos/original/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+        <video id="org-vid" class="d-none" width="889" height="500" src="{{ url_for('static', filename='videos/original/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
     </div>
     <!-- Correct guess alert -->
     <div id="win-alert-container" class="d-flex justify-content-center mb-0">
-        <div id="win-alert" class="alert alert-success d-none col-lg-4 col-md-6 col-10" role="alert">
+        <div id="win-alert" class="alert alert-success d-none col-lg-4 col-md-6 col-10 mb-0" role="alert">
             <h4 class="text-center mb-1">Correct!</h4>
             <h5 class="text-center">The answer was {{ answer_name }}!</h5>
-            <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark btn-md w-50 mx-auto d-block text-center">
+            <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark w-50 mx-auto d-block text-center">
                 {%- block play_again_text -%}
                     Play Again
                 {%- endblock -%}
             </a>
+            <!-- Show sharable result -->
+            <button type="button" class="win-loss-btn btn btn-dark mx-auto d-block text-center my-2" data-bs-toggle="modal" data-bs-target="#shareResult" style="width: 35%;">
+                Share Result
+            </button>
+            <!-- Sharable result -->
+            <div class="modal fade" id="shareResult" tabindex="-1" aria-labelledby="shareResultLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="shareResultLabel">Share Result</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary colour-changing">Copy</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Loss alert -->
@@ -58,7 +80,7 @@
         <div id="loss-alert" class="alert alert-danger d-none col-lg-4 col-md-6 col-10" role="alert">
             <h4 class="text-center mb-1">You lose!</h4>
             <h5 class="text-center">The answer was {{ answer_name }}!</h5>
-            <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark btn-md w-50 mx-auto d-block text-center">
+            <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark w-50 mx-auto d-block text-center">
                 {{ self.play_again_text() }}
             </a>
         </div>
@@ -66,7 +88,7 @@
     <!-- Create player input form -->
     <div class="container">
         <form class="form" autocomplete="off" id="player-form">
-            <div class="row row-cols-10 mb-2 justify-content-center">
+            <div class="row row-cols-10 justify-content-center" style="margin-bottom: 24px;">
                 <div class="col-lg-4 col-6 px-0">
                     <input class="form-control" type="text" id="player-input" name="player" placeholder="Guess a player" autocomplete="off">
                     
@@ -86,11 +108,11 @@
             <div class="col-9 col-md-8 col-xxl-6">
                 <!-- Headers -->
                 <div class="row row-cols-5 flex-nowrap justify-content-center my-3 d-flex align-items-stretch">
-                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's current team.">Team</h6>
-                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's division, appears yellow when player conferences match.">Div.</h6>
-                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's number, appears yellow when within 10 of the correct answer.">#</h6>
-                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's country of birth.">Birth Nation</h6>
-                    <h6 class="column-headers column-tooltip col mx-2 my-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's age, appears yellow when within 3 of the correct answer.">Age</h6>
+                    <h6 class="column-headers colour-changing column-tooltip col mx-2 mb-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's current team.">Team</h6>
+                    <h6 class="column-headers colour-changing column-tooltip col mx-2 mb-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's division, appears yellow when player conferences match.">Div.</h6>
+                    <h6 class="column-headers colour-changing column-tooltip col mx-2 mb-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's number, appears yellow when within 10 of the correct answer.">#</h6>
+                    <h6 class="column-headers colour-changing column-tooltip col mx-2 mb-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's country of birth.">Birth Nation</h6>
+                    <h6 class="column-headers colour-changing column-tooltip col mx-2 mb-2 px-2 py-2 rounded mb-0 d-flex align-items-center justify-content-center" data-bs-placement="top" title="The player's age, appears yellow when within 3 of the correct answer.">Age</h6>
                 </div>
                 <!-- Display guess rows -->
                 <div id="guess-1">
