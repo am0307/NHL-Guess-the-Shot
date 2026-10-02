@@ -54,15 +54,15 @@
             <!-- Share daily result -->
             {% if request.path == "/" %}    
                 <!-- Toggle sharable result -->
-                <button type="button" class="win-loss-btn btn btn-dark mx-auto d-block text-center my-2" data-bs-toggle="modal" data-bs-target="#shareResultWin" style="width: 35%;">
+                <button type="button" class="win-loss-btn share-result-btn btn btn-dark mx-auto d-block text-center my-2" data-bs-toggle="modal" data-bs-target="#share-result-win">
                     Share Result
                 </button>
                 <!-- Sharable result -->
-                <div class="modal fade" id="shareResultWin" tabindex="-1" aria-labelledby="shareResultLabel" aria-hidden="true">
+                <div class="modal fade" id="share-result-win" tabindex="-1" aria-labelledby="share-result-label" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="shareResultLabel">Share Result</h5>
+                            <h5 class="modal-title" id="share-result-win-label">Share Result</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -87,17 +87,17 @@
                 {{ self.play_again_text() }}
             </a>
             <!-- Toggle sharable result -->
-            <button type="button" class="win-loss-btn btn btn-dark mx-auto d-block text-center my-2" data-bs-toggle="modal" data-bs-target="#shareResultLoss" style="width: 35%;">
+            <button type="button" class="win-loss-btn share-result-btn btn btn-dark mx-auto d-block text-center my-2" data-bs-toggle="modal" data-bs-target="#share-result-loss">
                 Share Result
             </button>
             <!-- Share daily result -->
             {% if request.path == "/" %}    
                 <!-- Sharable result -->
-                <div class="modal fade" id="shareResultLoss" tabindex="-1" aria-labelledby="shareResultLabel" aria-hidden="true">
+                <div class="modal fade" id="share-result-loss" tabindex="-1" aria-labelledby="share-result-label" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="shareResultLabel">Share Result</h5>
+                            <h5 class="modal-title" id="share-result-loss-label">Share Result</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">

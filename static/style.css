@@ -124,6 +124,11 @@ video {
   opacity: 1;
 }
 
+.share-result-btn {
+  width: 35%; 
+  min-width: 120px !important;
+}
+
 @keyframes flip {
   0% {
     transform: scaleY(1);

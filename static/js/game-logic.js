@@ -102,7 +102,7 @@ function displayAnswer(playerName) {
         // Create and show sharable text for a win
         if (window.location.pathname === "/") {
             const sharable = createSharable(guessCount);
-            document.querySelector("#shareResultWin .modal-body").innerHTML = sharable;
+            document.querySelector("#share-result-win .modal-body").innerHTML = sharable;
         }
     } else if (guessCount == 6) { // Loss
         const lossAlert = document.getElementById("loss-alert");
@@ -117,7 +117,7 @@ function displayAnswer(playerName) {
         // Create and show sharable text for a loss
         if (window.location.pathname === "/") {
             const sharable = createSharable("X");
-            document.querySelector("#shareResultLoss .modal-body").innerHTML = sharable;
+            document.querySelector("#share-result-loss .modal-body").innerHTML = sharable;
         }
     }
 }
@@ -211,7 +211,7 @@ if (copyWinBtn) { // Check if button exists prior to adding event listener
 
     // Copy text on click
     copyWinBtn.addEventListener("click", function() {
-        const textToCopy = document.querySelector("#shareResultWin .modal-body").textContent;
+        const textToCopy = document.querySelector("#share-result-win .modal-body").textContent;
         
         // Change button text to "Copied!" for 2 seconds
         navigator.clipboard.writeText(textToCopy).then(() => {
@@ -229,7 +229,7 @@ if (copyLossBtn) { // Check if button exists prior to adding event listener
 
     // Copy text on click
     copyLossBtn.addEventListener("click", function() {
-        const textToCopy = document.querySelector("#shareResultLoss .modal-body").textContent;
+        const textToCopy = document.querySelector("#share-result-loss .modal-body").textContent;
         
         // Change button text to "Copied!" for 2 seconds
         navigator.clipboard.writeText(textToCopy).then(() => {
