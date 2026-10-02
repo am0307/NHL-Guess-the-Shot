@@ -1,9 +1,10 @@
-// Retrieve elements and variables
+// Retrieve elements, variables, and functions
 const input = document.getElementById("player-input");
 const dropdown = document.getElementById("player-dropdown");
 const form = document.getElementById("player-form");
 const items = dropdown.querySelectorAll(".player-option");
 const tooltips = document.querySelectorAll(".column-tooltip");
+import { createSharable } from "./share-logic.js";
 
 let guessCount = 0; // Guess number tracker
 
@@ -97,7 +98,12 @@ function displayAnswer(playerName) {
         originalVideo.classList.remove("d-none");
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
-
+        
+        // Create and show sharable text for a win
+        if (window.location.pathname === "/") {
+            const sharable = createSharable(guessCount);
+            document.querySelector("#shareResultWin .modal-body").innerHTML = sharable;
+        }
     } else if (guessCount == 6) { // Loss
         const lossAlert = document.getElementById("loss-alert");
         const maskVideo = document.getElementById("mask-vid");
@@ -107,6 +113,12 @@ function displayAnswer(playerName) {
         originalVideo.classList.remove("d-none");
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
+
+        // Create and show sharable text for a loss
+        if (window.location.pathname === "/") {
+            const sharable = createSharable("X");
+            document.querySelector("#shareResultLoss .modal-body").innerHTML = sharable;
+        }
     }
 }
 
