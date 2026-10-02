@@ -204,3 +204,39 @@ function addGuessInfo(playerName) {
 
     if (guessCount >= 6) return;
 }
+
+// Handle copy from win modal
+const copyWinBtn = document.getElementById("copy-win-btn");
+if (copyWinBtn) { // Check if button exists prior to adding event listener
+
+    // Copy text on click
+    copyWinBtn.addEventListener("click", function() {
+        const textToCopy = document.querySelector("#shareResultWin .modal-body").textContent;
+        
+        // Change button text to "Copied!" for 2 seconds
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            copyWinBtn.textContent = "Copied!";
+            setTimeout(() => {
+                copyWinBtn.textContent = "Copy";
+            }, 2000); 
+        })
+    });
+}
+
+// Handle copy from loss modal
+const copyLossBtn = document.getElementById("copy-loss-btn");
+if (copyLossBtn) { // Check if button exists prior to adding event listener
+
+    // Copy text on click
+    copyLossBtn.addEventListener("click", function() {
+        const textToCopy = document.querySelector("#shareResultLoss .modal-body").textContent;
+        
+        // Change button text to "Copied!" for 2 seconds
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            copyLossBtn.textContent = "Copied!";
+            setTimeout(() => {
+                copyLossBtn.textContent = "Copy";
+            }, 2000);
+        })
+    });
+}
