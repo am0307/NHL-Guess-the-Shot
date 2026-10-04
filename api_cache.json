@@ -1,6 +1,15 @@
 {
-    "updated": "2026-10-02",
+    "updated": "2026-10-03",
     "players": {
+        "Adam Fox": {
+            "team": "NYR",
+            "division": "Metro",
+            "number": 23,
+            "nation": "USA",
+            "age": 28,
+            "conference": "Eastern",
+            "id": 8479323
+        },
         "Alex Ovechkin": {
             "team": "WSH",
             "division": "Metro",
@@ -18,6 +27,15 @@
             "age": 29,
             "conference": "Eastern",
             "id": 8479318
+        },
+        "Cale Makar": {
+            "team": "COL",
+            "division": "Central",
+            "number": 8,
+            "nation": "CAN",
+            "age": 27,
+            "conference": "Western",
+            "id": 8480069
         },
         "Cole Caufield": {
             "team": "MTL",
@@ -46,6 +64,15 @@
             "conference": "Western",
             "id": 8478402
         },
+        "Cutter Gauthier": {
+            "team": "ANA",
+            "division": "Pacific",
+            "number": 61,
+            "nation": "SWE",
+            "age": 22,
+            "conference": "Western",
+            "id": 8483445
+        },
         "David Pastrnak": {
             "team": "BOS",
             "division": "Atlantic",
@@ -64,6 +91,33 @@
             "conference": "Western",
             "id": 8480803
         },
+        "Filip Forsberg": {
+            "team": "NSH",
+            "division": "Central",
+            "number": 9,
+            "nation": "SWE",
+            "age": 32,
+            "conference": "Western",
+            "id": 8476887
+        },
+        "Jack Eichel": {
+            "team": "VGK",
+            "division": "Pacific",
+            "number": 9,
+            "nation": "USA",
+            "age": 29,
+            "conference": "Western",
+            "id": 8478403
+        },
+        "Jack Hughes": {
+            "team": "NJD",
+            "division": "Metro",
+            "number": 86,
+            "nation": "USA",
+            "age": 25,
+            "conference": "Eastern",
+            "id": 8481559
+        },
         "Jason Robertson": {
             "team": "DAL",
             "division": "Central",
@@ -81,6 +135,15 @@
             "age": 29,
             "conference": "Western",
             "id": 8478864
+        },
+        "Kyle Connor": {
+            "team": "WPG",
+            "division": "Central",
+            "number": 81,
+            "nation": "USA",
+            "age": 29,
+            "conference": "Western",
+            "id": 8478398
         },
         "Leon Draisaitl": {
             "team": "EDM",
@@ -109,6 +172,15 @@
             "conference": "Western",
             "id": 8484801
         },
+        "Matthew Schaefer": {
+            "team": "NYI",
+            "division": "Metro",
+            "number": 48,
+            "nation": "CAN",
+            "age": 19,
+            "conference": "Eastern",
+            "id": 8485366
+        },
         "Matthew Tkachuk": {
             "team": "FLA",
             "division": "Atlantic",
@@ -117,6 +189,15 @@
             "age": 28,
             "conference": "Eastern",
             "id": 8479314
+        },
+        "Matvei Michkov": {
+            "team": "PHI",
+            "division": "Metro",
+            "number": 39,
+            "nation": "RUS",
+            "age": 21,
+            "conference": "Eastern",
+            "id": 8484387
         },
         "Mitch Marner": {
             "team": "VGK",
@@ -136,6 +217,24 @@
             "conference": "Western",
             "id": 8477492
         },
+        "Nick Suzuki": {
+            "team": "MTL",
+            "division": "Atlantic",
+            "number": 14,
+            "nation": "CAN",
+            "age": 27,
+            "conference": "Eastern",
+            "id": 8480018
+        },
+        "Nikita Kucherov": {
+            "team": "TBL",
+            "division": "Atlantic",
+            "number": 86,
+            "nation": "RUS",
+            "age": 33,
+            "conference": "Eastern",
+            "id": 8476453
+        },
         "Patrick Kane": {
             "team": "CHI",
             "division": "Central",
@@ -144,6 +243,42 @@
             "age": 37,
             "conference": "Western",
             "id": 8474141
+        },
+        "Quinn Hughes": {
+            "team": "MIN",
+            "division": "Central",
+            "number": 43,
+            "nation": "USA",
+            "age": 26,
+            "conference": "Western",
+            "id": 8480800
+        },
+        "Rasmus Dahlin": {
+            "team": "BUF",
+            "division": "Atlantic",
+            "number": 26,
+            "nation": "SWE",
+            "age": 26,
+            "conference": "Eastern",
+            "id": 8480839
+        },
+        "Robert Thomas": {
+            "team": "STL",
+            "division": "Central",
+            "number": 18,
+            "nation": "CAN",
+            "age": 27,
+            "conference": "Western",
+            "id": 8480023
+        },
+        "Sebastian Aho": {
+            "team": "CAR",
+            "division": "Metro",
+            "number": 20,
+            "nation": "FIN",
+            "age": 29,
+            "conference": "Eastern",
+            "id": 8478427
         },
         "Sidney Crosby": {
             "team": "PIT",
@@ -180,6 +315,15 @@
             "age": 30,
             "conference": "Eastern",
             "id": 8477939
+        },
+        "Zach Werenski": {
+            "team": "CBJ",
+            "division": "Metro",
+            "number": 8,
+            "nation": "USA",
+            "age": 29,
+            "conference": "Eastern",
+            "id": 8478460
         }
     },
     "unused_daily_players": [
@@ -200,8 +344,7 @@
         "Nathan MacKinnon",
         "Sidney Crosby",
         "Tage Thompson",
-        "Tim Stützle",
         "William Nylander"
     ],
-    "daily_name": "Patrick Kane"
+    "daily_name": "Tim Stützle"
 }

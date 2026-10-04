@@ -30,13 +30,18 @@ TEAM_DIVISIONS_CONFERENCES = {"ANA": ("Pacific", "Western"), "BOS": ("Atlantic",
                               }
 
 # Players available to guess
-PLAYER_IDS = {"Alex Ovechkin":8471214, "Auston Matthews":8479318, "Cole Caufield":8481540, 
-              "Connor Bedard":8484144, "Connor McDavid":8478402, "David Pastrnak":8477956, 
-              "Evan Bouchard":8480803, "Jason Robertson":8480027, "Kirill Kaprizov":8478864, 
-              "Leon Draisaitl":8477934, "Linus Ullmark":8476999, "Macklin Celebrini":8484801, 
-              "Matthew Tkachuk":8479314, "Mitch Marner":8478483, "Nathan MacKinnon":8477492,
-              "Patrick Kane":8474141, "Sidney Crosby":8471675, "Tage Thompson":8479420, 
-              "Tim Stützle":8482116, "William Nylander":8477939
+PLAYER_IDS = {"Adam Fox":8479323, "Alex Ovechkin":8471214, "Auston Matthews":8479318, 
+              "Cale Makar":8480069, "Cole Caufield":8481540, "Connor Bedard":8484144, 
+              "Connor McDavid":8478402, "Cutter Gauthier":8483445, "David Pastrnak":8477956, 
+              "Evan Bouchard":8480803, "Filip Forsberg":8476887, "Jack Eichel":8478403, 
+              "Jack Hughes":8481559, "Jason Robertson":8480027, "Kirill Kaprizov":8478864, 
+              "Kyle Connor":8478398, "Leon Draisaitl":8477934, "Linus Ullmark":8476999, 
+              "Macklin Celebrini":8484801, "Matthew Schaefer":8485366, "Matthew Tkachuk":8479314, 
+              "Matvei Michkov":8484387, "Mitch Marner":8478483, "Nathan MacKinnon":8477492, 
+              "Nick Suzuki":8480018, "Nikita Kucherov":8476453, "Patrick Kane":8474141, 
+              "Quinn Hughes":8480800, "Rasmus Dahlin":8480839, "Robert Thomas":8480023, 
+              "Sebastian Aho":8478427, "Sidney Crosby":8471675, "Tage Thompson":8479420, 
+              "Tim Stützle":8482116, "William Nylander":8477939, "Zach Werenski":8478460
               }
 
 # Path to API cache file
