@@ -1,15 +1,21 @@
 import os, json
-from flask import Flask, render_template, session
+from flask import Flask, render_template, session, flash, redirect, url_for
 from flask_login import UserMixin, login_user, LoginManager, logout_user
 from flask_wtf.csrf import CSRFProtect
 from flask_bootstrap import Bootstrap5
+from flask_sqlalchemy import SQLAlchemy
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 from nhl_api import get_player_info
 from age_calculator import find_age
 from random import choice
 from zoneinfo import ZoneInfo
 from datetime import datetime
 from dotenv import load_dotenv
-from forms import RegisterForm
+from forms import RegisterForm, LoginForm
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy import Integer, String
+from werkzeug.security import generate_password_hash, check_password_hash
 
 load_dotenv("secrets.env") # Load env file
 
@@ -18,8 +24,47 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("FLASK_KEY")
 Bootstrap5(app)
 
+# Initialise Flask limiter
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    storage_uri="memory://",
+    default_limits=["1000 per day", "500 per hour"] 
+)
+
+# Set session cookie security settings
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+
+# Configure Flask login
+login_manager = LoginManager()
+login_manager.init_app(app)
+@login_manager.user_loader
+def load_user(user_id):
+    return db.session.get(User, int(user_id))
+
 csrf = CSRFProtect(app) # CSRF protection for forms
 
+# Create database
+class Base(DeclarativeBase):
+    pass
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DB_URI", "sqlite:///users.db")
+db = SQLAlchemy(model_class=Base)
+db.init_app(app)
+
+# Create user model
+class User(UserMixin, db.Model):
+    __tablename__ = "users"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    email: Mapped[str] = mapped_column(String(100), unique=True)
+    password: Mapped[str] = mapped_column(String(100))
+    daily_streak: Mapped[int] = mapped_column(Integer, default=0)
+    endless_streak: Mapped[int] = mapped_column(Integer, default=0)
+
+# Create database
+with app.app_context():
+    db.create_all()
+    
 # Dictionary of NHL team abbreviations and their division/conference
 TEAM_DIVISIONS_CONFERENCES = {"ANA": ("Pacific", "Western"), "BOS": ("Atlantic", "Eastern"), "BUF": ("Atlantic", "Eastern"),
                               "CGY": ("Pacific", "Western"), "CAR": ("Metro", "Eastern"), "CHI": ("Central", "Western"),
@@ -164,10 +209,74 @@ def endless_mode():
 
 # Register route
 @app.route("/register", methods=["GET", "POST"])
+@limiter.limit("50 per minute")
 def register():
     form = RegisterForm()
 
+    if form.validate_on_submit():
+        email = form.email.data
+
+        matching_user = db.session.execute(db.select(User).where(User.email == email)).scalar()
+        
+        if matching_user != None:
+            flash("You've already signed up with that email, try logging in instead!")
+            return redirect(url_for("login"))
+        elif form.password.data != form.verify_password.data:
+            flash("Passwords do not match, please try again.")
+            return redirect(url_for("register"))
+        
+        plain_password = form.password.data
+        encrypted_password = generate_password_hash(password=plain_password, method="pbkdf2:sha256", salt_length=8)
+
+        new_user = User(email=email, password=encrypted_password)
+
+        db.session.add(new_user)
+        db.session.commit()
+
+        login_user(new_user)
+
+        return redirect(url_for("home"))
+    
     return render_template("register.html", form=form)    
+
+# Login route
+@app.route("/login", methods=["GET", "POST"])
+@limiter.limit("50 per minute")
+def login():
+    form = LoginForm()
+
+    if form.validate_on_submit():
+        email = form.email.data
+        plain_password = form.password.data
+        
+        user = db.session.execute(db.select(User).where(User.email == email)).scalar()
+
+        if user != None:
+            password_check = check_password_hash(pwhash=user.password, password=plain_password)
+
+            if password_check:
+                login_user(user)
+                return redirect(url_for("home"))
+            else:
+                flash("Incorrect password, please try again.")
+                return render_template("login.html", form=form)
+        else:
+            flash("That email does not exist, please try again.")
+            return redirect(url_for("login", form=form))
+    
+    return render_template("login.html", form=form)
+
+# Logout route
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
+
+# Error handler for rate limiting
+@app.errorhandler(429)
+def ratelimit_handler(e):
+    flash("Too many login attempts. Please try again in a minute.")
+    return redirect(url_for("login"))
 
 # Run the app
 if __name__ == "__main__":

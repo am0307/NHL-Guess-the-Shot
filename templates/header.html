@@ -11,7 +11,7 @@
         <div class="d-flex align-items-center">
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}" 
+                    <a href="{{ url_for('home') }}" class="nav-link ms-0 {% if request.endpoint == 'home' %}active{% endif %}" 
                         {% if request.endpoint == 'home' %}
                             aria-current="page"
                         {% endif %}>
@@ -26,6 +26,22 @@
                         Endless
                     </a>
                 </li>
+                {% if not current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{{ url_for('login') }}" class="nav-link {% if request.endpoint == 'login' %}active{% endif %}" 
+                            {% if request.endpoint == 'login' %}
+                                aria-current="page"
+                            {% endif %}>
+                            Login
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{{ url_for('logout') }}" class="nav-link">
+                            Logout
+                        </a>
+                    </li>
+                {% endif %}
             </ul>
             
             <!-- Dark mode toggle button -->

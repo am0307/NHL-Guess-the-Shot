@@ -33,7 +33,7 @@
 <body>
     {% include "header.html" %}
 
-    <!-- Registration Form -->
+    <!-- Login Form -->
     <div class="container">
         <div class="row justify-content-center align-items-center center-account-form">
             {% with messages = get_flashed_messages() %}
@@ -43,26 +43,22 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-            <form method="POST" action="{{ url_for('register') }}" class="col-lg-4 col-md-6 col-10 px-0 mx-auto account-form px-4 rounded">
+            <form method="POST" action="{{ url_for('login') }}" class="col-lg-4 col-md-6 col-10 px-0 mx-auto account-form px-4 rounded">
                 {{ form.csrf_token }}
-                <h4 class="text-center account-label my-4">Create Account</h4>
+                <h4 class="text-center account-label my-4">Login</h4>
                 <div class="mb-4">
                     {{ form.email.label(class="account-label")}} <br>
-                    {{ form.email(class="form-control", placeholder="Enter email") }}
+                    {{ form.email(class="form-control", placeholder="Enter your email") }}
                 </div>
                 <div class="mb-4">
                     {{ form.password.label(class="account-label") }} <br>
-                    {{ form.password(class="form-control", placeholder="Create a password") }}
-                </div>
-                <div class="mb-4">
-                    {{ form.verify_password.label(class="account-label") }} <br>
-                    {{ form.verify_password(class="form-control", placeholder="Verify your password") }}
+                    {{ form.password(class="form-control", placeholder="Enter your password") }}
                 </div>
                 <div class="mb-4 text-center">
                     {{ form.submit(class="btn btn-dark", style="background-color: white; color: black; width: 100%; box-sizing: border-box;") }}
                 </div>
                 <h5 class="text-center mb-4 text-white">
-                    Have an account? <a href="{{ url_for('login') }}" class="link-light">Login!</a>
+                    Don't have an account? <a href="{{ url_for('register') }}" class="link-light">Register!</a>
                 </h5>
             </form>
         </div>

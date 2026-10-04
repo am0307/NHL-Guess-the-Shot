@@ -152,10 +152,13 @@ video {
   border-color: #000000 !important;
 }
 
-.form-container {
-  margin-top: 100px;
-}
-
 .account-label {
   color: white;
+}
+
+.center-account-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
 }
