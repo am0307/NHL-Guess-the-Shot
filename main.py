@@ -1,5 +1,7 @@
 import os, json
 from flask import Flask, render_template, session
+from flask_login import UserMixin, login_user, LoginManager, logout_user
+from flask_wtf.csrf import CSRFProtect
 from flask_bootstrap import Bootstrap5
 from nhl_api import get_player_info
 from age_calculator import find_age
@@ -7,6 +9,7 @@ from random import choice
 from zoneinfo import ZoneInfo
 from datetime import datetime
 from dotenv import load_dotenv
+from forms import RegisterForm
 
 load_dotenv("secrets.env") # Load env file
 
@@ -14,6 +17,8 @@ load_dotenv("secrets.env") # Load env file
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("FLASK_KEY")
 Bootstrap5(app)
+
+csrf = CSRFProtect(app) # CSRF protection for forms
 
 # Dictionary of NHL team abbreviations and their division/conference
 TEAM_DIVISIONS_CONFERENCES = {"ANA": ("Pacific", "Western"), "BOS": ("Atlantic", "Eastern"), "BUF": ("Atlantic", "Eastern"),
@@ -156,6 +161,13 @@ def endless_mode():
                            answer_info=answer_info, 
                            answer_name=answer_name,
                            players_to_use=session["players_to_use"])
+
+# Register route
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    form = RegisterForm()
+
+    return render_template("register.html", form=form)    
 
 # Run the app
 if __name__ == "__main__":

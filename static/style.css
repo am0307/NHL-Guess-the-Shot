@@ -146,3 +146,16 @@ video {
 .flip {
   animation: flip 500ms ease forwards;
 }
+
+.account-form {
+  background-color: #1434A4;
+  border-color: #000000 !important;
+}
+
+.form-container {
+  margin-top: 100px;
+}
+
+.account-label {
+  color: white;
+}

@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-03",
+    "updated": "2026-10-04",
     "players": {
         "Adam Fox": {
             "team": "NYR",
@@ -327,7 +327,6 @@
         }
     },
     "unused_daily_players": [
-        "Alex Ovechkin",
         "Auston Matthews",
         "Cole Caufield",
         "Connor Bedard",
@@ -346,5 +345,5 @@
         "Tage Thompson",
         "William Nylander"
     ],
-    "daily_name": "Tim Stützle"
+    "daily_name": "Alex Ovechkin"
 }
