@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-04",
+    "updated": "2026-10-05",
     "players": {
         "Adam Fox": {
             "team": "NYR",
@@ -330,7 +330,6 @@
         "Auston Matthews",
         "Cole Caufield",
         "Connor Bedard",
-        "Connor McDavid",
         "David Pastrnak",
         "Evan Bouchard",
         "Jason Robertson",
@@ -345,5 +344,5 @@
         "Tage Thompson",
         "William Nylander"
     ],
-    "daily_name": "Alex Ovechkin"
+    "daily_name": "Connor McDavid"
 }

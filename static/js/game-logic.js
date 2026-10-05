@@ -258,10 +258,13 @@ if (copyWinBtn) { // Check if button exists prior to adding event listener
 
     // Copy text on click
     copyWinBtn.addEventListener("click", function() {
-        const textToCopy = document.querySelector("#share-result-win .modal-body").textContent;
+        const textToCopy = document.querySelector("#share-result-win .modal-body").innerText;
         
+        // Make sharable text have working line breaks when copied
+        const copyableText = textToCopy.replace(/<br>/g, '\n');
+
         // Change button text to "Copied!" for 2 seconds
-        navigator.clipboard.writeText(textToCopy).then(() => {
+        navigator.clipboard.writeText(copyableText).then(() => {
             copyWinBtn.textContent = "Copied!";
             setTimeout(() => {
                 copyWinBtn.textContent = "Copy";
@@ -276,10 +279,13 @@ if (copyLossBtn) { // Check if button exists prior to adding event listener
 
     // Copy text on click
     copyLossBtn.addEventListener("click", function() {
-        const textToCopy = document.querySelector("#share-result-loss .modal-body").textContent;
+        const textToCopy = document.querySelector("#share-result-loss .modal-body").innerText;
         
+        // Make sharable text have working line breaks when copied
+        const copyableText = textToCopy.replace(/<br>/g, '\n');
+
         // Change button text to "Copied!" for 2 seconds
-        navigator.clipboard.writeText(textToCopy).then(() => {
+        navigator.clipboard.writeText(copyableText).then(() => {
             copyLossBtn.textContent = "Copied!";
             setTimeout(() => {
                 copyLossBtn.textContent = "Copy";
