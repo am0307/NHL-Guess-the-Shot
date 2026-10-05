@@ -97,10 +97,12 @@ function displayAnswer(playerName) {
 
     if (playerName === window.answerName) { // Win
         const successAlert = document.getElementById("win-alert");
+        const winAnswer = document.getElementById("win-answer");
         const maskVideo = document.getElementById("mask-vid");
         const originalVideo = document.getElementById("org-vid");
 
         successAlert.classList.remove("d-none");
+        winAnswer.textContent = `The answer was ${window.answerName}!`;
         originalVideo.classList.remove("d-none");
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
@@ -116,10 +118,12 @@ function displayAnswer(playerName) {
         gameResult = "win";
     } else if (guessCount == 6) { // Loss
         const lossAlert = document.getElementById("loss-alert");
+        const lossAnswer = document.getElementById("loss-answer");
         const maskVideo = document.getElementById("mask-vid");
         const originalVideo = document.getElementById("org-vid");
 
         lossAlert.classList.remove("d-none");
+        lossAnswer.textContent = `The answer was ${window.answerName}!`;
         originalVideo.classList.remove("d-none");
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
