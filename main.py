@@ -183,12 +183,13 @@ def home():
         if current_user.last_daily_date == today_est:
             daily_completed = True
     
+    daily_id = daily_info["id"]  # Get the ID of the daily player
+    
     # Render homepage w/ player names
     return render_template("index.html", 
                            players=list(PLAYER_IDS.keys()), 
                            player_data=player_dict, 
-                           answer_info=daily_info, 
-                           answer_name=daily_name,
+                           answer_id=daily_id,
                            players_to_use=session["players_to_use"],
                            daily_completed=daily_completed)
 
@@ -205,6 +206,7 @@ def endless_mode():
     # Player to guess is randomly selected from players yet to be used
     answer_name = choice(session["players_to_use"])
     answer_info = player_dict[answer_name]
+    answer_id = answer_info["id"]  # Get the ID of the selected player
     
     if answer_name in session["players_to_use"]: # Safety check
         session["players_to_use"].remove(answer_name) # Remove player from unused list
@@ -215,8 +217,7 @@ def endless_mode():
     return render_template("endless.html", 
                            players=list(PLAYER_IDS.keys()), 
                            player_data=player_dict, 
-                           answer_info=answer_info, 
-                           answer_name=answer_name,
+                           answer_id=answer_id,
                            players_to_use=session["players_to_use"])
 
 # Register route

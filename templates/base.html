@@ -37,11 +37,11 @@
 
     <!-- Show mask video -->
     <div class="d-flex justify-content-center align-items-center">
-        <video id="mask-vid" width="889" height="500" src="{{ url_for('static', filename='videos/masks/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+        <video id="mask-vid" width="889" height="500" src="{{ url_for('static', filename='videos/masks/' + answer_id | string + '.mp4') }}" autoplay loop muted playsinline></video>
     </div>
     <!-- Show original video -->
     <div class="d-flex justify-content-center align-items-center">
-        <video id="org-vid" class="d-none" width="889" height="500" src="{{ url_for('static', filename='videos/original/' + answer_info['id'] | string + '.mp4') }}" autoplay loop muted playsinline></video>
+        <video id="org-vid" class="d-none" width="889" height="500" src="{{ url_for('static', filename='videos/original/' + answer_id | string + '.mp4') }}" autoplay loop muted playsinline></video>
     </div>
     <!-- Correct guess alert -->
     <div id="win-alert-container" class="d-flex justify-content-center mb-0">
@@ -211,8 +211,7 @@
     <script>
         // Declare global variables with Jinja
         window.playerData = {{ player_data | tojson }};
-        window.answerInfo = {{ answer_info | tojson }};
-        window.answerName = {{ answer_name | tojson }};
+        window.answerId = {{ answer_id | tojson }};
         window.isAuthenticated = {{ current_user.is_authenticated | default(False) | tojson }};
         window.gameMode = "{{ 'daily' if request.path == '/' else 'endless' }}";
         window.dailyCompleted = {{ daily_completed | default(False) | tojson }};

@@ -8,6 +8,13 @@ import { createSharable } from "./share-logic.js";
 
 let guessCount = 0; // Guess number tracker
 
+const nameLookup = {}; // Empty lookup table for player names based on their IDs
+
+// Populate the nameLookup
+for (const [name, data] of Object.entries(window.playerData)) {
+    nameLookup[data.id] = name;
+}
+
 // Create Bootstrap tooltips
 tooltips.forEach(tt => {
     new bootstrap.Tooltip(tt)
@@ -15,27 +22,27 @@ tooltips.forEach(tt => {
 
 // Show and filter dropdown as the user types
 input.addEventListener("input", function() {
-    const user_input = input.value.toLowerCase();
-    const max_displayed = 5;
-    let num_displayed = 0;
+    const userInput = input.value.toLowerCase();
+    const maxDisplayed = 5;
+    let numDisplayed = 0;
     let hasVisibleItems = false;
 
     // Loop through each item and show players based on the filter
     items.forEach(item => {
-        var player_text = item.textContent.toLowerCase();
-        const player_text_deaccent = player_text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        const user_input_deaccent = user_input.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        var playerText = item.textContent.toLowerCase();
+        const playerTextDeaccent = playerText.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const userInputDeaccent = userInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         
-        if (player_text_deaccent.includes(user_input_deaccent) && user_input_deaccent.length > 0 && num_displayed < max_displayed) {
+        if (playerTextDeaccent.includes(userInputDeaccent) && userInputDeaccent.length > 0 && numDisplayed < maxDisplayed) {
             item.parentElement.style.display = "block";
             hasVisibleItems = true;
-            num_displayed++;
+            numDisplayed++;
         } else {
             item.parentElement.style.display = "none";
         }
     });
 
-    dropdown.style.display = (hasVisibleItems && user_input.length > 0) ? "block" : "none";
+    dropdown.style.display = (hasVisibleItems && userInput.length > 0) ? "block" : "none";
 });
 
 // Handle click on a list item
@@ -88,21 +95,27 @@ function flipBoxes(playerName) {
     }, 1500);
 }
 
+// Retrieve answer's name
+function getPlayerName() {
+    return nameLookup[window.answerId];
+}
+
 // Display answer on correct guess/loss
 function displayAnswer(playerName) {
     
     // Variables to track game state
     let gameFinished = false;
     let gameResult = "";
+    const answerName = getPlayerName();
 
-    if (playerName === window.answerName) { // Win
+    if (playerName === answerName) { // Win
         const successAlert = document.getElementById("win-alert");
         const winAnswer = document.getElementById("win-answer");
         const maskVideo = document.getElementById("mask-vid");
         const originalVideo = document.getElementById("org-vid");
 
         successAlert.classList.remove("d-none");
-        winAnswer.textContent = `The answer was ${window.answerName}!`;
+        winAnswer.textContent = `The answer was ${answerName}!`;
         originalVideo.classList.remove("d-none");
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
@@ -123,7 +136,7 @@ function displayAnswer(playerName) {
         const originalVideo = document.getElementById("org-vid");
 
         lossAlert.classList.remove("d-none");
-        lossAnswer.textContent = `The answer was ${window.answerName}!`;
+        lossAnswer.textContent = `The answer was ${answerName}!`;
         originalVideo.classList.remove("d-none");
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
@@ -171,11 +184,13 @@ function displayAnswer(playerName) {
 
 // Colour boxes based on the guessed player's info
 function colourBox(box, index, playerName) {
-    const player_info = window.playerData[playerName];
+    const playerInfo = window.playerData[playerName];
+    const answerName = getPlayerName();
+    const answerInfo = window.playerData[answerName];
 
     switch (index) {
         case 0:
-            if (player_info.team === window.answerInfo.team) {
+            if (playerInfo.team === answerInfo.team) {
                 box.style.backgroundColor = "#538D4E"; 
                 box.style.color = "white";
             } else {
@@ -184,10 +199,10 @@ function colourBox(box, index, playerName) {
             }
             break;
         case 1:
-            if (player_info.division === window.answerInfo.division) {
+            if (playerInfo.division === answerInfo.division) {
                 box.style.backgroundColor = "#538D4E"; 
                 box.style.color = "white";
-            } else if (player_info.conference === window.answerInfo.conference) {
+            } else if (playerInfo.conference === answerInfo.conference) {
                 box.style.backgroundColor = "#B59F3B"; 
                 box.style.color = "white";
             } else {
@@ -196,10 +211,10 @@ function colourBox(box, index, playerName) {
             }
             break;
         case 2:
-            if (player_info.number === window.answerInfo.number) {
+            if (playerInfo.number === answerInfo.number) {
                 box.style.backgroundColor = "#538D4E"; 
                 box.style.color = "white";
-            } else if (Math.abs(player_info.number - window.answerInfo.number) <= 10) {
+            } else if (Math.abs(playerInfo.number - answerInfo.number) <= 10) {
                 box.style.backgroundColor = "#B59F3B"; 
                 box.style.color = "white";
             } else {
@@ -208,7 +223,7 @@ function colourBox(box, index, playerName) {
             }
             break;
         case 3:
-            if (player_info.nation === window.answerInfo.nation) {
+            if (playerInfo.nation === answerInfo.nation) {
                 box.style.backgroundColor = "#538D4E"; 
                 box.style.color = "white";
             } else {
@@ -217,10 +232,10 @@ function colourBox(box, index, playerName) {
             }
             break;
         case 4:
-            if (player_info.age === window.answerInfo.age) {
+            if (playerInfo.age === answerInfo.age) {
                 box.style.backgroundColor = "#538D4E"; 
                 box.style.color = "white";
-            } else if (Math.abs(player_info.age - window.answerInfo.age) <= 3) {
+            } else if (Math.abs(playerInfo.age - answerInfo.age) <= 3) {
                 box.style.backgroundColor = "#B59F3B"; 
                 box.style.color = "white";
             } else {
@@ -240,13 +255,13 @@ function addGuessInfo(playerName) {
     const nation = guessRow.querySelector(".nation");
     const age = guessRow.querySelector(".age");
 
-    const player_info = window.playerData[playerName];
-    if (player_info) {
-        team.innerText = player_info.team;
-        division.innerText = player_info.division;
-        number.innerText = player_info.number;
-        nation.innerText = player_info.nation;
-        age.innerText = player_info.age;
+    const playerInfo = window.playerData[playerName];
+    if (playerInfo) {
+        team.innerText = playerInfo.team;
+        division.innerText = playerInfo.division;
+        number.innerText = playerInfo.number;
+        nation.innerText = playerInfo.nation;
+        age.innerText = playerInfo.age;
     }
 
     if (guessCount >= 6) return;
