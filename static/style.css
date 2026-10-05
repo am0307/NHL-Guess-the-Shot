@@ -98,11 +98,20 @@ video {
   overflow-wrap: anywhere;
   padding-left: 0.15rem !important;
   padding-right: 0.15rem !important;
+  margin-left: 6px;
+  margin-right: 6px;
+  min-width: 60px;
 }
 
 [class^="player-info-"] * {
   margin: 0;
   padding: 0;
+}
+
+.column-headers {
+  margin-left: 6px;
+  margin-right: 6px;
+  min-width: 60px;
 }
 
 .player-option {

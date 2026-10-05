@@ -260,7 +260,7 @@ if (copyWinBtn) { // Check if button exists prior to adding event listener
     copyWinBtn.addEventListener("click", function() {
         const textToCopy = document.querySelector("#share-result-win .modal-body").innerText;
         
-        // Make sharable text have working line breaks when copied
+        // Make sharable text that has working line breaks when copied
         const copyableText = textToCopy.replace(/<br>/g, '\n');
 
         // Change button text to "Copied!" for 2 seconds
@@ -281,7 +281,7 @@ if (copyLossBtn) { // Check if button exists prior to adding event listener
     copyLossBtn.addEventListener("click", function() {
         const textToCopy = document.querySelector("#share-result-loss .modal-body").innerText;
         
-        // Make sharable text have working line breaks when copied
+        // Make sharable text that has working line breaks when copied
         const copyableText = textToCopy.replace(/<br>/g, '\n');
 
         // Change button text to "Copied!" for 2 seconds
