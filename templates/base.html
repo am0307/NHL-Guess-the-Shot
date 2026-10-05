@@ -123,16 +123,38 @@
     <!-- Create player input form -->
     <div class="container">
         <form class="form" autocomplete="off" id="player-form">
-            <div class="row row-cols-10 justify-content-center" style="margin-bottom: 24px;">
-                <div class="col-lg-4 col-6 px-0">
+            <div class="row justify-content-center align-items-center g-2" style="margin-bottom: 24px;">
+                <div class="col-lg-4 col-6 px-0 position-relative">
                     <input class="form-control" type="text" id="player-input" name="player" placeholder="Guess a player" autocomplete="off">
-                    
                     <!-- Player dropdown menu -->
                     <ul id="player-dropdown" class="dropdown-menu shadow-sm">
                         {% for player in players %}
                             <li><a class="dropdown-item player-option" data-value="{{ player }}">{{ player }}</a></li>
                         {% endfor %}
                     </ul>
+                </div>
+                <!-- Forfeit UI -->
+                <div class="col-auto ms-2">
+                    <button id="start-forfeit" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#forfeit-modal">
+                        Give Up?
+                    </button>
+                </div>
+                <div class="modal fade" id="forfeit-modal" tabindex="-1" role="dialog" aria-labelledby="forfeit-modal-label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="forfeit-modal-label">Are you sure?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                The game will end if you forfeit!
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button id="give-up" type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>

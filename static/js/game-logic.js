@@ -4,6 +4,8 @@ const dropdown = document.getElementById("player-dropdown");
 const form = document.getElementById("player-form");
 const items = dropdown.querySelectorAll(".player-option");
 const tooltips = document.querySelectorAll(".column-tooltip");
+const initiateForfeit = document.getElementById("start-forfeit")
+const confirmForfeit = document.getElementById("give-up");
 import { createSharable } from "./share-logic.js";
 
 let guessCount = 0; // Guess number tracker
@@ -53,7 +55,7 @@ items.forEach(item => {
         if (guessCount >= 6) { // Only allow submission if user has guesses left
             return
         }
-        
+
         const playerName = this.getAttribute("data-value");
         input.value = playerName;
         dropdown.style.display = "none";
@@ -78,6 +80,11 @@ form.addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
         e.preventDefault();
     }
+});
+
+// Giving up logic
+confirmForfeit.addEventListener("click", function(e) {
+    displayAnswer("Loss");
 });
 
 // Make boxes flip
@@ -131,8 +138,9 @@ function displayAnswer(playerName) {
         originalVideo.classList.remove("d-none");
         originalVideo.style.marginBottom = "4px";
         videoSource.classList.remove("d-none");
-        videoSourceLink.textContent = `${sourceInfo.source} on Youtube`
+        videoSourceLink.textContent = `${sourceInfo.source} on YouTube`
         videoSourceLink.href = sourceInfo.URL
+        initiateForfeit.classList.add("d-none");
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
         
@@ -145,7 +153,7 @@ function displayAnswer(playerName) {
         // Set game state variables
         gameFinished = true;
         gameResult = "win";
-    } else if (guessCount == 6) { // Loss
+    } else if (guessCount == 6 || playerName === "Loss") { // Loss
 
         // Get link, alerts, and videos elements
         const lossAlert = document.getElementById("loss-alert");
@@ -161,14 +169,24 @@ function displayAnswer(playerName) {
         originalVideo.classList.remove("d-none");
         originalVideo.style.marginBottom = "4px";
         videoSource.classList.remove("d-none");
-        videoSourceLink.textContent = `${sourceInfo.source} on Youtube`
+        videoSourceLink.textContent = `${sourceInfo.source} on YouTube`
         videoSourceLink.href = sourceInfo.URL
+        initiateForfeit.classList.add("d-none");
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
 
         // Create and show sharable text for a loss
         if (window.location.pathname === "/") {
-            const sharable = createSharable("X");
+            let sharable;
+            
+            // Create sharable based on whether player forfeited or lost traditionally
+            if (playerName === "Loss") {
+                sharable = createSharable(guessCount);
+                sharable = sharable.replace(guessCount, "X"); // Replace guess count with "X" to mark loss
+            } else {
+                sharable = createSharable("X");
+            }
+            
             document.querySelector("#share-result-loss .modal-body").innerHTML = sharable;
         }
 
