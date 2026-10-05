@@ -167,8 +167,9 @@ def home():
                            video_sources=VIDEO_SOURCES)
 
 # Endless mode route
-@app.route("/endless", methods=["GET", "POST"])
-def endless_mode():
+@app.route("/endless", defaults={"player_id": None}, methods=["GET", "POST"])
+@app.route("/endless/<int:player_id>", methods=["GET", "POST"])
+def endless_mode(player_id):
     
     player_dict = retrieve_API_info("players") # Retrieve player dictionary
     
@@ -176,8 +177,23 @@ def endless_mode():
     if "players_to_use" not in session or not session["players_to_use"]: # Checks if list DNE or ran out of players
         session["players_to_use"] = list(PLAYER_IDS.keys())
     
-    # Player to guess is randomly selected from players yet to be used
-    answer_name = choice(session["players_to_use"])
+    # If no player_id is provided in the url, generate one and redirect
+    if player_id is None:
+        answer_name = choice(session["players_to_use"])
+        new_player_id = player_dict[answer_name]["id"]
+        return redirect(url_for('endless_mode', player_id=new_player_id))
+    
+    # If a player_id is provided, find the matching player
+    answer_name = None
+    for name, info in player_dict.items():
+        if info["id"] == player_id:
+            answer_name = name
+            break
+        
+    # Fallback if user types an invalid player_id themselves
+    if not answer_name:
+        return redirect(url_for('endless_mode'))
+    
     answer_info = player_dict[answer_name]
     answer_id = answer_info["id"]  # Get the ID of the selected player
     

@@ -56,31 +56,28 @@
                     Play Again
                 {%- endblock -%}
             </a>
-            <!-- Share daily result -->
-            {% if request.path == "/" %}    
-                <!-- Toggle sharable result -->
-                <button type="button" class="win-loss-btn share-result-btn btn btn-dark mx-auto d-block text-center my-2" data-bs-toggle="modal" data-bs-target="#share-result-win">
-                    Share Result
-                </button>
-                <!-- Sharable result -->
-                <div class="modal fade" id="share-result-win" tabindex="-1" aria-labelledby="share-result-label" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="share-result-win-label">Share Result</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary colour-changing" id="copy-win-btn">Copy</button>
-                        </div>
-                        </div>
+            <!-- Toggle sharable result -->
+            <button type="button" class="win-loss-btn share-result-btn btn btn-dark mx-auto d-block text-center my-2" data-bs-toggle="modal" data-bs-target="#share-result-win">
+                Share Result
+            </button>
+            <!-- Sharable result -->
+            <div class="modal fade" id="share-result-win" tabindex="-1" aria-labelledby="share-result-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="share-result-win-label">Share Result</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary colour-changing" id="copy-win-btn">Copy</button>
+                    </div>
                     </div>
                 </div>
-            {% endif %}
+            </div>
             <p class="streak-text text-center text-white mt-3 mb-1 d-none"></p>
         </div>
     </div>

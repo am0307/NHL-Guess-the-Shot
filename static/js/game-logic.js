@@ -145,10 +145,8 @@ function displayAnswer(playerName) {
         maskVideo.classList.add("d-none");
         
         // Create and show sharable text for a win
-        if (window.location.pathname === "/") {
-            const sharable = createSharable(guessCount);
-            document.querySelector("#share-result-win .modal-body").innerHTML = sharable;
-        }
+        const sharable = createSharable(guessCount);
+        document.querySelector("#share-result-win .modal-body").innerHTML = sharable;
 
         // Set game state variables
         gameFinished = true;
@@ -176,19 +174,17 @@ function displayAnswer(playerName) {
         maskVideo.classList.add("d-none");
 
         // Create and show sharable text for a loss
-        if (window.location.pathname === "/") {
-            let sharable;
-            
-            // Create sharable based on whether player forfeited or lost traditionally
-            if (playerName === "Loss") {
-                sharable = createSharable(guessCount);
-                sharable = sharable.replace(guessCount, "X"); // Replace guess count with "X" to mark loss
-            } else {
-                sharable = createSharable("X");
-            }
-            
-            document.querySelector("#share-result-loss .modal-body").innerHTML = sharable;
+        let sharable;
+        
+        // Create sharable based on whether player forfeited or lost traditionally
+        if (playerName === "Loss") {
+            sharable = createSharable(guessCount);
+            sharable = sharable.replace(guessCount, "X"); // Replace guess count with "X" to mark loss
+        } else {
+            sharable = createSharable("X");
         }
+        
+        document.querySelector("#share-result-loss .modal-body").innerHTML = sharable;
 
         // Set game state variables
         gameFinished = true;
