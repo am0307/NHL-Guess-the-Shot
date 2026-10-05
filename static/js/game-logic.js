@@ -50,6 +50,10 @@ items.forEach(item => {
     item.addEventListener("click", function(e) {
         e.preventDefault();
 
+        if (guessCount >= 6) { // Only allow submission if user has guesses left
+            return
+        }
+        
         const playerName = this.getAttribute("data-value");
         input.value = playerName;
         dropdown.style.display = "none";
