@@ -80,15 +80,21 @@ function flipBoxes(playerName) {
         setTimeout(() => {
             colourBox(box, i, playerName);
         }, (i * 250) + 250);
-
-        setTimeout(() => {
-            displayAnswer(playerName)
-        }, (5 * 250) + 250);
     });
+
+    // Display answer after all boxes have flipped
+    setTimeout(() => {
+        displayAnswer(playerName);
+    }, 1500);
 }
 
 // Display answer on correct guess/loss
 function displayAnswer(playerName) {
+    
+    // Variables to track game state
+    let gameFinished = false;
+    let gameResult = "";
+
     if (playerName === window.answerName) { // Win
         const successAlert = document.getElementById("win-alert");
         const maskVideo = document.getElementById("mask-vid");
@@ -104,6 +110,10 @@ function displayAnswer(playerName) {
             const sharable = createSharable(guessCount);
             document.querySelector("#share-result-win .modal-body").innerHTML = sharable;
         }
+
+        // Set game state variables
+        gameFinished = true;
+        gameResult = "win";
     } else if (guessCount == 6) { // Loss
         const lossAlert = document.getElementById("loss-alert");
         const maskVideo = document.getElementById("mask-vid");
@@ -119,6 +129,39 @@ function displayAnswer(playerName) {
             const sharable = createSharable("X");
             document.querySelector("#share-result-loss .modal-body").innerHTML = sharable;
         }
+
+        // Set game state variables
+        gameFinished = true;
+        gameResult = "loss";
+    }
+
+    // Update streak if user is authenticated
+    if (gameFinished && window.isAuthenticated) {
+        
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content'); // Get CSRF token from meta tag
+        
+        // Send POST request to update streak
+        fetch("/update_streak", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": csrfToken
+            },
+            body: JSON.stringify({
+                mode: window.gameMode,
+                result: gameResult
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            // Update the streak display in the alert box if the streak value is returned
+            if(data.streak !== undefined) {
+                const targetAlert = gameResult === "win" ? document.getElementById("win-alert") : document.getElementById("loss-alert");
+                const streakDisplay = targetAlert.querySelector(".streak-text");
+                streakDisplay.innerHTML = `Current Streak: <strong>${data.streak}</strong>`;
+                streakDisplay.classList.remove("d-none");
+            }
+        });
     }
 }
 
@@ -239,4 +282,24 @@ if (copyLossBtn) { // Check if button exists prior to adding event listener
             }, 2000);
         })
     });
+}
+
+// Checks on page load if the user has already played today
+if (window.gameMode === "daily" && window.dailyCompleted) {
+
+    // Hide the player input form and mask video, show the original video
+    document.getElementById("player-form").classList.add("d-none");
+    document.getElementById("mask-vid").classList.add("d-none");
+    document.getElementById("org-vid").classList.remove("d-none");
+    
+    // Show the appropriate alert based on the last daily status
+    const alertBox = window.lastDailyStatus === "win" ? document.getElementById("win-alert") : document.getElementById("loss-alert");
+    alertBox.classList.remove("d-none");
+    
+    // Display the user's current streak if available
+    const streakDisplay = alertBox.querySelector(".streak-text");
+    if (streakDisplay && window.userStreak !== undefined) {
+        streakDisplay.innerHTML = `Current Streak: <strong>${window.userStreak}</strong>`;
+        streakDisplay.classList.remove("d-none");
+    }
 }

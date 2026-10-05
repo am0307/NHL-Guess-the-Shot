@@ -27,6 +27,9 @@
     {{ bootstrap.load_css() }}
     
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
     <!-- Show header -->
@@ -43,7 +46,7 @@
     <!-- Correct guess alert -->
     <div id="win-alert-container" class="d-flex justify-content-center mb-0">
         <div id="win-alert" class="alert alert-success d-none col-lg-4 col-md-6 col-10 mb-0" role="alert">
-            <h4 class="text-center mb-1">Correct!</h4>
+            <h4 class="text-center mb-1">Bar down!</h4>
             <h5 class="text-center">The answer was {{ answer_name }}!</h5>
             <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark w-50 mx-auto d-block text-center">
                 {%- block play_again_text -%}
@@ -75,12 +78,13 @@
                     </div>
                 </div>
             {% endif %}
+            <p class="streak-text text-center text-white mt-3 mb-1 d-none"></p>
         </div>
     </div>
     <!-- Loss alert -->
     <div id="loss-alert-container" class="d-flex justify-content-center mb-0">
         <div id="loss-alert" class="alert alert-danger d-none col-lg-4 col-md-6 col-10 mb-0" role="alert">
-            <h4 class="text-center mb-1">You lose!</h4>
+            <h4 class="text-center mb-1">Missed the net by a mile!</h4>
             <h5 class="text-center">The answer was {{ answer_name }}!</h5>
             <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark w-50 mx-auto d-block text-center">
                 {{ self.play_again_text() }}
@@ -110,6 +114,7 @@
                     </div>
                 </div>
             {% endif %}
+            <p class="streak-text text-center text-white mt-3 mb-1 d-none"></p>
         </div>
     </div>
     <!-- Create player input form -->
@@ -208,6 +213,11 @@
         window.playerData = {{ player_data | tojson }};
         window.answerInfo = {{ answer_info | tojson }};
         window.answerName = {{ answer_name | tojson }};
+        window.isAuthenticated = {{ current_user.is_authenticated | default(False) | tojson }};
+        window.gameMode = "{{ 'daily' if request.path == '/' else 'endless' }}";
+        window.dailyCompleted = {{ daily_completed | default(False) | tojson }};
+        window.lastDailyStatus = "{{ current_user.last_daily_status if current_user.is_authenticated else '' }}";
+        window.userStreak = {{ current_user.daily_streak if request.path == '/' else (current_user.endless_streak if current_user.is_authenticated else 0) }};
     </script>
 
     <!-- Load js files -->

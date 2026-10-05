@@ -1,6 +1,7 @@
-import os, json
-from flask import Flask, render_template, session, flash, redirect, url_for
-from flask_login import UserMixin, login_user, LoginManager, logout_user
+import os, json, jsonify
+from unittest import result
+from flask import Flask, render_template, session, flash, redirect, url_for, request
+from flask_login import UserMixin, login_user, LoginManager, logout_user, current_user, login_required
 from flask_wtf.csrf import CSRFProtect
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
@@ -60,6 +61,8 @@ class User(UserMixin, db.Model):
     password: Mapped[str] = mapped_column(String(100))
     daily_streak: Mapped[int] = mapped_column(Integer, default=0)
     endless_streak: Mapped[int] = mapped_column(Integer, default=0)
+    last_daily_date: Mapped[str] = mapped_column(String(15), nullable=True) 
+    last_daily_status: Mapped[str] = mapped_column(String(10), nullable=True)
 
 # Create database
 with app.app_context():
@@ -172,13 +175,22 @@ def home():
     
     session.modified = True # Force Flask to save change to unused list
             
+    # Check if user already played today
+    daily_completed = False
+    if current_user.is_authenticated:
+        est = ZoneInfo("America/New_York")
+        today_est = datetime.now(tz=est).strftime("%Y-%m-%d")
+        if current_user.last_daily_date == today_est:
+            daily_completed = True
+    
     # Render homepage w/ player names
     return render_template("index.html", 
                            players=list(PLAYER_IDS.keys()), 
                            player_data=player_dict, 
                            answer_info=daily_info, 
                            answer_name=daily_name,
-                           players_to_use=session["players_to_use"])
+                           players_to_use=session["players_to_use"],
+                           daily_completed=daily_completed)
 
 # Endless mode route
 @app.route("/endless", methods=["GET", "POST"])
@@ -277,6 +289,47 @@ def logout():
 def ratelimit_handler(e):
     flash("Too many login attempts. Please try again in a minute.")
     return redirect(url_for("login"))
+
+# Update streak route
+@app.route("/update_streak", methods=["POST"])
+@login_required
+def update_streak():
+    
+    # Get JSON data from request
+    data = request.get_json()
+    mode = data.get("mode")
+    result = data.get("result")
+    
+    # Get current date in EST
+    est = ZoneInfo("America/New_York")
+    today_est = datetime.now(tz=est).strftime("%Y-%m-%d")
+
+    # Update streak based on mode and result
+    if mode == "daily":
+        # Update daily streak only if the user hasn't played today
+        if current_user.last_daily_date == today_est:
+            return jsonify({"success": False, "message": "Already played today."}), 400
+            
+        current_user.last_daily_date = today_est
+        current_user.last_daily_status = result
+        
+        if result == "win":
+            current_user.daily_streak += 1
+        else:
+            current_user.daily_streak = 0
+            
+        db.session.commit()
+        return jsonify({"streak": current_user.daily_streak})
+    elif mode == "endless":
+        if result == "win":
+            current_user.endless_streak += 1
+        else:
+            current_user.endless_streak = 0
+            
+        db.session.commit()
+        return jsonify({"streak": current_user.endless_streak})
+        
+    return jsonify({"success": False}), 400
 
 # Run the app
 if __name__ == "__main__":

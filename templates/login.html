@@ -36,16 +36,9 @@
     <!-- Login Form -->
     <div class="container">
         <div class="row justify-content-center align-items-center center-account-form">
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <p class="flash">{{ message }}</p>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
             <form method="POST" action="{{ url_for('login') }}" class="col-lg-4 col-md-6 col-10 px-0 mx-auto account-form px-4 rounded">
                 {{ form.csrf_token }}
-                <h4 class="text-center account-label my-4">Login</h4>
+                <h3 class="text-center account-label my-4">Login</h3>
                 <div class="mb-4">
                     {{ form.email.label(class="account-label")}} <br>
                     {{ form.email(class="form-control", placeholder="Enter your email") }}
@@ -57,6 +50,13 @@
                 <div class="mb-4 text-center">
                     {{ form.submit(class="btn btn-dark", style="background-color: white; color: black; width: 100%; box-sizing: border-box;") }}
                 </div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <h4 class="flash text-center mb-4">❗ {{ message }}</h4>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                 <h5 class="text-center mb-4 text-white">
                     Don't have an account? <a href="{{ url_for('register') }}" class="link-light">Register!</a>
                 </h5>
