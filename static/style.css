@@ -54,6 +54,10 @@ video {
   margin-bottom: 36px;
 }
 
+#video-source {
+  margin-bottom: 36px;
+}
+
 [data-bs-theme="dark"] .nav-pills .nav-link.active {
   background-color: #4682B4 !important; 
   color: white !important;

@@ -163,7 +163,8 @@ def home():
                            player_data=player_dict, 
                            answer_id=daily_id,
                            players_to_use=session["players_to_use"],
-                           daily_completed=daily_completed)
+                           daily_completed=daily_completed,
+                           video_sources=VIDEO_SOURCES)
 
 # Endless mode route
 @app.route("/endless", methods=["GET", "POST"])
@@ -190,7 +191,8 @@ def endless_mode():
                            players=list(PLAYER_IDS.keys()), 
                            player_data=player_dict, 
                            answer_id=answer_id,
-                           players_to_use=session["players_to_use"])
+                           players_to_use=session["players_to_use"],
+                           video_sources=VIDEO_SOURCES)
 
 # Register route
 @app.route("/register", methods=["GET", "POST"])

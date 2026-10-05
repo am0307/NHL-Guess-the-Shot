@@ -106,17 +106,29 @@ function displayAnswer(playerName) {
     // Variables to track game state
     let gameFinished = false;
     let gameResult = "";
+
+    // Get answer name and source information
     const answerName = getPlayerName();
+    const sourceInfo = videoSources[answerName]
 
     if (playerName === answerName) { // Win
+
+        // Get link, alerts, and videos elements
         const successAlert = document.getElementById("win-alert");
         const winAnswer = document.getElementById("win-answer");
         const maskVideo = document.getElementById("mask-vid");
         const originalVideo = document.getElementById("org-vid");
+        const videoSource = document.getElementById("video-source");
+        const videoSourceLink = document.getElementById("video-source-link");
 
+        // Adjust styles and show/hide relevant elements
         successAlert.classList.remove("d-none");
         winAnswer.textContent = `The answer was ${answerName}!`;
         originalVideo.classList.remove("d-none");
+        originalVideo.style.marginBottom = "4px";
+        videoSource.classList.remove("d-none");
+        videoSourceLink.textContent = `${sourceInfo.source} on Youtube`
+        videoSourceLink.href = sourceInfo.URL
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
         
@@ -130,14 +142,23 @@ function displayAnswer(playerName) {
         gameFinished = true;
         gameResult = "win";
     } else if (guessCount == 6) { // Loss
+
+        // Get link, alerts, and videos elements
         const lossAlert = document.getElementById("loss-alert");
         const lossAnswer = document.getElementById("loss-answer");
         const maskVideo = document.getElementById("mask-vid");
         const originalVideo = document.getElementById("org-vid");
+        const videoSource = document.getElementById("video-source");
+        const videoSourceLink = document.getElementById("video-source-link");
 
+        // Adjust styles and show/hide relevant elements
         lossAlert.classList.remove("d-none");
         lossAnswer.textContent = `The answer was ${answerName}!`;
         originalVideo.classList.remove("d-none");
+        originalVideo.style.marginBottom = "4px";
+        videoSource.classList.remove("d-none");
+        videoSourceLink.textContent = `${sourceInfo.source} on Youtube`
+        videoSourceLink.href = sourceInfo.URL
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
 
