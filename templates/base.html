@@ -212,6 +212,7 @@
         // Declare global variables with Jinja
         window.playerData = {{ player_data | tojson }};
         window.answerInfo = {{ answer_info | tojson }};
+        window.answerName = {{ answer_name | tojson }};
         window.isAuthenticated = {{ current_user.is_authenticated | default(False) | tojson }};
         window.gameMode = "{{ 'daily' if request.path == '/' else 'endless' }}";
         window.dailyCompleted = {{ daily_completed | default(False) | tojson }};
