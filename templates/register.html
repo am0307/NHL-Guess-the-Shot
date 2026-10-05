@@ -41,16 +41,16 @@
                 <h3 class="text-center account-label mt-4">Create Account</h3>
                 <h6 class="text-center account-label mt-2 mb-4">Save your streaks!</h6>
                 <div class="mb-4">
-                    {{ form.email.label(class="account-label")}} <br>
-                    {{ form.email(class="form-control", placeholder="Enter email") }}
+                    {{ form.username.label(class="account-label")}} <br>
+                    {{ form.username(class="form-control") }}
                 </div>
                 <div class="mb-4">
                     {{ form.password.label(class="account-label") }} <br>
-                    {{ form.password(class="form-control", placeholder="Create a password") }}
+                    {{ form.password(class="form-control") }}
                 </div>
                 <div class="mb-4">
                     {{ form.verify_password.label(class="account-label") }} <br>
-                    {{ form.verify_password(class="form-control", placeholder="Verify your password") }}
+                    {{ form.verify_password(class="form-control") }}
                 </div>
                 <div class="mb-4 text-center">
                     {{ form.submit(class="btn btn-dark", style="background-color: white; color: black; width: 100%; box-sizing: border-box;") }}

@@ -58,7 +58,7 @@ db.init_app(app)
 class User(UserMixin, db.Model):
     __tablename__ = "users"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    email: Mapped[str] = mapped_column(String(100), unique=True)
+    username: Mapped[str] = mapped_column(String(100), unique=True)
     password: Mapped[str] = mapped_column(String(100))
     daily_streak: Mapped[int] = mapped_column(Integer, default=0)
     endless_streak: Mapped[int] = mapped_column(Integer, default=0)
@@ -217,13 +217,13 @@ def register():
     form = RegisterForm()
 
     if form.validate_on_submit():
-        email = form.email.data
+        username = form.username.data
 
-        matching_user = db.session.execute(db.select(User).where(User.email == email)).scalar()
+        matching_user = db.session.execute(db.select(User).where(User.username == username)).scalar()
         
         if matching_user != None:
-            flash("You've already signed up with that email, try logging in instead!")
-            return redirect(url_for("login"))
+            flash("Someone already signed up with that username!")
+            return redirect(url_for("register"))
         elif form.password.data != form.verify_password.data:
             flash("Passwords do not match, please try again.")
             return redirect(url_for("register"))
@@ -231,7 +231,7 @@ def register():
         plain_password = form.password.data
         encrypted_password = generate_password_hash(password=plain_password, method="pbkdf2:sha256", salt_length=8)
 
-        new_user = User(email=email, password=encrypted_password)
+        new_user = User(username=username, password=encrypted_password)
 
         db.session.add(new_user)
         db.session.commit()
@@ -249,10 +249,10 @@ def login():
     form = LoginForm()
 
     if form.validate_on_submit():
-        email = form.email.data
+        username = form.username.data
         plain_password = form.password.data
         
-        user = db.session.execute(db.select(User).where(User.email == email)).scalar()
+        user = db.session.execute(db.select(User).where(User.username == username)).scalar()
 
         if user != None:
             password_check = check_password_hash(pwhash=user.password, password=plain_password)
@@ -264,7 +264,7 @@ def login():
                 flash("Incorrect password, please try again.")
                 return render_template("login.html", form=form)
         else:
-            flash("That email does not exist, please try again.")
+            flash("That username does not exist, please try again.")
             return redirect(url_for("login", form=form))
     
     return render_template("login.html", form=form)

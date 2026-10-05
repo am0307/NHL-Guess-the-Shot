@@ -40,12 +40,12 @@
                 {{ form.csrf_token }}
                 <h3 class="text-center account-label my-4">Login</h3>
                 <div class="mb-4">
-                    {{ form.email.label(class="account-label")}} <br>
-                    {{ form.email(class="form-control", placeholder="Enter your email") }}
+                    {{ form.username.label(class="account-label")}} <br>
+                    {{ form.username(class="form-control") }}
                 </div>
                 <div class="mb-4">
                     {{ form.password.label(class="account-label") }} <br>
-                    {{ form.password(class="form-control", placeholder="Enter your password") }}
+                    {{ form.password(class="form-control") }}
                 </div>
                 <div class="mb-4 text-center">
                     {{ form.submit(class="btn btn-dark", style="background-color: white; color: black; width: 100%; box-sizing: border-box;") }}
