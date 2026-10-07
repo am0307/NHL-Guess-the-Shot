@@ -51,7 +51,7 @@
         <div id="win-alert" class="alert alert-success d-none col-lg-4 col-md-6 col-10 mb-0" role="alert">
             <h4 class="text-center mb-1">Bar down!</h4>
             <h5 class="text-center" id="win-answer"></h5>
-            <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark w-50 mx-auto d-block text-center">
+            <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark w-50 mt-2 mx-auto d-block text-center">
                 {%- block play_again_text -%}
                     Play Again
                 {%- endblock -%}
@@ -86,7 +86,7 @@
         <div id="loss-alert" class="alert alert-danger d-none col-lg-4 col-md-6 col-10 mb-0" role="alert">
             <h4 class="text-center mb-1">Missed the net by a mile!</h4>
             <h5 class="text-center" id="loss-answer"></h5>
-            <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark w-50 mx-auto d-block text-center">
+            <a href="{{ url_for('endless_mode') }}" class="win-loss-btn btn btn-dark w-50 mt-2 mx-auto d-block text-center">
                 {{ self.play_again_text() }}
             </a>
             <!-- Toggle sharable result -->
@@ -94,26 +94,24 @@
                 Share Result
             </button>
             <!-- Share daily result -->
-            {% if request.path == "/" %}    
-                <!-- Sharable result -->
-                <div class="modal fade" id="share-result-loss" tabindex="-1" aria-labelledby="share-result-label" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="share-result-loss-label">Share Result</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary colour-changing" id="copy-loss-btn">Copy</button>
-                        </div>
-                        </div>
+            <!-- Sharable result -->
+            <div class="modal fade" id="share-result-loss" tabindex="-1" aria-labelledby="share-result-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="share-result-loss-label">Share Result</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary colour-changing" id="copy-loss-btn">Copy</button>
+                    </div>
                     </div>
                 </div>
-            {% endif %}
+            </div>
             <p class="streak-text text-center mt-3 mb-1 d-none"></p>
         </div>
     </div>
@@ -237,6 +235,7 @@
         window.videoSources = {{ video_sources | tojson }};
         window.gameMode = "{{ 'daily' if request.path == '/' else 'endless' }}";
         window.alreadyPlayed = {{ already_played | tojson }};
+        window.endlessStreak = {{ endless_streak | default(0) | tojson }};
     </script>
 
     <!-- Load js files -->

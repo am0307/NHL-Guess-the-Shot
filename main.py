@@ -150,7 +150,8 @@ def endless_mode(player_id):
                            answer_id=answer_id,
                            players_to_use=session["players_to_use"],
                            video_sources=VIDEO_SOURCES,
-                           already_played=already_played)
+                           already_played=already_played,
+                           endless_streak=session.get("endless_streak", 0))
 
 # Update endless streaks
 @app.route("/update_endless_streak", methods=["POST"])

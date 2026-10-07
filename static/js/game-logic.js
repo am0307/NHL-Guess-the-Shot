@@ -144,9 +144,13 @@ function displayAnswer(playerName, updateStreak = true) {
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
         
-        // Create and show sharable text for a win
-        const sharable = createSharable(guessCount);
-        document.querySelector("#share-result-win .modal-body").innerHTML = sharable;
+        const sharable = createSharable(guessCount); // Create sharable text for a win
+
+        // Retrieve win alert
+        const winModalBody = document.querySelector("#share-result-win .modal-body")
+        if (winModalBody) {
+            winModalBody.innerHTML = sharable; // Show text for sharing result
+        }
 
         // Set game state variables
         gameFinished = true;
@@ -186,6 +190,16 @@ function displayAnswer(playerName, updateStreak = true) {
                 shareBtn.classList.add("d-none");
             }
 
+            // Display existing endless streak if needed
+            if (window.gameMode === "endless") {
+                const streakDisplay = lossAlert.querySelector(".streak-text");
+                if (streakDisplay) {
+                    streakDisplay.innerHTML = `Current Streak: <strong>${window.endlessStreak}</strong>`;
+                    streakDisplay.classList.remove("d-none");
+                }
+            }
+
+            // Set game state variables
             gameFinished = true;
             gameResult = "played";
         } else { // User lost
@@ -201,7 +215,11 @@ function displayAnswer(playerName, updateStreak = true) {
                 sharable = createSharable("X");
             }
             
-            document.querySelector("#share-result-loss .modal-body").innerHTML = sharable; // Show text for sharing result
+            // Retrieve loss alert
+            const lossModalBody = document.querySelector("#share-result-loss .modal-body");
+            if (lossModalBody) {
+                lossModalBody.innerHTML = sharable; // Show text for sharing result
+            }
 
             // Set game state variables
             gameFinished = true;
