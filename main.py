@@ -1,22 +1,13 @@
-import os, json, jsonify
-from unittest import result
-from flask import Flask, render_template, session, flash, redirect, url_for, request
-from flask_login import UserMixin, login_user, LoginManager, logout_user, current_user, login_required
+import os, json
+from flask import Flask, render_template, session, redirect, url_for, request, jsonify
 from flask_wtf.csrf import CSRFProtect
 from flask_bootstrap import Bootstrap5
-from flask_sqlalchemy import SQLAlchemy
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 from nhl_api import get_player_info
 from age_calculator import find_age
 from random import choice
 from zoneinfo import ZoneInfo
 from datetime import datetime
 from dotenv import load_dotenv
-from forms import RegisterForm, LoginForm
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import Integer, String
-from werkzeug.security import generate_password_hash, check_password_hash
 from data import TEAM_DIVISIONS_CONFERENCES, PLAYER_IDS, VIDEO_SOURCES
 
 load_dotenv("secrets.env") # Load env file
@@ -26,48 +17,11 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("FLASK_KEY")
 Bootstrap5(app)
 
-# Initialise Flask limiter
-limiter = Limiter(
-    get_remote_address,
-    app=app,
-    storage_uri="memory://",
-    default_limits=["1000 per day", "500 per hour"] 
-)
-
 # Set session cookie security settings
 app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 
-# Configure Flask login
-login_manager = LoginManager()
-login_manager.init_app(app)
-@login_manager.user_loader
-def load_user(user_id):
-    return db.session.get(User, int(user_id))
-
 csrf = CSRFProtect(app) # CSRF protection for forms
-
-# Create database
-class Base(DeclarativeBase):
-    pass
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DB_URI", "sqlite:///users.db")
-db = SQLAlchemy(model_class=Base)
-db.init_app(app)
-
-# Create user model
-class User(UserMixin, db.Model):
-    __tablename__ = "users"
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    username: Mapped[str] = mapped_column(String(100), unique=True)
-    password: Mapped[str] = mapped_column(String(100))
-    daily_streak: Mapped[int] = mapped_column(Integer, default=0)
-    endless_streak: Mapped[int] = mapped_column(Integer, default=0)
-    last_daily_date: Mapped[str] = mapped_column(String(15), nullable=True) 
-    last_daily_status: Mapped[str] = mapped_column(String(10), nullable=True)
-
-# Create database
-with app.app_context():
-    db.create_all()
 
 # Path to API cache file
 CACHE_PATH = "api_cache.json"
@@ -147,14 +101,6 @@ def home():
     
     session.modified = True # Force Flask to save change to unused list
             
-    # Check if user already played today
-    daily_completed = False
-    if current_user.is_authenticated:
-        est = ZoneInfo("America/New_York")
-        today_est = datetime.now(tz=est).strftime("%Y-%m-%d")
-        if current_user.last_daily_date == today_est:
-            daily_completed = True
-    
     daily_id = daily_info["id"]  # Get the ID of the daily player
     
     # Render homepage w/ player names
@@ -163,7 +109,6 @@ def home():
                            player_data=player_dict, 
                            answer_id=daily_id,
                            players_to_use=session["players_to_use"],
-                           daily_completed=daily_completed,
                            video_sources=VIDEO_SOURCES)
 
 # Endless mode route
@@ -210,117 +155,27 @@ def endless_mode(player_id):
                            players_to_use=session["players_to_use"],
                            video_sources=VIDEO_SOURCES)
 
-# Register route
-@app.route("/register", methods=["GET", "POST"])
-@limiter.limit("50 per minute")
-def register():
-    form = RegisterForm()
-
-    if form.validate_on_submit():
-        username = form.username.data
-
-        matching_user = db.session.execute(db.select(User).where(User.username == username)).scalar()
-        
-        if matching_user != None:
-            flash("Someone already signed up with that username!")
-            return redirect(url_for("register"))
-        elif form.password.data != form.verify_password.data:
-            flash("Passwords do not match, please try again.")
-            return redirect(url_for("register"))
-        
-        plain_password = form.password.data
-        encrypted_password = generate_password_hash(password=plain_password, method="pbkdf2:sha256", salt_length=8)
-
-        new_user = User(username=username, password=encrypted_password)
-
-        db.session.add(new_user)
-        db.session.commit()
-
-        login_user(new_user)
-
-        return redirect(url_for("home"))
+# Update endless streaks
+@app.route("/update_endless_streak", methods=["POST"])
+def update_endless_streak():
     
-    return render_template("register.html", form=form)    
-
-# Login route
-@app.route("/login", methods=["GET", "POST"])
-@limiter.limit("50 per minute")
-def login():
-    form = LoginForm()
-
-    if form.validate_on_submit():
-        username = form.username.data
-        plain_password = form.password.data
-        
-        user = db.session.execute(db.select(User).where(User.username == username)).scalar()
-
-        if user != None:
-            password_check = check_password_hash(pwhash=user.password, password=plain_password)
-
-            if password_check:
-                login_user(user)
-                return redirect(url_for("home"))
-            else:
-                flash("Incorrect password, please try again.")
-                return render_template("login.html", form=form)
-        else:
-            flash("That username does not exist, please try again.")
-            return redirect(url_for("login", form=form))
-    
-    return render_template("login.html", form=form)
-
-# Logout route
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('home'))
-
-# Error handler for rate limiting
-@app.errorhandler(429)
-def ratelimit_handler(e):
-    flash("Too many login attempts. Please try again in a minute.")
-    return redirect(url_for("login"))
-
-# Update streak route
-@app.route("/update_streak", methods=["POST"])
-@login_required
-def update_streak():
-    
-    # Get JSON data from request
+    # Retrieve data
     data = request.get_json()
-    mode = data.get("mode")
     result = data.get("result")
-    
-    # Get current date in EST
-    est = ZoneInfo("America/New_York")
-    today_est = datetime.now(tz=est).strftime("%Y-%m-%d")
 
-    # Update streak based on mode and result
-    if mode == "daily":
-        # Update daily streak only if the user hasn't played today
-        if current_user.last_daily_date == today_est:
-            return jsonify({"success": False, "message": "Already played today."}), 400
-            
-        current_user.last_daily_date = today_est
-        current_user.last_daily_status = result
+    # If streak DNE, initialise it in the session
+    if "endless_streak" not in session:
+        session["endless_streak"] = 0
+
+    # Update streak based on user's result
+    if result == "win":
+        session["endless_streak"] += 1
+    elif result == "loss":
+        session["endless_streak"] = 0
         
-        if result == "win":
-            current_user.daily_streak += 1
-        else:
-            current_user.daily_streak = 0
-            
-        db.session.commit()
-        return jsonify({"streak": current_user.daily_streak})
-    elif mode == "endless":
-        if result == "win":
-            current_user.endless_streak += 1
-        else:
-            current_user.endless_streak = 0
-            
-        db.session.commit()
-        return jsonify({"streak": current_user.endless_streak})
-        
-    return jsonify({"success": False}), 400
+    session.modified = True # Force Flask to save change to streak
+
+    return jsonify({"streak": session["endless_streak"]})
 
 # Run the app
 if __name__ == "__main__":

@@ -235,11 +235,7 @@
         window.playerData = {{ player_data | tojson }};
         window.answerId = {{ answer_id | tojson }};
         window.videoSources = {{ video_sources | tojson }};
-        window.isAuthenticated = {{ current_user.is_authenticated | default(False) | tojson }};
         window.gameMode = "{{ 'daily' if request.path == '/' else 'endless' }}";
-        window.dailyCompleted = {{ daily_completed | default(False) | tojson }};
-        window.lastDailyStatus = "{{ current_user.last_daily_status if current_user.is_authenticated else '' }}";
-        window.userStreak = {{ current_user.daily_streak if (current_user.is_authenticated and request.path == '/') else (current_user.endless_streak if current_user.is_authenticated else 0) }};
     </script>
 
     <!-- Load js files -->

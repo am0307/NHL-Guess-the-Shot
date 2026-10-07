@@ -191,33 +191,31 @@ function displayAnswer(playerName) {
         gameResult = "loss";
     }
 
-    // Update streak if user is authenticated
-    if (gameFinished && window.isAuthenticated) {
+    // Update endless streak logic
+    if (gameFinished && window.gameMode === "endless") {
         
-        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content'); // Get CSRF token from meta tag
-        
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content'); // Get CSRF token from the meta tag
+
         // Send POST request to update streak
-        fetch("/update_streak", {
+        fetch("/update_endless_streak", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "X-CSRFToken": csrfToken
             },
-            body: JSON.stringify({
-                mode: window.gameMode,
-                result: gameResult
-            })
+            body: JSON.stringify({ result: gameResult })
         })
         .then(res => res.json())
         .then(data => {
-            // Update the streak display in the alert box if the streak value is returned
-            if(data.streak !== undefined) {
-                const targetAlert = gameResult === "win" ? document.getElementById("win-alert") : document.getElementById("loss-alert");
-                const streakDisplay = targetAlert.querySelector(".streak-text");
-                streakDisplay.innerHTML = `Current Streak: <strong>${data.streak}</strong>`;
-                streakDisplay.classList.remove("d-none");
-            }
-        });
+            // Retrieve desired streak display area
+            const targetAlert = gameResult === "win" ? document.getElementById("win-alert") : document.getElementById("loss-alert");
+            const streakDisplay = targetAlert.querySelector(".streak-text");
+
+            // Update streak display
+            streakDisplay.innerHTML = `Current Streak: <strong>${data.streak}</strong>`;
+            streakDisplay.classList.remove("d-none");
+        })
+        .catch(error => console.error("Error updating streak:", error));
     }
 }
 
@@ -346,24 +344,4 @@ if (copyLossBtn) { // Check if button exists prior to adding event listener
             }, 2000);
         })
     });
-}
-
-// Checks on page load if the user has already played today
-if (window.gameMode === "daily" && window.dailyCompleted) {
-
-    // Hide the player input form and mask video, show the original video
-    document.getElementById("player-form").classList.add("d-none");
-    document.getElementById("mask-vid").classList.add("d-none");
-    document.getElementById("org-vid").classList.remove("d-none");
-    
-    // Show the appropriate alert based on the last daily status
-    const alertBox = window.lastDailyStatus === "win" ? document.getElementById("win-alert") : document.getElementById("loss-alert");
-    alertBox.classList.remove("d-none");
-    
-    // Display the user's current streak if available
-    const streakDisplay = alertBox.querySelector(".streak-text");
-    if (streakDisplay && window.userStreak !== undefined) {
-        streakDisplay.innerHTML = `Current Streak: <strong>${window.userStreak}</strong>`;
-        streakDisplay.classList.remove("d-none");
-    }
 }
