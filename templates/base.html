@@ -43,7 +43,7 @@
     <div class="d-flex justify-content-center">
         <div style="width: 889px;">
             <video id="org-vid" class="d-none w-100" height="500" src="{{ url_for('static', filename='videos/original/' + answer_id | string + '.mp4') }}" autoplay loop muted playsinline></video>
-            <h6 id="video-source" class="text-white d-none">Video sourced from <a id="video-source-link" href="#" class="link-light"></a></h6>
+            <h6 id="video-source" class="link-body-emphasis d-none">Video sourced from <a id="video-source-link" href="#"></a></h6>
         </div>
     </div>
     <!-- Correct guess alert -->
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <p class="streak-text text-center text-white mt-3 mb-1 d-none"></p>
+            <p class="streak-text text-center mt-3 mb-1 d-none"></p>
         </div>
     </div>
     <!-- Loss alert -->
@@ -114,7 +114,7 @@
                     </div>
                 </div>
             {% endif %}
-            <p class="streak-text text-center text-white mt-3 mb-1 d-none"></p>
+            <p class="streak-text text-center mt-3 mb-1 d-none"></p>
         </div>
     </div>
     <!-- Create player input form -->
@@ -236,6 +236,7 @@
         window.answerId = {{ answer_id | tojson }};
         window.videoSources = {{ video_sources | tojson }};
         window.gameMode = "{{ 'daily' if request.path == '/' else 'endless' }}";
+        window.alreadyPlayed = {{ already_played | tojson }};
     </script>
 
     <!-- Load js files -->

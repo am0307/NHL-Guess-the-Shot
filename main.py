@@ -93,15 +93,12 @@ def home():
     if "players_to_use" not in session or not session["players_to_use"]: # Checks if list DNE or ran out of players
         session["players_to_use"] = list(PLAYER_IDS.keys())
     
-    # Player to guess is randomly selected from players yet to be used
-    daily_info = player_dict[daily_name]
+    daily_info = player_dict[daily_name] # Player to guess is randomly selected from players yet to be used
     
-    if daily_name in session["players_to_use"]: # Safety check
-        session["players_to_use"].remove(daily_name) # Remove player from unused list
-    
-    session.modified = True # Force Flask to save change to unused list
-            
     daily_id = daily_info["id"]  # Get the ID of the daily player
+    
+    # Check if they have already played this player
+    already_played = daily_name not in session["players_to_use"]
     
     # Render homepage w/ player names
     return render_template("index.html", 
@@ -109,7 +106,8 @@ def home():
                            player_data=player_dict, 
                            answer_id=daily_id,
                            players_to_use=session["players_to_use"],
-                           video_sources=VIDEO_SOURCES)
+                           video_sources=VIDEO_SOURCES,
+                           already_played=already_played)
 
 # Endless mode route
 @app.route("/endless", defaults={"player_id": None}, methods=["GET", "POST"])
@@ -142,18 +140,17 @@ def endless_mode(player_id):
     answer_info = player_dict[answer_name]
     answer_id = answer_info["id"]  # Get the ID of the selected player
     
-    if answer_name in session["players_to_use"]: # Safety check
-        session["players_to_use"].remove(answer_name) # Remove player from unused list
+    # Determine if player has already been played
+    already_played = answer_name not in session["players_to_use"]
     
-    session.modified = True # Force Flask to save change to unused list
-            
     # Render homepage w/ player names
     return render_template("endless.html", 
                            players=list(PLAYER_IDS.keys()), 
                            player_data=player_dict, 
                            answer_id=answer_id,
                            players_to_use=session["players_to_use"],
-                           video_sources=VIDEO_SOURCES)
+                           video_sources=VIDEO_SOURCES,
+                           already_played=already_played)
 
 # Update endless streaks
 @app.route("/update_endless_streak", methods=["POST"])
@@ -162,16 +159,28 @@ def update_endless_streak():
     # Retrieve data
     data = request.get_json()
     result = data.get("result")
+    player_id = data.get("player_id")
+    mode = data.get("mode")
 
-    # If streak DNE, initialise it in the session
+    # Mark player as used when the user actually completes the round
+    if player_id is not None:
+        player_dict = retrieve_API_info("players")
+        player_name = next((name for name, info in player_dict.items() if info["id"] == player_id), None) # Find player name
+        
+        # Remove player from unused list if needed
+        if player_name and player_name in session.get("players_to_use", []):
+            session["players_to_use"].remove(player_name)
+
+    # Initialise streak if necessary
     if "endless_streak" not in session:
         session["endless_streak"] = 0
 
-    # Update streak based on user's result
-    if result == "win":
-        session["endless_streak"] += 1
-    elif result == "loss":
-        session["endless_streak"] = 0
+    # Only update the streak counter when user is in endless mode
+    if mode == "endless":
+        if result == "win":
+            session["endless_streak"] += 1
+        elif result == "loss":
+            session["endless_streak"] = 0
         
     session.modified = True # Force Flask to save change to streak
 

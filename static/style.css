@@ -175,3 +175,10 @@ video {
     align-items: center;
     min-height: 80vh;
 }
+
+html[data-bs-theme="light"] .alert-warning,
+html:not([data-bs-theme="dark"]) .alert-warning {
+    background-color: #ffe69c;
+    border-color: #ffd866;
+    color: #664d03;
+}

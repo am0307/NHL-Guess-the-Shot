@@ -112,7 +112,7 @@ function getPlayerName() {
 }
 
 // Display answer on correct guess/loss
-function displayAnswer(playerName) {
+function displayAnswer(playerName, updateStreak = true) {
     
     // Variables to track game state
     let gameFinished = false;
@@ -151,7 +151,7 @@ function displayAnswer(playerName) {
         // Set game state variables
         gameFinished = true;
         gameResult = "win";
-    } else if (guessCount == 6 || playerName === "Loss") { // Loss
+    } else if (guessCount == 6 || playerName === "Loss"|| playerName === "Played") { // Loss or already played
 
         // Get link, alerts, and videos elements
         const lossAlert = document.getElementById("loss-alert");
@@ -163,7 +163,6 @@ function displayAnswer(playerName) {
 
         // Adjust styles and show/hide relevant elements
         lossAlert.classList.remove("d-none");
-        lossAnswer.textContent = `The answer was ${answerName}!`;
         originalVideo.classList.remove("d-none");
         originalVideo.style.marginBottom = "4px";
         videoSource.classList.remove("d-none");
@@ -173,26 +172,45 @@ function displayAnswer(playerName) {
         form.classList.add("d-none");
         maskVideo.classList.add("d-none");
 
-        // Create and show sharable text for a loss
-        let sharable;
-        
-        // Create sharable based on whether player forfeited or lost traditionally
-        if (playerName === "Loss") {
-            sharable = createSharable(guessCount);
-            sharable = sharable.replace(guessCount, "X"); // Replace guess count with "X" to mark loss
-        } else {
-            sharable = createSharable("X");
-        }
-        
-        document.querySelector("#share-result-loss .modal-body").innerHTML = sharable;
 
-        // Set game state variables
-        gameFinished = true;
-        gameResult = "loss";
+        if (playerName === "Played") { // User already played this player
+            // Warning for already playing
+            lossAlert.classList.remove("alert-danger");
+            lossAlert.classList.add("alert-warning"); 
+            lossAlert.querySelector("h4").textContent = "You already played this one!";
+            lossAnswer.textContent = `The answer was ${answerName}.`;
+            
+            // Hide the share button
+            const shareBtn = lossAlert.querySelector(".share-result-btn");
+            if (shareBtn) {
+                shareBtn.classList.add("d-none");
+            }
+
+            gameFinished = true;
+            gameResult = "played";
+        } else { // User lost
+            lossAnswer.textContent = `The answer was ${answerName}!`; // Display answer
+
+            let sharable; // Create and show sharable text for a loss
+            
+            // Create sharable based on whether player forfeited or lost traditionally
+            if (playerName === "Loss") {
+                sharable = createSharable(guessCount);
+                sharable = sharable.replace(guessCount, "X"); // Replace guess count with "X" to mark loss
+            } else {
+                sharable = createSharable("X");
+            }
+            
+            document.querySelector("#share-result-loss .modal-body").innerHTML = sharable; // Show text for sharing result
+
+            // Set game state variables
+            gameFinished = true;
+            gameResult = "loss";
+        }
     }
 
     // Update endless streak logic
-    if (gameFinished && window.gameMode === "endless") {
+    if (gameFinished && window.gameMode === "endless" && updateStreak) {
         
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content'); // Get CSRF token from the meta tag
 
@@ -203,7 +221,11 @@ function displayAnswer(playerName) {
                 "Content-Type": "application/json",
                 "X-CSRFToken": csrfToken
             },
-            body: JSON.stringify({ result: gameResult })
+            body: JSON.stringify({ 
+                result: gameResult,
+                player_id: window.answerId,
+                mode: window.gameMode
+            })
         })
         .then(res => res.json())
         .then(data => {
@@ -217,6 +239,12 @@ function displayAnswer(playerName) {
         })
         .catch(error => console.error("Error updating streak:", error));
     }
+}
+
+// Check if the user has already had this player's page
+if (window.alreadyPlayed) {
+    // Shows the already played screen and does not update the streak
+    displayAnswer("Played", false); 
 }
 
 // Colour boxes based on the guessed player's info
