@@ -1,15 +1,3 @@
-// Retrieve elements, variables, and functions
-const input = document.getElementById("player-input");
-const dropdown = document.getElementById("player-dropdown");
-const form = document.getElementById("player-form");
-const items = dropdown.querySelectorAll(".player-option");
-const tooltips = document.querySelectorAll(".column-tooltip");
-const initiateForfeit = document.getElementById("start-forfeit")
-const confirmForfeit = document.getElementById("give-up");
-import { createSharable } from "./share-logic.js";
-
-let guessCount = 0; // Guess number tracker
-
 // Fetch data from Cloudflare
 async function loadGameData() {
     try {
@@ -42,6 +30,18 @@ async function loadGameData() {
 
 // Immediately call function
 loadGameData();
+
+// Retrieve elements, variables, and functions
+const input = document.getElementById("player-input");
+const dropdown = document.getElementById("player-dropdown");
+const form = document.getElementById("player-form");
+const items = dropdown.querySelectorAll(".player-option");
+const tooltips = document.querySelectorAll(".column-tooltip");
+const initiateForfeit = document.getElementById("start-forfeit")
+const confirmForfeit = document.getElementById("give-up");
+import { createSharable } from "./share-logic.js";
+
+let guessCount = 0; // Guess number tracker
 
 const nameLookup = {}; // Empty lookup table for player names based on their IDs
 
