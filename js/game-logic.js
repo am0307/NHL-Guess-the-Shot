@@ -14,7 +14,7 @@ let guessCount = 0; // Guess number tracker
 async function loadGameData() {
     try {
         // Get data
-        const response = await fetch('/api/game-data');
+        const response = await fetch(`${window.PUBLIC_R2_URL}/api_cache.json`);
         const data = await response.json();
         
         // Declare variables
