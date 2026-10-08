@@ -1,0 +1,5 @@
+name = "nhl-guess-the-shot"
+compatibility_date = "2026-10-08"
+
+[assets]
+directory = "."
