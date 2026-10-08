@@ -10,6 +10,39 @@ import { createSharable } from "./share-logic.js";
 
 let guessCount = 0; // Guess number tracker
 
+// Fetch data from Cloudflare
+async function loadGameData() {
+    try {
+        // Get data
+        const response = await fetch('/api/game-data');
+        const data = await response.json();
+        
+        // Declare variables
+        window.playerData = data.players;
+        window.videoSources = data.video_sources;
+
+        if (window.gameMode === "daily") {
+            // Get daily player
+            window.answerId = data.players[data.daily_name].id;
+        } else {
+            // Pick a random player for endless mode
+            const playerNames = Object.keys(window.playerData);
+            const randomName = playerNames[Math.floor(Math.random() * playerNames.length)];
+            window.answerId = window.playerData[randomName].id;
+        }
+
+        // Set video sources from Cloudflare
+        document.getElementById("mask-vid").src = `${window.PUBLIC_R2_URL}/videos/masks/${window.answerId}.mp4`;
+        document.getElementById("org-vid").src = `${window.PUBLIC_R2_URL}/videos/original/${window.answerId}.mp4`;
+
+    } catch (error) {
+        console.error("Error loading game data:", error);
+    }
+}
+
+// Immediately call function
+loadGameData();
+
 const nameLookup = {}; // Empty lookup table for player names based on their IDs
 
 // Populate the nameLookup
@@ -229,33 +262,31 @@ function displayAnswer(playerName, updateStreak = true) {
 
     // Update endless streak logic
     if (gameFinished && window.gameMode === "endless" && updateStreak) {
-        
-        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content'); // Get CSRF token from the meta tag
 
         // Send POST request to update streak
-        fetch("/update_endless_streak", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRFToken": csrfToken
-            },
-            body: JSON.stringify({ 
-                result: gameResult,
-                player_id: window.answerId,
-                mode: window.gameMode
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
-            // Retrieve desired streak display area
+        if (window.gameMode === "endless") {
+            
+            let currentStreak = parseInt(localStorage.getItem("endless_streak")) || 0; // Read the current streak
+            
+            // Update streak accordingly
+            if (gameResult === "win") {
+                currentStreak += 1;
+            } else if (gameResult === "loss") {
+                currentStreak = 0;
+            }
+            
+            localStorage.setItem("endless_streak", currentStreak); // Save streak
+            
+            // Display appropriate alert
             const targetAlert = gameResult === "win" ? document.getElementById("win-alert") : document.getElementById("loss-alert");
             const streakDisplay = targetAlert.querySelector(".streak-text");
 
-            // Update streak display
-            streakDisplay.innerHTML = `Current Streak: <strong>${data.streak}</strong>`;
-            streakDisplay.classList.remove("d-none");
-        })
-        .catch(error => console.error("Error updating streak:", error));
+            // Update and show streak
+            if (streakDisplay) {
+                streakDisplay.innerHTML = `Current Streak: <strong>${currentStreak}</strong>`;
+                streakDisplay.classList.remove("d-none");
+            }
+        }
     }
 }
 
