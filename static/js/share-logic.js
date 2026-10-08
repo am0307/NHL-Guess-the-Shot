@@ -4,7 +4,7 @@ const MAX_NUM_GUESSES = 6;
 export function createSharable(numGuesses) {
 
     // First lines of sharable text
-    let sharable = "Guess the Shot! - " + numGuesses + "/" + MAX_NUM_GUESSES + "\n\n";
+    let sharable = "PuckGuessr - " + numGuesses + "/" + MAX_NUM_GUESSES + "\n\n";
 
     // If the player lost, set numGuesses to 6 for the purpose of creating the sharable text
     if (numGuesses === "X") {
