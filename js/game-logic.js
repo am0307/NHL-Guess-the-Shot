@@ -54,10 +54,32 @@ async function loadGameData() {
             // Get daily player
             window.answerId = data.players[data.daily_name].id;
         } else {
-            // Pick a random player for endless mode
-            const playerNames = Object.keys(window.playerData);
-            const randomName = playerNames[Math.floor(Math.random() * playerNames.length)];
-            window.answerId = window.playerData[randomName].id;
+            // Check URL for player ID
+            const urlParams = new URLSearchParams(window.location.search);
+            const requestedId = urlParams.get("id");
+
+            // Validate if the requested ID exists in the nameLookup table
+            if (requestedId && nameLookup[requestedId]) {
+                window.answerId = requestedId;
+            } else {
+                // If ID is missing or invalid, pick a random player
+                const playerNames = Object.keys(window.playerData);
+                const randomName = playerNames[Math.floor(Math.random() * playerNames.length)];
+                window.answerId = window.playerData[randomName].id;
+
+                // Add new ID to URL
+                const newUrl = `${window.location.pathname}?id=${window.answerId}`;
+                window.history.replaceState({}, '', newUrl);
+            }
+
+            // Check if the user has already played this specific endless player ID
+            const playedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]");
+            if (playedIds.includes(window.answerId)) {
+                window.alreadyPlayed = true;
+            } else {
+                playedIds.push(window.answerId);
+                localStorage.setItem("played_endless_ids", JSON.stringify(playedIds));
+            }
         }
 
         // Set video sources from Cloudflare
@@ -70,7 +92,12 @@ async function loadGameData() {
 }
 
 // Immediately call function
-loadGameData();
+loadGameData().then(() => {
+    // If endless mode and already played, trigger the alert screen without updating streak
+    if (window.gameMode === "endless" && window.alreadyPlayed) {
+        displayAnswer("Played", false);
+    }
+});
 
 // Retrieve elements, variables, and functions
 const input = document.getElementById("player-input");
@@ -303,12 +330,6 @@ function displayAnswer(playerName, updateStreak = true) {
             }
         }
     }
-}
-
-// Check if the user has already had this player's page
-if (window.alreadyPlayed) {
-    // Shows the already played screen and does not update the streak
-    displayAnswer("Played", false); 
 }
 
 // Colour boxes based on the guessed player's info

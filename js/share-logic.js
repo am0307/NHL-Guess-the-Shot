@@ -31,7 +31,7 @@ export function createSharable(numGuesses) {
     }
 
     // URL of game
-    sharable += "\npuckguessr.com"
+    sharable += "\n" + window.location.href;
 
     // Replace newlines with <br> for HTML display
     sharable = sharable.replace(/\n/g, '<br>')
