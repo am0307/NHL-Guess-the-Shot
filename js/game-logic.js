@@ -3,8 +3,10 @@ const nameLookup = {}; // Empty lookup table for player names based on their IDs
 // Fetch data from Cloudflare
 async function loadGameData() {
     try {
-        // Get data
-        const response = await fetch(`${window.PUBLIC_R2_URL}/api_cache.json`);
+        // Get data without caching issues
+        const response = await fetch(`${window.PUBLIC_R2_URL}/api_cache.json?t=${Date.now()}`, {
+            cache: "no-store"
+        });
         const data = await response.json();
         
         // Declare variables

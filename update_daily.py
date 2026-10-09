@@ -81,7 +81,8 @@ def run_update():
         Bucket=bucket,
         Key=cache_path,
         Body=json.dumps(new_cache, ensure_ascii=False, indent=4),
-        ContentType="application/json"
+        ContentType="application/json",
+        CacheControl="no-cache, no-store, must-revalidate"
     )
 
 if __name__ == "__main__":
