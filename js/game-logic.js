@@ -74,10 +74,12 @@ async function loadGameData() {
 
             // Check if the user has already played this specific endless player ID
             const playedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]");
-            if (playedIds.includes(window.answerId)) {
+            const currentId = String(window.answerId);
+
+            if (playedIds.includes(currentId)) {
                 window.alreadyPlayed = true;
             } else {
-                playedIds.push(window.answerId);
+                playedIds.push(currentId);
                 localStorage.setItem("played_endless_ids", JSON.stringify(playedIds));
             }
         }
@@ -267,9 +269,10 @@ function displayAnswer(playerName, updateStreak = true) {
 
             // Display existing endless streak if needed
             if (window.gameMode === "endless") {
-                const streakDisplay = lossAlert.querySelector(".streak-text");
+                let currentStreak = parseInt(localStorage.getItem("endless_streak")) || 0;
+                
                 if (streakDisplay) {
-                    streakDisplay.innerHTML = `Current Streak: <strong>${window.endlessStreak}</strong>`;
+                    streakDisplay.innerHTML = `Current Streak: <strong>${currentStreak}</strong>`;
                     streakDisplay.classList.remove("d-none");
                 }
             }
