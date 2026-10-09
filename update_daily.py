@@ -7,6 +7,9 @@ from nhl_api import get_player_info
 from age_calculator import find_age
 from random import choice
 from data import TEAM_DIVISIONS_CONFERENCES, PLAYER_IDS, VIDEO_SOURCES
+from dotenv import load_dotenv
+
+load_dotenv("secrets.env")
 
 def run_update():
     # Connect to Cloudflare R2
