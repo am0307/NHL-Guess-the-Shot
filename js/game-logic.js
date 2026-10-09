@@ -11,9 +11,23 @@ async function loadGameData() {
         window.playerData = data.players;
         window.videoSources = data.video_sources;
 
-        // Populate the nameLookup
+        // Get dropdown element
+        const dropdown = document.getElementById("player-dropdown");
+        dropdown.innerHTML = ""; // Clear existing
+
+        // Populate the nameLookup and create dropdown options
         for (const [name, data] of Object.entries(window.playerData)) {
             nameLookup[data.id] = name;
+
+            // Create list item for the search dropdown
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.className = "dropdown-item player-option";
+            a.href = "#";
+            a.setAttribute("data-value", name);
+            a.textContent = name;
+            li.appendChild(a);
+            dropdown.appendChild(li);
         }
 
         if (window.gameMode === "daily") {
@@ -42,7 +56,6 @@ loadGameData();
 const input = document.getElementById("player-input");
 const dropdown = document.getElementById("player-dropdown");
 const form = document.getElementById("player-form");
-const items = dropdown.querySelectorAll(".player-option");
 const tooltips = document.querySelectorAll(".column-tooltip");
 const initiateForfeit = document.getElementById("start-forfeit")
 const confirmForfeit = document.getElementById("give-up");
@@ -62,8 +75,11 @@ input.addEventListener("input", function() {
     let numDisplayed = 0;
     let hasVisibleItems = false;
 
+    // Get current options
+    const currentItems = dropdown.querySelectorAll(".player-option");
+
     // Loop through each item and show players based on the filter
-    items.forEach(item => {
+    currentItems.forEach(item => {
         var playerText = item.textContent.toLowerCase();
         const playerTextDeaccent = playerText.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         const userInputDeaccent = userInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
