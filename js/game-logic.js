@@ -26,6 +26,26 @@ async function loadGameData() {
             a.href = "#";
             a.setAttribute("data-value", name);
             a.textContent = name;
+
+            // Attach click listener directly to each dynamically created option
+            a.addEventListener("click", function(e) {
+                e.preventDefault();
+
+                if (guessCount >= 6) { // Only allow submission if user has guesses left
+                    return;
+                }
+
+                const playerName = this.getAttribute("data-value");
+                input.value = playerName;
+                dropdown.style.display = "none";
+                
+                guessCount++;
+                addGuessInfo(playerName);
+                
+                input.value = "";
+                flipBoxes(playerName);
+            });
+
             li.appendChild(a);
             dropdown.appendChild(li);
         }
@@ -94,27 +114,6 @@ input.addEventListener("input", function() {
     });
 
     dropdown.style.display = (hasVisibleItems && userInput.length > 0) ? "block" : "none";
-});
-
-// Handle click on a list item
-items.forEach(item => {
-    item.addEventListener("click", function(e) {
-        e.preventDefault();
-
-        if (guessCount >= 6) { // Only allow submission if user has guesses left
-            return
-        }
-
-        const playerName = this.getAttribute("data-value");
-        input.value = playerName;
-        dropdown.style.display = "none";
-        
-        guessCount++;
-        addGuessInfo(playerName);
-        
-        input.value = "";
-        flipBoxes(playerName);
-    });
 });
 
 // Hide dropdown on outside click
