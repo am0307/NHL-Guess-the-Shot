@@ -58,23 +58,40 @@ async function loadGameData() {
             const urlParams = new URLSearchParams(window.location.search);
             const requestedId = urlParams.get("id");
 
+            // Retrieve played players
+            const playedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
+
             // Validate if the requested ID exists in the nameLookup table
             if (requestedId && nameLookup[requestedId]) {
                 window.answerId = requestedId;
             } else {
-                // If ID is missing or invalid, pick a random player
-                const playerNames = Object.keys(window.playerData);
-                const randomName = playerNames[Math.floor(Math.random() * playerNames.length)];
-                window.answerId = window.playerData[randomName].id;
+                // Create an array of all IDs
+                const allIds = Object.values(window.playerData).map(p => String(p.id));
+                
+                // Filter out IDs the user has already played
+                let availableIds = allIds.filter(id => !playedIds.includes(id));
+
+                // If all players have been played, empty the played pool to reset the cycle
+                if (availableIds.length === 0) {
+                    availableIds = allIds;
+                    playedIds.length = 0; // Clear memory array
+                    localStorage.setItem("played_endless_ids", "[]"); // Clear storage array
+                }
+
+                // Pick random from remaining unplayed pool
+                const randomId = availableIds[Math.floor(Math.random() * availableIds.length)];
+                window.answerId = randomId;
 
                 // Add new ID to URL
                 const newUrl = `${window.location.pathname}?id=${window.answerId}`;
                 window.history.replaceState({}, '', newUrl);
             }
 
-            // Check if the user has already played this specific endless player ID
-            const playedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
+            // Trigger already played state if applicable
             const currentId = String(window.answerId);
+            if (playedIds.includes(currentId)) {
+                window.alreadyPlayed = true;
+            }
 
             if (playedIds.includes(currentId)) {
                 window.alreadyPlayed = true;
@@ -270,6 +287,7 @@ function displayAnswer(playerName, updateStreak = true) {
             // Display existing endless streak if needed
             if (window.gameMode === "endless") {
                 let currentStreak = parseInt(localStorage.getItem("endless_streak")) || 0;
+                const streakDisplay = lossAlert.querySelector(".streak-text");
                 
                 if (streakDisplay) {
                     streakDisplay.innerHTML = `Current Streak: <strong>${currentStreak}</strong>`;
@@ -308,6 +326,16 @@ function displayAnswer(playerName, updateStreak = true) {
     // Update endless streak logic
     if (gameFinished && window.gameMode === "endless" && updateStreak) {
 
+        // Add players to played players only after a win/loss
+        if (gameResult === "win" || gameResult === "loss") {
+            const currentPlayedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
+            const currentId = String(window.answerId);
+            if (!currentPlayedIds.includes(currentId)) {
+                currentPlayedIds.push(currentId);
+                localStorage.setItem("played_endless_ids", JSON.stringify(currentPlayedIds));
+            }
+        }
+        
         // Send POST request to update streak
         if (window.gameMode === "endless") {
             
