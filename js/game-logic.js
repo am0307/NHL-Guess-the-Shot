@@ -86,18 +86,18 @@ async function loadGameData() {
         document.getElementById("mask-vid").src = `${window.PUBLIC_R2_URL}/videos/masks/${window.answerId}.mp4`;
         document.getElementById("org-vid").src = `${window.PUBLIC_R2_URL}/videos/original/${window.answerId}.mp4`;
 
+        // If endless mode and already played, trigger the alert screen without updating streak
+        if (window.gameMode === "endless" && window.alreadyPlayed) {
+            displayAnswer("Played", false);
+        }
+
     } catch (error) {
         console.error("Error loading game data:", error);
     }
 }
 
 // Immediately call function
-loadGameData().then(() => {
-    // If endless mode and already played, trigger the alert screen without updating streak
-    if (window.gameMode === "endless" && window.alreadyPlayed) {
-        displayAnswer("Played", false);
-    }
-});
+loadGameData()
 
 // Retrieve elements, variables, and functions
 const input = document.getElementById("player-input");
