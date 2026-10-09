@@ -73,7 +73,7 @@ async function loadGameData() {
             }
 
             // Check if the user has already played this specific endless player ID
-            const playedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]");
+            const playedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
             const currentId = String(window.answerId);
 
             if (playedIds.includes(currentId)) {
