@@ -69,6 +69,13 @@ def run_update():
         "video_sources": VIDEO_SOURCES
     }
 
+    # Prepare JSON data
+    json_data = json.dumps(new_cache, ensure_ascii=False, indent=4)
+
+    # Save local copy
+    with open(cache_path, "w", encoding="utf-8") as f:
+        f.write(json_data)
+        
     # Upload to Cloudflare R2
     s3.put_object(
         Bucket=bucket,
