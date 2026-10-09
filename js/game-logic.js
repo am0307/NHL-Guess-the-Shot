@@ -1,3 +1,5 @@
+const nameLookup = {}; // Empty lookup table for player names based on their IDs
+
 // Fetch data from Cloudflare
 async function loadGameData() {
     try {
@@ -8,6 +10,11 @@ async function loadGameData() {
         // Declare variables
         window.playerData = data.players;
         window.videoSources = data.video_sources;
+
+        // Populate the nameLookup
+        for (const [name, data] of Object.entries(window.playerData)) {
+            nameLookup[data.id] = name;
+        }
 
         if (window.gameMode === "daily") {
             // Get daily player
@@ -42,13 +49,6 @@ const confirmForfeit = document.getElementById("give-up");
 import { createSharable } from "./share-logic.js";
 
 let guessCount = 0; // Guess number tracker
-
-const nameLookup = {}; // Empty lookup table for player names based on their IDs
-
-// Populate the nameLookup
-for (const [name, data] of Object.entries(window.playerData)) {
-    nameLookup[data.id] = name;
-}
 
 // Create Bootstrap tooltips
 tooltips.forEach(tt => {
