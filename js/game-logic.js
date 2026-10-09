@@ -92,13 +92,6 @@ async function loadGameData() {
             if (playedIds.includes(currentId)) {
                 window.alreadyPlayed = true;
             }
-
-            if (playedIds.includes(currentId)) {
-                window.alreadyPlayed = true;
-            } else {
-                playedIds.push(currentId);
-                localStorage.setItem("played_endless_ids", JSON.stringify(playedIds));
-            }
         }
 
         // Set video sources from Cloudflare
