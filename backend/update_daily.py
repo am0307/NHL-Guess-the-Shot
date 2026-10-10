@@ -8,8 +8,12 @@ from age_calculator import find_age
 from random import choice
 from data import TEAM_DIVISIONS_CONFERENCES, PLAYER_IDS, VIDEO_SOURCES
 from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv("secrets.env")
+# Load secrets.env from the project root directory
+ROOT_DIR = Path(__file__).resolve().parent.parent
+env_path = ROOT_DIR / "secrets.env"
+load_dotenv(dotenv_path=env_path)
 
 def run_update():
     # Connect to Cloudflare R2
@@ -21,7 +25,7 @@ def run_update():
         region_name="auto",
     )
     bucket = os.environ["R2_BUCKET_NAME"]
-    cache_path = "api_cache.json"
+    cache_path = ROOT_DIR / "api_cache.json"
 
     # Fetch existing cache from R2
     cache_dictionary = {"unused_daily_players": []}
