@@ -15,6 +15,12 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 env_path = ROOT_DIR / "secrets.env"
 load_dotenv(dotenv_path=env_path)
 
+# Local path for writing the file
+local_cache_path = ROOT_DIR / "api_cache.json"
+
+# Bucket key
+s3_cache_key = "api_cache.json"
+
 def run_update():
     # Connect to Cloudflare R2
     s3 = boto3.client(
@@ -30,7 +36,7 @@ def run_update():
     # Fetch existing cache from R2
     cache_dictionary = {"unused_daily_players": []}
     try:
-        response = s3.get_object(Bucket=bucket, Key=cache_path)
+        response = s3.get_object(Bucket=bucket, Key=s3_cache_key)
         cache_dictionary = json.loads(response['Body'].read().decode('utf-8'))
     except Exception:
         pass # Triggers if the file DNE
@@ -87,13 +93,13 @@ def run_update():
     json_data = json.dumps(new_cache, ensure_ascii=False, indent=4)
 
     # Save local copy
-    with open(cache_path, "w", encoding="utf-8") as f:
+    with open(local_cache_path, "w", encoding="utf-8") as f:
         f.write(json_data)
         
     # Upload to Cloudflare R2
     s3.put_object(
         Bucket=bucket,
-        Key=cache_path,
+        Key=s3_cache_key,
         Body=json.dumps(new_cache, ensure_ascii=False, indent=4),
         ContentType="application/json",
         CacheControl="no-cache, no-store, must-revalidate"
