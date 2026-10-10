@@ -1,4 +1,4 @@
-const MAX_NUM_GUESSES = 6;
+const MAX_NUM_GUESSES = 8;
 
 // Create a sharable text representation of the game result
 export function createSharable(numGuesses) {
@@ -6,9 +6,9 @@ export function createSharable(numGuesses) {
     // First lines of sharable text
     let sharable = "PuckGuessr - " + numGuesses + "/" + MAX_NUM_GUESSES + "\n\n";
 
-    // If the player lost, set numGuesses to 6 for the purpose of creating the sharable text
+    // If the player lost, set numGuesses to 8 for the purpose of creating the sharable text
     if (numGuesses === "X") {
-        numGuesses = 6;
+        numGuesses = MAX_NUM_GUESSES;
     }
     
     // Cycle through player info boxes and create a string of emojis based on colour of boxes

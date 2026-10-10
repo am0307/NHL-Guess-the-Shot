@@ -33,7 +33,7 @@ async function loadGameData() {
             a.addEventListener("click", function(e) {
                 e.preventDefault();
 
-                if (guessCount >= 6) { // Only allow submission if user has guesses left
+                if (guessCount >= 8) { // Only allow submission if user has guesses left
                     return;
                 }
 
@@ -244,7 +244,7 @@ function displayAnswer(playerName, updateStreak = true) {
         // Set game state variables
         gameFinished = true;
         gameResult = "win";
-    } else if (guessCount == 6 || playerName === "Loss"|| playerName === "Played") { // Loss or already played
+    } else if (guessCount == 8 || playerName === "Loss"|| playerName === "Played") { // Loss or already played
 
         // Get link, alerts, and videos elements
         const lossAlert = document.getElementById("loss-alert");
@@ -440,7 +440,8 @@ function addGuessInfo(playerName) {
         age.innerText = playerInfo.age;
     }
 
-    if (guessCount >= 6) return;
+    if (guessCount >= 8) // User used last guess already
+        return;
 }
 
 // Handle copy from win modal
