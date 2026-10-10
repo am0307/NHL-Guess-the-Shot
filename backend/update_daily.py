@@ -35,6 +35,16 @@ def run_update():
     except Exception:
         pass # Triggers if the file DNE
 
+    # Retrieve all players currently in the game
+    existing_cached_players = cache_dictionary.get("players", {})
+    
+    # Retrieve unused daily players list
+    unused_list = cache_dictionary.setdefault("unused_daily_players", [])
+    
+    for name in PLAYER_IDS.keys(): # Loop through all players
+        if name not in existing_cached_players and name not in unused_list: # Adds newly added players to the unused dailies
+            unused_list.append(name)
+    
     # If file DNE or is not current, get new data
     all_player_data = get_player_info(list(PLAYER_IDS.values()))
     
