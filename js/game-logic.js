@@ -231,12 +231,15 @@ function displayAnswer(playerName, updateStreak = true) {
         const originalVideo = document.getElementById("org-vid");
         const videoSource = document.getElementById("video-source");
         const videoSourceLink = document.getElementById("video-source-link");
+        const swapVideoBtn = document.getElementById("swap-video-btn")
 
         // Adjust styles and show/hide relevant elements
         successAlert.classList.remove("d-none");
         winAnswer.textContent = `The answer was ${answerName}!`;
         originalVideo.classList.remove("d-none");
         originalVideo.style.marginBottom = "4px";
+        maskVideo.style.marginBottom = "4px";
+        swapVideoBtn.classList.remove("d-none");
         videoSource.classList.remove("d-none");
         videoSourceLink.textContent = `${sourceInfo.source} on YouTube`
         videoSourceLink.href = sourceInfo.URL
@@ -264,11 +267,14 @@ function displayAnswer(playerName, updateStreak = true) {
         const originalVideo = document.getElementById("org-vid");
         const videoSource = document.getElementById("video-source");
         const videoSourceLink = document.getElementById("video-source-link");
+        const swapVideoBtn = document.getElementById("swap-video-btn")
 
         // Adjust styles and show/hide relevant elements
         lossAlert.classList.remove("d-none");
         originalVideo.classList.remove("d-none");
         originalVideo.style.marginBottom = "4px";
+        maskVideo.style.marginBottom = "4px";
+        swapVideoBtn.classList.remove("d-none");
         videoSource.classList.remove("d-none");
         videoSourceLink.textContent = `${sourceInfo.source} on YouTube`
         videoSourceLink.href = sourceInfo.URL
@@ -494,5 +500,24 @@ if (copyLossBtn) { // Check if button exists prior to adding event listener
                 copyLossBtn.textContent = "Copy";
             }, 2000);
         })
+    });
+}
+
+// Handle swapping of videos
+const swapVideoBtn = document.getElementById("swap-video-btn")
+if (swapVideoBtn) { // Check if button exists prior to adding event listener
+
+    // Swap video on click
+    swapVideoBtn.addEventListener("click", function() {
+        const maskVideo = document.getElementById("mask-vid");
+        const originalVideo = document.getElementById("org-vid");
+        
+        if (maskVideo.classList.contains("d-none")) {
+            maskVideo.classList.remove("d-none");
+            originalVideo.classList.add("d-none");
+        } else {
+            originalVideo.classList.remove("d-none");
+            maskVideo.classList.add("d-none");
+        }
     });
 }
