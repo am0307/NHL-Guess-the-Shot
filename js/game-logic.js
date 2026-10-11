@@ -1,3 +1,4 @@
+const MAX_NUM_GUESSES = 8; // Maximum number of guesses before game ends
 const nameLookup = {}; // Empty lookup table for player names based on their IDs
 
 // Fetch data from Cloudflare
@@ -33,7 +34,7 @@ async function loadGameData() {
             a.addEventListener("click", function(e) {
                 e.preventDefault();
 
-                if (guessCount >= 8) { // Only allow submission if user has guesses left
+                if (guessCount >= MAX_NUM_GUESSES) { // Only allow submission if user has guesses left
                     return;
                 }
 
@@ -55,6 +56,16 @@ async function loadGameData() {
         if (window.gameMode === "daily") {
             // Get daily player
             window.answerId = data.players[data.daily_name].id;
+
+            // Add the daily player to the already played ids so it does not show up in endless mode
+            const currentPlayedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
+            const dailyId = String(window.answerId);
+
+            if (!currentPlayedIds.includes(dailyId)) { // Only add if not already there
+                currentPlayedIds.push(dailyId);
+                localStorage.setItem("played_endless_ids", JSON.stringify(currentPlayedIds));
+            }
+
         } else {
             // Check URL for player ID
             const urlParams = new URLSearchParams(window.location.search);
@@ -244,7 +255,7 @@ function displayAnswer(playerName, updateStreak = true) {
         // Set game state variables
         gameFinished = true;
         gameResult = "win";
-    } else if (guessCount == 8 || playerName === "Loss"|| playerName === "Played") { // Loss or already played
+    } else if (guessCount == MAX_NUM_GUESSES || playerName === "Loss"|| playerName === "Played") { // Loss or already played
 
         // Get link, alerts, and videos elements
         const lossAlert = document.getElementById("loss-alert");
@@ -440,7 +451,7 @@ function addGuessInfo(playerName) {
         age.innerText = playerInfo.age;
     }
 
-    if (guessCount >= 8) // User used last guess already
+    if (guessCount >= MAX_NUM_GUESSES) // User used last guess already
         return;
 }
 

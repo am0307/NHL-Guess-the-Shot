@@ -269,7 +269,10 @@
 
     <script>
         window.gameMode = "daily"; 
-        window.PUBLIC_R2_URL = "https://media.puckguessr.com";
+
+        // Switch between local videos root and Cloudflare
+        const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+        window.PUBLIC_R2_URL = isLocal ? "" : "https://media.puckguessr.com";
     </script>
 
     <!-- Load js files -->
