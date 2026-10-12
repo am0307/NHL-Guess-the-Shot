@@ -5,7 +5,7 @@ const nameLookup = {}; // Empty lookup table for player names based on their IDs
 async function loadGameData() {
     try {
         // Get data without caching issues
-        const response = await fetch(`${window.PUBLIC_R2_URL}/api_cache.json?t=${Date.now()}`, {
+        const response = await fetch(`${window.PUBLIC_R2_URL}/player_data.json?t=${Date.now()}`, {
             cache: "no-store"
         });
         const data = await response.json();
@@ -116,8 +116,8 @@ async function loadGameData() {
             displayAnswer("Played", false);
         }
 
-    } catch (error) {
-        console.error("Error loading game data:", error);
+    } catch (error) { // Error handling
+        console.error("Error loading game data: ", error);
     }
 }
 
@@ -211,6 +211,26 @@ function getPlayerName() {
     return nameLookup[window.answerId];
 }
 
+// Send POST request to send game result to database
+async function submitGameResult(playerName, gameResult, guessCount) {
+
+    let resultKey = gameResult === "win" ? String(guessCount) : "X"; // Based on game result, format resultKey
+
+    // POST result to worker
+    try {
+        await fetch("/api/submit-score", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                playerName: playerName,
+                result: resultKey
+            })
+        });
+    } catch (error) { // Error handling
+        console.error("Failed to submit game result: ", error);
+    }
+}
+
 // Display answer on correct guess/loss
 function displayAnswer(playerName, updateStreak = true) {
     
@@ -258,6 +278,8 @@ function displayAnswer(playerName, updateStreak = true) {
         // Set game state variables
         gameFinished = true;
         gameResult = "win";
+
+        submitGameResult(answerName, "win", guessCount); // Submit result
     } else if (guessCount == MAX_NUM_GUESSES || playerName === "Loss"|| playerName === "Played") { // Loss or already played
 
         // Get link, alerts, and videos elements
@@ -332,6 +354,8 @@ function displayAnswer(playerName, updateStreak = true) {
             // Set game state variables
             gameFinished = true;
             gameResult = "loss";
+
+            submitGameResult(answerName, "loss", guessCount); // Submit result
         }
     }
 

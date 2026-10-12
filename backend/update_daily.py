@@ -16,10 +16,10 @@ ENV_PATH = ROOT_DIR / "secrets.env"
 load_dotenv(dotenv_path=ENV_PATH)
 
 # Local path for writing the file
-LOCAL_CACHE_PATH = ROOT_DIR / "api_cache.json"
+LOCAL_CACHE_PATH = ROOT_DIR / "player_data.json"
 
 # Bucket key
-S3_CACHE_KEY = "api_cache.json"
+S3_CACHE_KEY = "player_data.json"
 
 def run_update():
     # Connect to Cloudflare R2
@@ -31,7 +31,7 @@ def run_update():
         region_name="auto",
     )
     bucket = os.environ["R2_BUCKET_NAME"]
-    cache_path = ROOT_DIR / "api_cache.json"
+    cache_path = ROOT_DIR / "player_data.json"
 
     # Fetch existing cache from R2
     cache_dictionary = {"unused_daily_players": []}
@@ -63,7 +63,10 @@ def run_update():
             "nation": player_data["birthCountry"],
             "age": find_age(player_data["birthDate"]),
             "conference": TEAM_DIVISIONS_CONFERENCES[player_data["currentTeamAbbrev"]][1],
-            "id": PLAYER_IDS[name]
+            "id": PLAYER_IDS[name],
+            "results": existing_cached_players.get(name, {}).get("results", {
+                "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "X": 0, "total_guesses": 0
+                })
         }
         for name, player_data in zip(PLAYER_IDS.keys(), all_player_data)
     }

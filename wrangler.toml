@@ -1,5 +1,10 @@
 name = "nhl-guess-the-shot"
 compatibility_date = "2026-10-08"
+main = "post-result.js"
 
 [assets]
 directory = "."
+
+[[r2_buckets]]
+binding = "MY_BUCKET"
+bucket_name = "puckguessr"

@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-08",
+    "updated": "2026-10-12",
     "players": {
         "Adam Fox": {
             "team": "NYR",
@@ -10,6 +10,24 @@
             "conference": "Eastern",
             "id": 8479323
         },
+        "Aleksander Barkov": {
+            "team": "FLA",
+            "division": "Atlantic",
+            "number": 16,
+            "nation": "FIN",
+            "age": 31,
+            "conference": "Eastern",
+            "id": 8477493
+        },
+        "Alex DeBrincat": {
+            "team": "DET",
+            "division": "Atlantic",
+            "number": 93,
+            "nation": "USA",
+            "age": 28,
+            "conference": "Eastern",
+            "id": 8479337
+        },
         "Alex Ovechkin": {
             "team": "WSH",
             "division": "Metro",
@@ -18,6 +36,15 @@
             "age": 41,
             "conference": "Eastern",
             "id": 8471214
+        },
+        "Artemi Panarin": {
+            "team": "LAK",
+            "division": "Pacific",
+            "number": 10,
+            "nation": "RUS",
+            "age": 34,
+            "conference": "Western",
+            "id": 8478550
         },
         "Auston Matthews": {
             "team": "TOR",
@@ -36,6 +63,15 @@
             "age": 27,
             "conference": "Western",
             "id": 8480069
+        },
+        "Clayton Keller": {
+            "team": "UTA",
+            "division": "Central",
+            "number": 9,
+            "nation": "USA",
+            "age": 28,
+            "conference": "Western",
+            "id": 8479343
         },
         "Cole Caufield": {
             "team": "MTL",
@@ -64,6 +100,15 @@
             "conference": "Western",
             "id": 8478402
         },
+        "Cutter Gauthier": {
+            "team": "ANA",
+            "division": "Pacific",
+            "number": 61,
+            "nation": "SWE",
+            "age": 22,
+            "conference": "Western",
+            "id": 8483445
+        },
         "David Pastrnak": {
             "team": "BOS",
             "division": "Atlantic",
@@ -72,6 +117,33 @@
             "age": 30,
             "conference": "Eastern",
             "id": 8477956
+        },
+        "Dylan Guenther": {
+            "team": "UTA",
+            "division": "Central",
+            "number": 11,
+            "nation": "CAN",
+            "age": 23,
+            "conference": "Western",
+            "id": 8482699
+        },
+        "Elias Pettersson": {
+            "team": "VAN",
+            "division": "Pacific",
+            "number": 40,
+            "nation": "SWE",
+            "age": 27,
+            "conference": "Western",
+            "id": 8480012
+        },
+        "Erik Karlsson": {
+            "team": "PIT",
+            "division": "Metro",
+            "number": 65,
+            "nation": "SWE",
+            "age": 36,
+            "conference": "Eastern",
+            "id": 8474578
         },
         "Evan Bouchard": {
             "team": "EDM",
@@ -109,6 +181,24 @@
             "conference": "Eastern",
             "id": 8481559
         },
+        "Jake Guentzel": {
+            "team": "TBL",
+            "division": "Atlantic",
+            "number": 59,
+            "nation": "USA",
+            "age": 32,
+            "conference": "Eastern",
+            "id": 8477404
+        },
+        "Jake Sanderson": {
+            "team": "OTT",
+            "division": "Atlantic",
+            "number": 85,
+            "nation": "USA",
+            "age": 24,
+            "conference": "Eastern",
+            "id": 8482105
+        },
         "Jason Robertson": {
             "team": "DAL",
             "division": "Central",
@@ -135,6 +225,24 @@
             "age": 29,
             "conference": "Western",
             "id": 8478398
+        },
+        "Lane Hutson": {
+            "team": "MTL",
+            "division": "Atlantic",
+            "number": 48,
+            "nation": "USA",
+            "age": 22,
+            "conference": "Eastern",
+            "id": 8483457
+        },
+        "Leo Carlsson": {
+            "team": "ANA",
+            "division": "Pacific",
+            "number": 91,
+            "nation": "SWE",
+            "age": 21,
+            "conference": "Western",
+            "id": 8484153
         },
         "Leon Draisaitl": {
             "team": "EDM",
@@ -163,6 +271,24 @@
             "conference": "Western",
             "id": 8484801
         },
+        "Mark Scheifele": {
+            "team": "WPG",
+            "division": "Central",
+            "number": 55,
+            "nation": "CAN",
+            "age": 33,
+            "conference": "Western",
+            "id": 8476460
+        },
+        "Matt Boldy": {
+            "team": "MIN",
+            "division": "Central",
+            "number": 12,
+            "nation": "USA",
+            "age": 25,
+            "conference": "Western",
+            "id": 8481557
+        },
         "Matthew Schaefer": {
             "team": "NYI",
             "division": "Metro",
@@ -190,6 +316,33 @@
             "conference": "Eastern",
             "id": 8484387
         },
+        "Mika Zibanejad": {
+            "team": "NYR",
+            "division": "Metro",
+            "number": 93,
+            "nation": "SWE",
+            "age": 33,
+            "conference": "Eastern",
+            "id": 8476459
+        },
+        "Mikko Rantanen": {
+            "team": "DAL",
+            "division": "Central",
+            "number": 96,
+            "nation": "FIN",
+            "age": 29,
+            "conference": "Western",
+            "id": 8478420
+        },
+        "Miro Heiskanen": {
+            "team": "DAL",
+            "division": "Central",
+            "number": 4,
+            "nation": "FIN",
+            "age": 27,
+            "conference": "Western",
+            "id": 8480036
+        },
         "Mitch Marner": {
             "team": "VGK",
             "division": "Pacific",
@@ -198,6 +351,15 @@
             "age": 29,
             "conference": "Western",
             "id": 8478483
+        },
+        "Moritz Seider": {
+            "team": "DET",
+            "division": "Atlantic",
+            "number": 53,
+            "nation": "DEU",
+            "age": 25,
+            "conference": "Eastern",
+            "id": 8481542
         },
         "Nathan MacKinnon": {
             "team": "COL",
@@ -244,6 +406,15 @@
             "conference": "Western",
             "id": 8480800
         },
+        "Quinton Byfield": {
+            "team": "LAK",
+            "division": "Pacific",
+            "number": 55,
+            "nation": "CAN",
+            "age": 24,
+            "conference": "Western",
+            "id": 8482124
+        },
         "Rasmus Dahlin": {
             "team": "BUF",
             "division": "Atlantic",
@@ -261,6 +432,15 @@
             "age": 27,
             "conference": "Western",
             "id": 8480023
+        },
+        "Sam Reinhart": {
+            "team": "FLA",
+            "division": "Atlantic",
+            "number": 13,
+            "nation": "CAN",
+            "age": 30,
+            "conference": "Eastern",
+            "id": 8477933
         },
         "Sebastian Aho": {
             "team": "CAR",
@@ -319,46 +499,78 @@
     },
     "unused_daily_players": [
         "Adam Fox",
+        "Alex DeBrincat",
         "Alex Ovechkin",
         "Auston Matthews",
         "Cale Makar",
+        "Clayton Keller",
         "Cole Caufield",
         "Connor Bedard",
         "Connor McDavid",
+        "Cutter Gauthier",
         "David Pastrnak",
+        "Dylan Guenther",
+        "Elias Pettersson",
+        "Erik Karlsson",
         "Evan Bouchard",
         "Filip Forsberg",
         "Jack Eichel",
         "Jack Hughes",
-        "Jason Robertson",
+        "Jake Guentzel",
+        "Kirill Kaprizov",
         "Kyle Connor",
+        "Lane Hutson",
         "Leon Draisaitl",
         "Linus Ullmark",
         "Macklin Celebrini",
         "Matthew Schaefer",
+        "Matthew Tkachuk",
         "Matvei Michkov",
+        "Mika Zibanejad",
+        "Mikko Rantanen",
         "Mitch Marner",
+        "Moritz Seider",
         "Nathan MacKinnon",
         "Nick Suzuki",
         "Nikita Kucherov",
         "Patrick Kane",
         "Quinn Hughes",
+        "Quinton Byfield",
+        "Rasmus Dahlin",
         "Robert Thomas",
+        "Sam Reinhart",
         "Sebastian Aho",
+        "Sidney Crosby",
         "Tage Thompson",
         "Tim Stützle",
         "William Nylander",
-        "Zach Werenski"
+        "Aleksander Barkov",
+        "Leo Carlsson",
+        "Mark Scheifele",
+        "Matt Boldy",
+        "Miro Heiskanen"
     ],
-    "daily_name": "Kirill Kaprizov",
+    "daily_name": "Jason Robertson",
     "video_sources": {
         "Adam Fox": {
             "URL": "https://youtu.be/VZdDy9x23Fo",
             "source": "Sportsnet"
         },
+        "Aleksander Barkov": {
+            "URL": "https://youtu.be/GBv4LkyavcU",
+            "source": "Sportsnet"
+        },
+        "Alex DeBrincat": {
+            "URL": "https://youtu.be/4yu7is9Qm6g",
+            "source": "Sportsnet"
+        },
         "Alex Ovechkin": {
             "URL": "https://youtu.be/rbdBRaVdPg4",
-            "source": "the NHL"
+            "source": "The NHL"
+        },
+        "Artemi Panarin": {
+            "URL": "https://youtu.be/qY2lCo94W7Y",
+            "source": "Sportsnet"
         },
         "Auston Matthews": {
             "URL": "https://youtu.be/vY5TIGmTFIA",
@@ -368,9 +580,13 @@
             "URL": "https://youtu.be/POu3KUZy_pk",
             "source": "Sportsnet"
         },
+        "Clayton Keller": {
+            "URL": "https://youtu.be/L2SsGH0tW5U",
+            "source": "Sportsnet"
+        },
         "Cole Caufield": {
             "URL": "https://youtu.be/XEFu3Q305gI",
-            "source": "the NHL"
+            "source": "The NHL"
         },
         "Connor Bedard": {
             "URL": "https://youtu.be/nYXS4imOm8g",
@@ -380,13 +596,29 @@
             "URL": "https://youtu.be/m2uGGihNIMA",
             "source": "Sportsnet"
         },
+        "Cutter Gauthier": {
+            "URL": "https://youtu.be/obMZQ-YT6nI",
+            "source": "The NHL"
+        },
         "David Pastrnak": {
             "URL": "https://youtu.be/NABw97A-51k",
-            "source": "the NHL"
+            "source": "The NHL"
+        },
+        "Dylan Guenther": {
+            "URL": "https://youtu.be/U7yPx82yf-s",
+            "source": "Sportsnet"
+        },
+        "Elias Pettersson": {
+            "URL": "https://youtu.be/UMNF6EUVvuw",
+            "source": "Sportsnet"
+        },
+        "Erik Karlsson": {
+            "URL": "https://youtu.be/F-GPZizD-iw",
+            "source": "Sportsnet"
         },
         "Evan Bouchard": {
             "URL": "https://youtu.be/7EvbV7_CtWU",
-            "source": "the NHL"
+            "source": "The NHL"
         },
         "Filip Forsberg": {
             "URL": "https://youtu.be/CZDUm3rRhqc",
@@ -398,6 +630,14 @@
         },
         "Jack Hughes": {
             "URL": "https://youtu.be/VkQGhT2MAmc",
+            "source": "Sportsnet"
+        },
+        "Jake Guentzel": {
+            "URL": "https://youtu.be/_1Jc0xJW2dk",
+            "source": "Sportsnet"
+        },
+        "Jake Sanderson": {
+            "URL": "https://youtu.be/JSMh4uWGMXo",
             "source": "Sportsnet"
         },
         "Jason Robertson": {
@@ -412,17 +652,33 @@
             "URL": "https://youtu.be/L5Yf06msrTQ",
             "source": "Sportsnet"
         },
+        "Lane Hutson": {
+            "URL": "https://youtu.be/INdKQTQmusI",
+            "source": "Sportsnet"
+        },
+        "Leo Carlsson": {
+            "URL": "https://youtu.be/OH99YJ8NbxQ",
+            "source": "Sportsnet"
+        },
         "Leon Draisaitl": {
             "URL": "https://youtu.be/kEr5-t0RKwY",
             "source": "Sportsnet"
         },
         "Linus Ullmark": {
             "URL": "https://youtu.be/B97Kxv7ji-o",
-            "source": "the NHL"
+            "source": "The NHL"
         },
         "Macklin Celebrini": {
             "URL": "https://youtu.be/Baz4HviPu0U",
-            "source": "the NHL"
+            "source": "The NHL"
+        },
+        "Mark Scheifele": {
+            "URL": "https://youtu.be/WAul1Kh3YRk",
+            "source": "Sportsnet"
+        },
+        "Matt Boldy": {
+            "URL": "https://youtu.be/_GwKZTtpOHY",
+            "source": "Sportsnet"
         },
         "Matthew Schaefer": {
             "URL": "https://youtu.be/EBZvKMEq6Sw",
@@ -436,8 +692,24 @@
             "URL": "https://youtu.be/ub7BELV4w2k",
             "source": "Sportsnet"
         },
+        "Mika Zibanejad": {
+            "URL": "https://youtu.be/pVcN7VmJHKM",
+            "source": "Sportsnet"
+        },
+        "Mikko Rantanen": {
+            "URL": "https://youtu.be/z5E_ypJAGho",
+            "source": "Sportsnet"
+        },
+        "Miro Heiskanen": {
+            "URL": "https://youtu.be/VpjvAOW0GQI",
+            "source": "Sportsnet"
+        },
         "Mitch Marner": {
             "URL": "https://youtu.be/Xz-S3j1SU1w",
+            "source": "Sportsnet"
+        },
+        "Moritz Seider": {
+            "URL": "https://youtu.be/k9ue3pRIPNg",
             "source": "Sportsnet"
         },
         "Nathan MacKinnon": {
@@ -450,7 +722,7 @@
         },
         "Nikita Kucherov": {
             "URL": "https://youtu.be/Hajw4hWGjvg",
-            "source": "the NHL"
+            "source": "The NHL"
         },
         "Patrick Kane": {
             "URL": "https://youtu.be/qg5UrHpmjmY",
@@ -460,12 +732,20 @@
             "URL": "https://youtu.be/iXPFnh4wBBI",
             "source": "Sportsnet"
         },
+        "Quinton Byfield": {
+            "URL": "https://youtu.be/MBqyiZe8_Bs",
+            "source": "Sportsnet"
+        },
         "Rasmus Dahlin": {
             "URL": "https://youtu.be/EPXMne8YNsU",
             "source": "Sportsnet"
         },
         "Robert Thomas": {
             "URL": "https://youtu.be/Xtsoaa9_TxQ",
+            "source": "Sportsnet"
+        },
+        "Sam Reinhart": {
+            "URL": "https://youtu.be/-DK-q97CJWM",
             "source": "Sportsnet"
         },
         "Sebastian Aho": {
@@ -482,11 +762,11 @@
         },
         "Tim Stützle": {
             "URL": "https://youtu.be/WgVWQtj3x7w",
-            "source": "the NHL"
+            "source": "The NHL"
         },
         "William Nylander": {
             "URL": "https://youtu.be/NOt4rzyGwdY",
-            "source": "the NHL"
+            "source": "The NHL"
         },
         "Zach Werenski": {
             "URL": "https://youtu.be/mCfEyeCIgiY",
