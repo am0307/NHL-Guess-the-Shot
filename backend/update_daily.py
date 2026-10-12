@@ -22,6 +22,7 @@ LOCAL_CACHE_PATH = ROOT_DIR / "player_data.json"
 S3_CACHE_KEY = "player_data.json"
 
 def run_update():
+    
     # Connect to Cloudflare R2
     s3 = boto3.client(
         service_name="s3",
@@ -31,7 +32,6 @@ def run_update():
         region_name="auto",
     )
     bucket = os.environ["R2_BUCKET_NAME"]
-    cache_path = ROOT_DIR / "player_data.json"
 
     # Fetch existing cache from R2
     cache_dictionary = {"unused_daily_players": []}
@@ -41,6 +41,9 @@ def run_update():
     except Exception:
         pass # Triggers if the file DNE
 
+    # Retrieve daily history
+    daily_history = cache_dictionary.get("daily_history", {})
+    
     # Retrieve all players currently in the game
     existing_cached_players = cache_dictionary.get("players", {})
     
@@ -82,6 +85,10 @@ def run_update():
         
     cache_dictionary["unused_daily_players"].remove(daily_name) # Remove new daily player name
 
+    # Append the new daily player to the daily history
+    next_index = str(len(daily_history) + 1)
+    daily_history[next_index] = daily_name
+    
     # Update file with new date and player dictionary
     est = ZoneInfo("America/New_York")
     new_cache = {
@@ -89,6 +96,7 @@ def run_update():
         "players": player_dict, 
         "unused_daily_players": cache_dictionary["unused_daily_players"],
         "daily_name": daily_name,
+        "daily_history": daily_history,
         "video_sources": VIDEO_SOURCES
     }
 
