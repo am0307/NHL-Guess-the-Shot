@@ -43,7 +43,10 @@ export default {
 
         // Save back to R2
         await env.MY_BUCKET.put(fileKey, JSON.stringify(gameData, null, 4), {
-          httpMetadata: { contentType: "application/json" },
+          httpMetadata: { 
+            contentType: "application/json",
+            cacheControl: "no-store, no-cache, must-revalidate"
+          },
         });
 
         return new Response(JSON.stringify({ success: true, results: playerResults }), {
