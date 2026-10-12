@@ -1,6 +1,6 @@
 name = "nhl-guess-the-shot"
 compatibility_date = "2026-10-08"
-main = "post-result.js"
+main = "js/post-result.js"
 
 [assets]
 directory = "."
