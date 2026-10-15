@@ -81,6 +81,26 @@
             </div>
         </header>
     </div>
+    <!-- First visit modal -->
+    <div class="modal fade" id="first-visit-info" tabindex="-1" aria-labelledby="first-visit-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="share-result-win-label">Welcome to PuckGuessr!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your objective is to guess which active NHL player is shooting the puck in the black-and-white video.</p>
+                    <p>This is a Wordle-style game, so each one of your guesses will help you narrow down the correct answer as you play along!</p>
+                    <p>Note that you are only able to guess players who are actually in the game, so not everyone you type will be here.</p>
+                    <p class="mb-1">Select the column headers above your guesses (e.g. "Age") to get more information on what the colours mean.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Show original video, mask video, and source -->
     <div class="d-flex justify-content-center align-items-center">
         <div class="d-flex flex-column align-items-center text-center" style="max-width: 889px; width: 90%;">
@@ -111,7 +131,7 @@
             <p class="streak-text text-center mt-3 mb-1 d-none"></p>
         </div>
     </div>
-    <!-- Sharable result for win-->
+    <!-- Sharable result for win -->
     <div class="modal fade" id="share-result-win" tabindex="-1" aria-labelledby="share-result-label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -316,6 +336,15 @@
         // Switch between local videos root and Cloudflare
         const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
         window.PUBLIC_R2_URL = isLocal ? "" : "https://media.puckguessr.com";
+
+        // Load information for the user's first visit
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem("has_visited_puckguessr")) {
+                const firstVisitModal = new bootstrap.Modal(document.getElementById("first-visit-info"));
+                firstVisitModal.show(); // Display modal
+                localStorage.setItem("has_visited_puckguessr", "true"); // Prevent modal from showing in future visits
+            }
+        });
     </script>
 
     <!-- Load js files -->
