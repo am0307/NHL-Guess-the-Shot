@@ -1,1884 +1,1962 @@
 {
-    "updated": "2026-10-17",
-    "players": {
-        "Adam Fox": {
-            "team": "NYR",
-            "division": "Metro",
-            "number": 23,
-            "nation": "USA",
-            "age": 28,
-            "conference": "Eastern",
-            "id": 8479323,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Aleksander Barkov": {
-            "team": "FLA",
-            "division": "Atlantic",
-            "number": 16,
-            "nation": "FIN",
-            "age": 31,
-            "conference": "Eastern",
-            "id": 8477493,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Alex DeBrincat": {
-            "team": "DET",
-            "division": "Atlantic",
-            "number": 93,
-            "nation": "USA",
-            "age": 28,
-            "conference": "Eastern",
-            "id": 8479337,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Alex Ovechkin": {
-            "team": "WSH",
-            "division": "Metro",
-            "number": 8,
-            "nation": "RUS",
-            "age": 41,
-            "conference": "Eastern",
-            "id": 8471214,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Alexis Lafrenière": {
-            "team": "NYR",
-            "division": "Metro",
-            "number": 13,
-            "nation": "CAN",
-            "age": 25,
-            "conference": "Eastern",
-            "id": 8482109,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Andrei Svechnikov": {
-            "team": "CAR",
-            "division": "Metro",
-            "number": 37,
-            "nation": "RUS",
-            "age": 26,
-            "conference": "Eastern",
-            "id": 8480830,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Artemi Panarin": {
-            "team": "LAK",
-            "division": "Pacific",
-            "number": 10,
-            "nation": "RUS",
-            "age": 34,
-            "conference": "Western",
-            "id": 8478550,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Auston Matthews": {
-            "team": "TOR",
-            "division": "Atlantic",
-            "number": 34,
-            "nation": "USA",
-            "age": 29,
-            "conference": "Eastern",
-            "id": 8479318,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Brandon Hagel": {
-            "team": "TBL",
-            "division": "Atlantic",
-            "number": 38,
-            "nation": "CAN",
-            "age": 28,
-            "conference": "Eastern",
-            "id": 8479542,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Brayden Point": {
-            "team": "TBL",
-            "division": "Atlantic",
-            "number": 21,
-            "nation": "CAN",
-            "age": 30,
-            "conference": "Eastern",
-            "id": 8478010,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Brock Faber": {
-            "team": "MIN",
-            "division": "Central",
-            "number": 7,
-            "nation": "USA",
-            "age": 24,
-            "conference": "Western",
-            "id": 8482122,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Cale Makar": {
-            "team": "COL",
-            "division": "Central",
-            "number": 8,
-            "nation": "CAN",
-            "age": 27,
-            "conference": "Western",
-            "id": 8480069,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Clayton Keller": {
-            "team": "UTA",
-            "division": "Central",
-            "number": 9,
-            "nation": "USA",
-            "age": 28,
-            "conference": "Western",
-            "id": 8479343,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Cole Caufield": {
-            "team": "MTL",
-            "division": "Atlantic",
-            "number": 13,
-            "nation": "USA",
-            "age": 25,
-            "conference": "Eastern",
-            "id": 8481540,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Connor Bedard": {
-            "team": "CHI",
-            "division": "Central",
-            "number": 98,
-            "nation": "CAN",
-            "age": 21,
-            "conference": "Western",
-            "id": 8484144,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Connor McDavid": {
-            "team": "EDM",
-            "division": "Pacific",
-            "number": 97,
-            "nation": "CAN",
-            "age": 29,
-            "conference": "Western",
-            "id": 8478402,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Cutter Gauthier": {
-            "team": "ANA",
-            "division": "Pacific",
-            "number": 61,
-            "nation": "SWE",
-            "age": 22,
-            "conference": "Western",
-            "id": 8483445,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "David Pastrnak": {
-            "team": "BOS",
-            "division": "Atlantic",
-            "number": 88,
-            "nation": "CZE",
-            "age": 30,
-            "conference": "Eastern",
-            "id": 8477956,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Dylan Guenther": {
-            "team": "UTA",
-            "division": "Central",
-            "number": 11,
-            "nation": "CAN",
-            "age": 23,
-            "conference": "Western",
-            "id": 8482699,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Elias Pettersson": {
-            "team": "VAN",
-            "division": "Pacific",
-            "number": 40,
-            "nation": "SWE",
-            "age": 27,
-            "conference": "Western",
-            "id": 8480012,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Erik Karlsson": {
-            "team": "PIT",
-            "division": "Metro",
-            "number": 65,
-            "nation": "SWE",
-            "age": 36,
-            "conference": "Eastern",
-            "id": 8474578,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Evan Bouchard": {
-            "team": "EDM",
-            "division": "Pacific",
-            "number": 2,
-            "nation": "CAN",
-            "age": 26,
-            "conference": "Western",
-            "id": 8480803,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Filip Forsberg": {
-            "team": "NSH",
-            "division": "Central",
-            "number": 9,
-            "nation": "SWE",
-            "age": 32,
-            "conference": "Western",
-            "id": 8476887,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Ivan Demidov": {
-            "team": "MTL",
-            "division": "Atlantic",
-            "number": 93,
-            "nation": "RUS",
-            "age": 20,
-            "conference": "Eastern",
-            "id": 8484984,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Jack Eichel": {
-            "team": "VGK",
-            "division": "Pacific",
-            "number": 9,
-            "nation": "USA",
-            "age": 29,
-            "conference": "Western",
-            "id": 8478403,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Jack Hughes": {
-            "team": "NJD",
-            "division": "Metro",
-            "number": 86,
-            "nation": "USA",
-            "age": 25,
-            "conference": "Eastern",
-            "id": 8481559,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Jake Guentzel": {
-            "team": "TBL",
-            "division": "Atlantic",
-            "number": 59,
-            "nation": "USA",
-            "age": 32,
-            "conference": "Eastern",
-            "id": 8477404,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Jake Sanderson": {
-            "team": "OTT",
-            "division": "Atlantic",
-            "number": 85,
-            "nation": "USA",
-            "age": 24,
-            "conference": "Eastern",
-            "id": 8482105,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Jakob Chychrun": {
-            "team": "WSH",
-            "division": "Metro",
-            "number": 6,
-            "nation": "USA",
-            "age": 28,
-            "conference": "Eastern",
-            "id": 8479345,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Jared McCann": {
-            "team": "SEA",
-            "division": "Pacific",
-            "number": 19,
-            "nation": "CAN",
-            "age": 30,
-            "conference": "Western",
-            "id": 8477955,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Jason Robertson": {
-            "team": "DAL",
-            "division": "Central",
-            "number": 21,
-            "nation": "USA",
-            "age": 27,
-            "conference": "Western",
-            "id": 8480027,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Jesper Bratt": {
-            "team": "NJD",
-            "division": "Metro",
-            "number": 63,
-            "nation": "SWE",
-            "age": 28,
-            "conference": "Eastern",
-            "id": 8479407,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "John Tavares": {
-            "team": "TOR",
-            "division": "Atlantic",
-            "number": 91,
-            "nation": "CAN",
-            "age": 36,
-            "conference": "Eastern",
-            "id": 8475166,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Kirill Kaprizov": {
-            "team": "MIN",
-            "division": "Central",
-            "number": 97,
-            "nation": "RUS",
-            "age": 29,
-            "conference": "Western",
-            "id": 8478864,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Kyle Connor": {
-            "team": "WPG",
-            "division": "Central",
-            "number": 81,
-            "nation": "USA",
-            "age": 29,
-            "conference": "Western",
-            "id": 8478398,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Lane Hutson": {
-            "team": "MTL",
-            "division": "Atlantic",
-            "number": 48,
-            "nation": "USA",
-            "age": 22,
-            "conference": "Eastern",
-            "id": 8483457,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Leo Carlsson": {
-            "team": "ANA",
-            "division": "Pacific",
-            "number": 91,
-            "nation": "SWE",
-            "age": 21,
-            "conference": "Western",
-            "id": 8484153,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Leon Draisaitl": {
-            "team": "EDM",
-            "division": "Pacific",
-            "number": 29,
-            "nation": "DEU",
-            "age": 30,
-            "conference": "Western",
-            "id": 8477934,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Linus Ullmark": {
-            "team": "OTT",
-            "division": "Atlantic",
-            "number": 35,
-            "nation": "SWE",
-            "age": 33,
-            "conference": "Eastern",
-            "id": 8476999,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Lucas Raymond": {
-            "team": "DET",
-            "division": "Atlantic",
-            "number": 23,
-            "nation": "SWE",
-            "age": 24,
-            "conference": "Eastern",
-            "id": 8482078,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Macklin Celebrini": {
-            "team": "SJS",
-            "division": "Pacific",
-            "number": 71,
-            "nation": "CAN",
-            "age": 20,
-            "conference": "Western",
-            "id": 8484801,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Mark Scheifele": {
-            "team": "WPG",
-            "division": "Central",
-            "number": 55,
-            "nation": "CAN",
-            "age": 33,
-            "conference": "Western",
-            "id": 8476460,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Mark Stone": {
-            "team": "VGK",
-            "division": "Pacific",
-            "number": 61,
-            "nation": "CAN",
-            "age": 34,
-            "conference": "Western",
-            "id": 8475913,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Martin Necas": {
-            "team": "COL",
-            "division": "Central",
-            "number": 88,
-            "nation": "CZE",
-            "age": 27,
-            "conference": "Western",
-            "id": 8480039,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Matt Boldy": {
-            "team": "MIN",
-            "division": "Central",
-            "number": 12,
-            "nation": "USA",
-            "age": 25,
-            "conference": "Western",
-            "id": 8481557,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Matthew Schaefer": {
-            "team": "NYI",
-            "division": "Metro",
-            "number": 48,
-            "nation": "CAN",
-            "age": 19,
-            "conference": "Eastern",
-            "id": 8485366,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Matthew Tkachuk": {
-            "team": "FLA",
-            "division": "Atlantic",
-            "number": 19,
-            "nation": "USA",
-            "age": 28,
-            "conference": "Eastern",
-            "id": 8479314,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Matvei Michkov": {
-            "team": "PHI",
-            "division": "Metro",
-            "number": 39,
-            "nation": "RUS",
-            "age": 21,
-            "conference": "Eastern",
-            "id": 8484387,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Mika Zibanejad": {
-            "team": "NYR",
-            "division": "Metro",
-            "number": 93,
-            "nation": "SWE",
-            "age": 33,
-            "conference": "Eastern",
-            "id": 8476459,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Mikko Rantanen": {
-            "team": "DAL",
-            "division": "Central",
-            "number": 96,
-            "nation": "FIN",
-            "age": 29,
-            "conference": "Western",
-            "id": 8478420,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Miro Heiskanen": {
-            "team": "DAL",
-            "division": "Central",
-            "number": 4,
-            "nation": "FIN",
-            "age": 27,
-            "conference": "Western",
-            "id": 8480036,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Mitch Marner": {
-            "team": "VGK",
-            "division": "Pacific",
-            "number": 93,
-            "nation": "CAN",
-            "age": 29,
-            "conference": "Western",
-            "id": 8478483,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Moritz Seider": {
-            "team": "DET",
-            "division": "Atlantic",
-            "number": 53,
-            "nation": "DEU",
-            "age": 25,
-            "conference": "Eastern",
-            "id": 8481542,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Nathan MacKinnon": {
-            "team": "COL",
-            "division": "Central",
-            "number": 29,
-            "nation": "CAN",
-            "age": 31,
-            "conference": "Western",
-            "id": 8477492,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Nick Suzuki": {
-            "team": "MTL",
-            "division": "Atlantic",
-            "number": 14,
-            "nation": "CAN",
-            "age": 27,
-            "conference": "Eastern",
-            "id": 8480018,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Nikita Kucherov": {
-            "team": "TBL",
-            "division": "Atlantic",
-            "number": 86,
-            "nation": "RUS",
-            "age": 33,
-            "conference": "Eastern",
-            "id": 8476453,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Patrick Kane": {
-            "team": "CHI",
-            "division": "Central",
-            "number": 88,
-            "nation": "USA",
-            "age": 37,
-            "conference": "Western",
-            "id": 8474141,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Quinn Hughes": {
-            "team": "MIN",
-            "division": "Central",
-            "number": 43,
-            "nation": "USA",
-            "age": 27,
-            "conference": "Western",
-            "id": 8480800,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Quinton Byfield": {
-            "team": "LAK",
-            "division": "Pacific",
-            "number": 55,
-            "nation": "CAN",
-            "age": 24,
-            "conference": "Western",
-            "id": 8482124,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Rasmus Dahlin": {
-            "team": "BUF",
-            "division": "Atlantic",
-            "number": 26,
-            "nation": "SWE",
-            "age": 26,
-            "conference": "Eastern",
-            "id": 8480839,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Robert Thomas": {
-            "team": "STL",
-            "division": "Central",
-            "number": 18,
-            "nation": "CAN",
-            "age": 27,
-            "conference": "Western",
-            "id": 8480023,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Sam Reinhart": {
-            "team": "FLA",
-            "division": "Atlantic",
-            "number": 13,
-            "nation": "CAN",
-            "age": 30,
-            "conference": "Eastern",
-            "id": 8477933,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Sebastian Aho": {
-            "team": "CAR",
-            "division": "Metro",
-            "number": 20,
-            "nation": "FIN",
-            "age": 29,
-            "conference": "Eastern",
-            "id": 8478427,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Sidney Crosby": {
-            "team": "PIT",
-            "division": "Metro",
-            "number": 87,
-            "nation": "CAN",
-            "age": 39,
-            "conference": "Eastern",
-            "id": 8471675,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Steven Stamkos": {
-            "team": "NSH",
-            "division": "Central",
-            "number": 91,
-            "nation": "CAN",
-            "age": 36,
-            "conference": "Western",
-            "id": 8474564,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Tage Thompson": {
-            "team": "BUF",
-            "division": "Atlantic",
-            "number": 72,
-            "nation": "USA",
-            "age": 28,
-            "conference": "Eastern",
-            "id": 8479420,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Tim Stützle": {
-            "team": "OTT",
-            "division": "Atlantic",
-            "number": 18,
-            "nation": "DEU",
-            "age": 24,
-            "conference": "Eastern",
-            "id": 8482116,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Tom Wilson": {
-            "team": "WSH",
-            "division": "Metro",
-            "number": 43,
-            "nation": "CAN",
-            "age": 32,
-            "conference": "Eastern",
-            "id": 8476880,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "William Nylander": {
-            "team": "TOR",
-            "division": "Atlantic",
-            "number": 88,
-            "nation": "CAN",
-            "age": 30,
-            "conference": "Eastern",
-            "id": 8477939,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Wyatt Johnston": {
-            "team": "DAL",
-            "division": "Central",
-            "number": 53,
-            "nation": "CAN",
-            "age": 23,
-            "conference": "Western",
-            "id": 8482740,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Zach Werenski": {
-            "team": "CBJ",
-            "division": "Metro",
-            "number": 8,
-            "nation": "USA",
-            "age": 29,
-            "conference": "Eastern",
-            "id": 8478460,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Zayne Parekh": {
-            "team": "CGY",
-            "division": "Pacific",
-            "number": 19,
-            "nation": "CAN",
-            "age": 20,
-            "conference": "Western",
-            "id": 8484768,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        }
+  "updated": "2026-10-19",
+  "players": {
+    "Adam Fox": {
+      "team": "NYR",
+      "division": "Metro",
+      "number": 23,
+      "nation": "USA",
+      "age": 28,
+      "conference": "Eastern",
+      "id": 8479323,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
     },
-    "unused_daily_players": [
-        "Adam Fox",
-        "Aleksander Barkov",
-        "Alex DeBrincat",
-        "Alex Ovechkin",
-        "Alexis Lafrenière",
-        "Andrei Svechnikov",
-        "Artemi Panarin",
-        "Auston Matthews",
-        "Brandon Hagel",
-        "Brayden Point",
-        "Brock Faber",
-        "Cale Makar",
-        "Clayton Keller",
-        "Cole Caufield",
-        "Connor Bedard",
-        "Connor McDavid",
-        "Cutter Gauthier",
-        "David Pastrnak",
-        "Dylan Guenther",
-        "Elias Pettersson",
-        "Erik Karlsson",
-        "Evan Bouchard",
-        "Ivan Demidov",
-        "Jack Eichel",
-        "Jack Hughes",
-        "Jake Guentzel",
-        "Jake Sanderson",
-        "Jakob Chychrun",
-        "Jared McCann",
-        "Jason Robertson",
-        "Jesper Bratt",
-        "John Tavares",
-        "Kirill Kaprizov",
-        "Kyle Connor",
-        "Lane Hutson",
-        "Leo Carlsson",
-        "Leon Draisaitl",
-        "Linus Ullmark",
-        "Lucas Raymond",
-        "Macklin Celebrini",
-        "Mark Scheifele",
-        "Mark Stone",
-        "Martin Necas",
-        "Matt Boldy",
-        "Matthew Schaefer",
-        "Matthew Tkachuk",
-        "Matvei Michkov",
-        "Mika Zibanejad",
-        "Mikko Rantanen",
-        "Miro Heiskanen",
-        "Mitch Marner",
-        "Moritz Seider",
-        "Nathan MacKinnon",
-        "Nick Suzuki",
-        "Nikita Kucherov",
-        "Patrick Kane",
-        "Quinn Hughes",
-        "Quinton Byfield",
-        "Rasmus Dahlin",
-        "Robert Thomas",
-        "Sam Reinhart",
-        "Sebastian Aho",
-        "Sidney Crosby",
-        "Steven Stamkos",
-        "Tage Thompson",
-        "Tim Stützle",
-        "Tom Wilson",
-        "William Nylander",
-        "Wyatt Johnston",
-        "Zach Werenski",
-        "Zayne Parekh"
-    ],
-    "daily_name": "Filip Forsberg",
-    "daily_history": {
-        "1": "Filip Forsberg"
+    "Aleksander Barkov": {
+      "team": "FLA",
+      "division": "Atlantic",
+      "number": 16,
+      "nation": "FIN",
+      "age": 31,
+      "conference": "Eastern",
+      "id": 8477493,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
     },
-    "video_sources": {
-        "Adam Fox": {
-            "URL": "https://youtu.be/VZdDy9x23Fo",
-            "source": "Sportsnet"
-        },
-        "Aleksander Barkov": {
-            "URL": "https://youtu.be/GBv4LkyavcU",
-            "source": "Sportsnet"
-        },
-        "Alex DeBrincat": {
-            "URL": "https://youtu.be/4yu7is9Qm6g",
-            "source": "Sportsnet"
-        },
-        "Alex Ovechkin": {
-            "URL": "https://youtu.be/rbdBRaVdPg4",
-            "source": "the NHL"
-        },
-        "Alexis Lafrenière": {
-            "URL": "https://youtu.be/skJppS73abw",
-            "source": "Sportsnet"
-        },
-        "Andrei Svechnikov": {
-            "URL": "https://youtu.be/mo7_NFIAEEE",
-            "source": "Sportsnet"
-        },
-        "Artemi Panarin": {
-            "URL": "https://youtu.be/qY2lCo94W7Y",
-            "source": "Sportsnet"
-        },
-        "Auston Matthews": {
-            "URL": "https://youtu.be/vY5TIGmTFIA",
-            "source": "Sportsnet"
-        },
-        "Brandon Hagel": {
-            "URL": "https://youtu.be/gHL_YCKJyt0",
-            "source": "Sportsnet"
-        },
-        "Brayden Point": {
-            "URL": "https://youtu.be/MqiH1Xq6FcQ",
-            "source": "Sportsnet"
-        },
-        "Brock Faber": {
-            "URL": "https://youtu.be/o0AsvxuuUZ4",
-            "source": "Sportsnet"
-        },
-        "Cale Makar": {
-            "URL": "https://youtu.be/POu3KUZy_pk",
-            "source": "Sportsnet"
-        },
-        "Clayton Keller": {
-            "URL": "https://youtu.be/L2SsGH0tW5U",
-            "source": "Sportsnet"
-        },
-        "Cole Caufield": {
-            "URL": "https://youtu.be/XEFu3Q305gI",
-            "source": "the NHL"
-        },
-        "Connor Bedard": {
-            "URL": "https://youtu.be/nYXS4imOm8g",
-            "source": "Sportsnet"
-        },
-        "Connor McDavid": {
-            "URL": "https://youtu.be/m2uGGihNIMA",
-            "source": "Sportsnet"
-        },
-        "Cutter Gauthier": {
-            "URL": "https://youtu.be/obMZQ-YT6nI",
-            "source": "the NHL"
-        },
-        "David Pastrnak": {
-            "URL": "https://youtu.be/NABw97A-51k",
-            "source": "the NHL"
-        },
-        "Dylan Guenther": {
-            "URL": "https://youtu.be/U7yPx82yf-s",
-            "source": "Sportsnet"
-        },
-        "Elias Pettersson": {
-            "URL": "https://youtu.be/UMNF6EUVvuw",
-            "source": "Sportsnet"
-        },
-        "Erik Karlsson": {
-            "URL": "https://youtu.be/F-GPZizD-iw",
-            "source": "Sportsnet"
-        },
-        "Evan Bouchard": {
-            "URL": "https://youtu.be/7EvbV7_CtWU",
-            "source": "the NHL"
-        },
-        "Filip Forsberg": {
-            "URL": "https://youtu.be/CZDUm3rRhqc",
-            "source": "Sportsnet"
-        },
-        "Ivan Demidov": {
-            "URL": "https://youtu.be/cS5869_d2Io",
-            "source": "Sportsnet"
-        },
-        "Jack Eichel": {
-            "URL": "https://youtu.be/VNYDKFxl-6w",
-            "source": "Sportsnet"
-        },
-        "Jack Hughes": {
-            "URL": "https://youtu.be/VkQGhT2MAmc",
-            "source": "Sportsnet"
-        },
-        "Jake Guentzel": {
-            "URL": "https://youtu.be/_1Jc0xJW2dk",
-            "source": "Sportsnet"
-        },
-        "Jake Sanderson": {
-            "URL": "https://youtu.be/JSMh4uWGMXo",
-            "source": "Sportsnet"
-        },
-        "Jakob Chychrun": {
-            "URL": "https://youtu.be/6aZ302wX-eM",
-            "source": "Sportsnet"
-        },
-        "Jared McCann": {
-            "URL": "https://youtu.be/KD44MxrpQWM",
-            "source": "Sportsnet"
-        },
-        "Jason Robertson": {
-            "URL": "https://youtu.be/nyJGb5kJKKc",
-            "source": "Sportsnet"
-        },
-        "Jesper Bratt": {
-            "URL": "https://youtu.be/0zO6Cs9ZI4E",
-            "source": "Sportsnet"
-        },
-        "John Tavares": {
-            "URL": "https://youtu.be/TJ2sKqO6FFk",
-            "source": "Sportsnet"
-        },
-        "Kirill Kaprizov": {
-            "URL": "https://youtu.be/n-If3Dx62lQ",
-            "source": "Sportsnet"
-        },
-        "Kyle Connor": {
-            "URL": "https://youtu.be/L5Yf06msrTQ",
-            "source": "Sportsnet"
-        },
-        "Lane Hutson": {
-            "URL": "https://youtu.be/INdKQTQmusI",
-            "source": "Sportsnet"
-        },
-        "Leo Carlsson": {
-            "URL": "https://youtu.be/OH99YJ8NbxQ",
-            "source": "Sportsnet"
-        },
-        "Leon Draisaitl": {
-            "URL": "https://youtu.be/kEr5-t0RKwY",
-            "source": "Sportsnet"
-        },
-        "Linus Ullmark": {
-            "URL": "https://youtu.be/B97Kxv7ji-o",
-            "source": "the NHL"
-        },
-        "Lucas Raymond": {
-            "URL": "https://youtu.be/aWpVbudL2_c",
-            "source": "Sportsnet"
-        },
-        "Macklin Celebrini": {
-            "URL": "https://youtu.be/Baz4HviPu0U",
-            "source": "the NHL"
-        },
-        "Mark Scheifele": {
-            "URL": "https://youtu.be/WAul1Kh3YRk",
-            "source": "Sportsnet"
-        },
-        "Mark Stone": {
-            "URL": "https://youtu.be/TmOtEnLJY3k",
-            "source": "Sportsnet"
-        },
-        "Martin Necas": {
-            "URL": "https://youtu.be/Ku73IV-Tb20",
-            "source": "Sportsnet"
-        },
-        "Matt Boldy": {
-            "URL": "https://youtu.be/_GwKZTtpOHY",
-            "source": "Sportsnet"
-        },
-        "Matthew Schaefer": {
-            "URL": "https://youtu.be/EBZvKMEq6Sw",
-            "source": "Sportsnet"
-        },
-        "Matthew Tkachuk": {
-            "URL": "https://youtu.be/268pu91OSjI",
-            "source": "Sportsnet"
-        },
-        "Matvei Michkov": {
-            "URL": "https://youtu.be/ub7BELV4w2k",
-            "source": "Sportsnet"
-        },
-        "Mika Zibanejad": {
-            "URL": "https://youtu.be/pVcN7VmJHKM",
-            "source": "Sportsnet"
-        },
-        "Mikko Rantanen": {
-            "URL": "https://youtu.be/z5E_ypJAGho",
-            "source": "Sportsnet"
-        },
-        "Miro Heiskanen": {
-            "URL": "https://youtu.be/VpjvAOW0GQI",
-            "source": "Sportsnet"
-        },
-        "Mitch Marner": {
-            "URL": "https://youtu.be/Xz-S3j1SU1w",
-            "source": "Sportsnet"
-        },
-        "Moritz Seider": {
-            "URL": "https://youtu.be/k9ue3pRIPNg",
-            "source": "Sportsnet"
-        },
-        "Nathan MacKinnon": {
-            "URL": "https://youtu.be/b-7ogDQRrDs",
-            "source": "Sportsnet"
-        },
-        "Nick Suzuki": {
-            "URL": "https://youtu.be/8Tu3x0j1OA4",
-            "source": "Sportsnet"
-        },
-        "Nikita Kucherov": {
-            "URL": "https://youtu.be/Hajw4hWGjvg",
-            "source": "the NHL"
-        },
-        "Patrick Kane": {
-            "URL": "https://youtu.be/qg5UrHpmjmY",
-            "source": "Sportsnet"
-        },
-        "Quinn Hughes": {
-            "URL": "https://youtu.be/iXPFnh4wBBI",
-            "source": "Sportsnet"
-        },
-        "Quinton Byfield": {
-            "URL": "https://youtu.be/MBqyiZe8_Bs",
-            "source": "Sportsnet"
-        },
-        "Rasmus Dahlin": {
-            "URL": "https://youtu.be/EPXMne8YNsU",
-            "source": "Sportsnet"
-        },
-        "Robert Thomas": {
-            "URL": "https://youtu.be/Xtsoaa9_TxQ",
-            "source": "Sportsnet"
-        },
-        "Sam Reinhart": {
-            "URL": "https://youtu.be/-DK-q97CJWM",
-            "source": "Sportsnet"
-        },
-        "Sebastian Aho": {
-            "URL": "https://youtu.be/VAFprF3TSXI",
-            "source": "Sportsnet"
-        },
-        "Sidney Crosby": {
-            "URL": "https://youtu.be/tAh0LK1sstI",
-            "source": "Sportsnet"
-        },
-        "Steven Stamkos": {
-            "URL": "https://youtu.be/7SqHNuU6jIs",
-            "source": "Sportsnet"
-        },
-        "Tage Thompson": {
-            "URL": "https://youtu.be/6dX8dRR86c0",
-            "source": "Sportsnet"
-        },
-        "Tim Stützle": {
-            "URL": "https://youtu.be/WgVWQtj3x7w",
-            "source": "the NHL"
-        },
-        "Tom Wilson": {
-            "URL": "https://youtu.be/bzFjcIKDyDU",
-            "source": "Sportsnet"
-        },
-        "William Nylander": {
-            "URL": "https://youtu.be/NOt4rzyGwdY",
-            "source": "the NHL"
-        },
-        "Wyatt Johnston": {
-            "URL": "https://youtu.be/O51kF7kplQM",
-            "source": "Sportsnet"
-        },
-        "Zach Werenski": {
-            "URL": "https://youtu.be/mCfEyeCIgiY",
-            "source": "Sportsnet"
-        },
-        "Zayne Parekh": {
-            "URL": "https://youtu.be/1qWJsCtZUWI",
-            "source": "Sportsnet"
-        }
+    "Alex DeBrincat": {
+      "team": "DET",
+      "division": "Atlantic",
+      "number": 93,
+      "nation": "USA",
+      "age": 28,
+      "conference": "Eastern",
+      "id": 8479337,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Alex Ovechkin": {
+      "team": "WSH",
+      "division": "Metro",
+      "number": 8,
+      "nation": "RUS",
+      "age": 41,
+      "conference": "Eastern",
+      "id": 8471214,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Alexis Lafrenière": {
+      "team": "NYR",
+      "division": "Metro",
+      "number": 13,
+      "nation": "CAN",
+      "age": 25,
+      "conference": "Eastern",
+      "id": 8482109,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Andrei Svechnikov": {
+      "team": "CAR",
+      "division": "Metro",
+      "number": 37,
+      "nation": "RUS",
+      "age": 26,
+      "conference": "Eastern",
+      "id": 8480830,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Artemi Panarin": {
+      "team": "LAK",
+      "division": "Pacific",
+      "number": 10,
+      "nation": "RUS",
+      "age": 34,
+      "conference": "Western",
+      "id": 8478550,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Auston Matthews": {
+      "team": "TOR",
+      "division": "Atlantic",
+      "number": 34,
+      "nation": "USA",
+      "age": 29,
+      "conference": "Eastern",
+      "id": 8479318,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Brandon Hagel": {
+      "team": "TBL",
+      "division": "Atlantic",
+      "number": 38,
+      "nation": "CAN",
+      "age": 28,
+      "conference": "Eastern",
+      "id": 8479542,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Brayden Point": {
+      "team": "TBL",
+      "division": "Atlantic",
+      "number": 21,
+      "nation": "CAN",
+      "age": 30,
+      "conference": "Eastern",
+      "id": 8478010,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Brock Faber": {
+      "team": "MIN",
+      "division": "Central",
+      "number": 7,
+      "nation": "USA",
+      "age": 24,
+      "conference": "Western",
+      "id": 8482122,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Cale Makar": {
+      "team": "COL",
+      "division": "Central",
+      "number": 8,
+      "nation": "CAN",
+      "age": 27,
+      "conference": "Western",
+      "id": 8480069,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Clayton Keller": {
+      "team": "UTA",
+      "division": "Central",
+      "number": 9,
+      "nation": "USA",
+      "age": 28,
+      "conference": "Western",
+      "id": 8479343,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Cole Caufield": {
+      "team": "MTL",
+      "division": "Atlantic",
+      "number": 13,
+      "nation": "USA",
+      "age": 25,
+      "conference": "Eastern",
+      "id": 8481540,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Connor Bedard": {
+      "team": "CHI",
+      "division": "Central",
+      "number": 98,
+      "nation": "CAN",
+      "age": 21,
+      "conference": "Western",
+      "id": 8484144,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Connor McDavid": {
+      "team": "EDM",
+      "division": "Pacific",
+      "number": 97,
+      "nation": "CAN",
+      "age": 29,
+      "conference": "Western",
+      "id": 8478402,
+      "results": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 1
+      }
+    },
+    "Cutter Gauthier": {
+      "team": "ANA",
+      "division": "Pacific",
+      "number": 61,
+      "nation": "SWE",
+      "age": 22,
+      "conference": "Western",
+      "id": 8483445,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "David Pastrnak": {
+      "team": "BOS",
+      "division": "Atlantic",
+      "number": 88,
+      "nation": "CZE",
+      "age": 30,
+      "conference": "Eastern",
+      "id": 8477956,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Dylan Guenther": {
+      "team": "UTA",
+      "division": "Central",
+      "number": 11,
+      "nation": "CAN",
+      "age": 23,
+      "conference": "Western",
+      "id": 8482699,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Dylan Larkin": {
+      "team": "DET",
+      "division": "Atlantic",
+      "number": 71,
+      "nation": "USA",
+      "age": 30,
+      "conference": "Eastern",
+      "id": 8477946,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Elias Pettersson": {
+      "team": "VAN",
+      "division": "Pacific",
+      "number": 40,
+      "nation": "SWE",
+      "age": 27,
+      "conference": "Western",
+      "id": 8480012,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Erik Karlsson": {
+      "team": "PIT",
+      "division": "Metro",
+      "number": 65,
+      "nation": "SWE",
+      "age": 36,
+      "conference": "Eastern",
+      "id": 8474578,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Evan Bouchard": {
+      "team": "EDM",
+      "division": "Pacific",
+      "number": 2,
+      "nation": "CAN",
+      "age": 26,
+      "conference": "Western",
+      "id": 8480803,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Filip Forsberg": {
+      "team": "NSH",
+      "division": "Central",
+      "number": 9,
+      "nation": "SWE",
+      "age": 32,
+      "conference": "Western",
+      "id": 8476887,
+      "results": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 2
+      }
+    },
+    "Ivan Demidov": {
+      "team": "MTL",
+      "division": "Atlantic",
+      "number": 93,
+      "nation": "RUS",
+      "age": 20,
+      "conference": "Eastern",
+      "id": 8484984,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Jack Eichel": {
+      "team": "VGK",
+      "division": "Pacific",
+      "number": 9,
+      "nation": "USA",
+      "age": 29,
+      "conference": "Western",
+      "id": 8478403,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Jack Hughes": {
+      "team": "NJD",
+      "division": "Metro",
+      "number": 86,
+      "nation": "USA",
+      "age": 25,
+      "conference": "Eastern",
+      "id": 8481559,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Jake Guentzel": {
+      "team": "TBL",
+      "division": "Atlantic",
+      "number": 59,
+      "nation": "USA",
+      "age": 32,
+      "conference": "Eastern",
+      "id": 8477404,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Jake Sanderson": {
+      "team": "OTT",
+      "division": "Atlantic",
+      "number": 85,
+      "nation": "USA",
+      "age": 24,
+      "conference": "Eastern",
+      "id": 8482105,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Jakob Chychrun": {
+      "team": "WSH",
+      "division": "Metro",
+      "number": 6,
+      "nation": "USA",
+      "age": 28,
+      "conference": "Eastern",
+      "id": 8479345,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Jared McCann": {
+      "team": "SEA",
+      "division": "Pacific",
+      "number": 19,
+      "nation": "CAN",
+      "age": 30,
+      "conference": "Western",
+      "id": 8477955,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Jason Robertson": {
+      "team": "DAL",
+      "division": "Central",
+      "number": 21,
+      "nation": "USA",
+      "age": 27,
+      "conference": "Western",
+      "id": 8480027,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Jesper Bratt": {
+      "team": "NJD",
+      "division": "Metro",
+      "number": 63,
+      "nation": "SWE",
+      "age": 28,
+      "conference": "Eastern",
+      "id": 8479407,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "John Tavares": {
+      "team": "TOR",
+      "division": "Atlantic",
+      "number": 91,
+      "nation": "CAN",
+      "age": 36,
+      "conference": "Eastern",
+      "id": 8475166,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Kirill Kaprizov": {
+      "team": "MIN",
+      "division": "Central",
+      "number": 97,
+      "nation": "RUS",
+      "age": 29,
+      "conference": "Western",
+      "id": 8478864,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Kyle Connor": {
+      "team": "WPG",
+      "division": "Central",
+      "number": 81,
+      "nation": "USA",
+      "age": 29,
+      "conference": "Western",
+      "id": 8478398,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Lane Hutson": {
+      "team": "MTL",
+      "division": "Atlantic",
+      "number": 48,
+      "nation": "USA",
+      "age": 22,
+      "conference": "Eastern",
+      "id": 8483457,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Leo Carlsson": {
+      "team": "ANA",
+      "division": "Pacific",
+      "number": 91,
+      "nation": "SWE",
+      "age": 21,
+      "conference": "Western",
+      "id": 8484153,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Leon Draisaitl": {
+      "team": "EDM",
+      "division": "Pacific",
+      "number": 29,
+      "nation": "DEU",
+      "age": 30,
+      "conference": "Western",
+      "id": 8477934,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Linus Ullmark": {
+      "team": "OTT",
+      "division": "Atlantic",
+      "number": 35,
+      "nation": "SWE",
+      "age": 33,
+      "conference": "Eastern",
+      "id": 8476999,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Lucas Raymond": {
+      "team": "DET",
+      "division": "Atlantic",
+      "number": 23,
+      "nation": "SWE",
+      "age": 24,
+      "conference": "Eastern",
+      "id": 8482078,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Macklin Celebrini": {
+      "team": "SJS",
+      "division": "Pacific",
+      "number": 71,
+      "nation": "CAN",
+      "age": 20,
+      "conference": "Western",
+      "id": 8484801,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Mark Scheifele": {
+      "team": "WPG",
+      "division": "Central",
+      "number": 55,
+      "nation": "CAN",
+      "age": 33,
+      "conference": "Western",
+      "id": 8476460,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Mark Stone": {
+      "team": "VGK",
+      "division": "Pacific",
+      "number": 61,
+      "nation": "CAN",
+      "age": 34,
+      "conference": "Western",
+      "id": 8475913,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Martin Necas": {
+      "team": "COL",
+      "division": "Central",
+      "number": 88,
+      "nation": "CZE",
+      "age": 27,
+      "conference": "Western",
+      "id": 8480039,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Matt Boldy": {
+      "team": "MIN",
+      "division": "Central",
+      "number": 12,
+      "nation": "USA",
+      "age": 25,
+      "conference": "Western",
+      "id": 8481557,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Matthew Schaefer": {
+      "team": "NYI",
+      "division": "Metro",
+      "number": 48,
+      "nation": "CAN",
+      "age": 19,
+      "conference": "Eastern",
+      "id": 8485366,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Matthew Tkachuk": {
+      "team": "FLA",
+      "division": "Atlantic",
+      "number": 19,
+      "nation": "USA",
+      "age": 28,
+      "conference": "Eastern",
+      "id": 8479314,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Matvei Michkov": {
+      "team": "PHI",
+      "division": "Metro",
+      "number": 39,
+      "nation": "RUS",
+      "age": 21,
+      "conference": "Eastern",
+      "id": 8484387,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Mika Zibanejad": {
+      "team": "NYR",
+      "division": "Metro",
+      "number": 93,
+      "nation": "SWE",
+      "age": 33,
+      "conference": "Eastern",
+      "id": 8476459,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Mikko Rantanen": {
+      "team": "DAL",
+      "division": "Central",
+      "number": 96,
+      "nation": "FIN",
+      "age": 29,
+      "conference": "Western",
+      "id": 8478420,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Miro Heiskanen": {
+      "team": "DAL",
+      "division": "Central",
+      "number": 4,
+      "nation": "FIN",
+      "age": 27,
+      "conference": "Western",
+      "id": 8480036,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Mitch Marner": {
+      "team": "VGK",
+      "division": "Pacific",
+      "number": 93,
+      "nation": "CAN",
+      "age": 29,
+      "conference": "Western",
+      "id": 8478483,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Moritz Seider": {
+      "team": "DET",
+      "division": "Atlantic",
+      "number": 53,
+      "nation": "DEU",
+      "age": 25,
+      "conference": "Eastern",
+      "id": 8481542,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Nathan MacKinnon": {
+      "team": "COL",
+      "division": "Central",
+      "number": 29,
+      "nation": "CAN",
+      "age": 31,
+      "conference": "Western",
+      "id": 8477492,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Nick Suzuki": {
+      "team": "MTL",
+      "division": "Atlantic",
+      "number": 14,
+      "nation": "CAN",
+      "age": 27,
+      "conference": "Eastern",
+      "id": 8480018,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Nikita Kucherov": {
+      "team": "TBL",
+      "division": "Atlantic",
+      "number": 86,
+      "nation": "RUS",
+      "age": 33,
+      "conference": "Eastern",
+      "id": 8476453,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Nikolaj Ehlers": {
+      "team": "CAR",
+      "division": "Metro",
+      "number": 27,
+      "nation": "DNK",
+      "age": 30,
+      "conference": "Eastern",
+      "id": 8477940,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Patrick Kane": {
+      "team": "CHI",
+      "division": "Central",
+      "number": 88,
+      "nation": "USA",
+      "age": 37,
+      "conference": "Western",
+      "id": 8474141,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Quinn Hughes": {
+      "team": "MIN",
+      "division": "Central",
+      "number": 43,
+      "nation": "USA",
+      "age": 27,
+      "conference": "Western",
+      "id": 8480800,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Quinton Byfield": {
+      "team": "LAK",
+      "division": "Pacific",
+      "number": 55,
+      "nation": "CAN",
+      "age": 24,
+      "conference": "Western",
+      "id": 8482124,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Rasmus Dahlin": {
+      "team": "BUF",
+      "division": "Atlantic",
+      "number": 26,
+      "nation": "SWE",
+      "age": 26,
+      "conference": "Eastern",
+      "id": 8480839,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Robert Thomas": {
+      "team": "STL",
+      "division": "Central",
+      "number": 18,
+      "nation": "CAN",
+      "age": 27,
+      "conference": "Western",
+      "id": 8480023,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Roope Hintz": {
+      "team": "DAL",
+      "division": "Central",
+      "number": 24,
+      "nation": "FIN",
+      "age": 29,
+      "conference": "Western",
+      "id": 8478449,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Sam Reinhart": {
+      "team": "FLA",
+      "division": "Atlantic",
+      "number": 13,
+      "nation": "CAN",
+      "age": 30,
+      "conference": "Eastern",
+      "id": 8477933,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Sebastian Aho": {
+      "team": "CAR",
+      "division": "Metro",
+      "number": 20,
+      "nation": "FIN",
+      "age": 29,
+      "conference": "Eastern",
+      "id": 8478427,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Sidney Crosby": {
+      "team": "PIT",
+      "division": "Metro",
+      "number": 87,
+      "nation": "CAN",
+      "age": 39,
+      "conference": "Eastern",
+      "id": 8471675,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Steven Stamkos": {
+      "team": "NSH",
+      "division": "Central",
+      "number": 91,
+      "nation": "CAN",
+      "age": 36,
+      "conference": "Western",
+      "id": 8474564,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Tage Thompson": {
+      "team": "BUF",
+      "division": "Atlantic",
+      "number": 72,
+      "nation": "USA",
+      "age": 28,
+      "conference": "Eastern",
+      "id": 8479420,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Tim Stützle": {
+      "team": "OTT",
+      "division": "Atlantic",
+      "number": 18,
+      "nation": "DEU",
+      "age": 24,
+      "conference": "Eastern",
+      "id": 8482116,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Tom Wilson": {
+      "team": "WSH",
+      "division": "Metro",
+      "number": 43,
+      "nation": "CAN",
+      "age": 32,
+      "conference": "Eastern",
+      "id": 8476880,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "William Nylander": {
+      "team": "TOR",
+      "division": "Atlantic",
+      "number": 88,
+      "nation": "CAN",
+      "age": 30,
+      "conference": "Eastern",
+      "id": 8477939,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Wyatt Johnston": {
+      "team": "DAL",
+      "division": "Central",
+      "number": 53,
+      "nation": "CAN",
+      "age": 23,
+      "conference": "Western",
+      "id": 8482740,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
+    },
+    "Zach Werenski": {
+      "team": "CBJ",
+      "division": "Metro",
+      "number": 8,
+      "nation": "USA",
+      "age": 29,
+      "conference": "Eastern",
+      "id": 8478460,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 0,
+        "total_guesses": 0
+      }
+    },
+    "Zayne Parekh": {
+      "team": "CGY",
+      "division": "Pacific",
+      "number": 19,
+      "nation": "CAN",
+      "age": 20,
+      "conference": "Western",
+      "id": 8484768,
+      "results": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "X": 1,
+        "total_guesses": 1
+      }
     }
+  },
+  "unused_daily_players": [
+    "Adam Fox",
+    "Aleksander Barkov",
+    "Alex DeBrincat",
+    "Alex Ovechkin",
+    "Alexis Lafrenière",
+    "Andrei Svechnikov",
+    "Artemi Panarin",
+    "Auston Matthews",
+    "Brandon Hagel",
+    "Brayden Point",
+    "Brock Faber",
+    "Cale Makar",
+    "Clayton Keller",
+    "Connor Bedard",
+    "Cutter Gauthier",
+    "David Pastrnak",
+    "Dylan Guenther",
+    "Elias Pettersson",
+    "Erik Karlsson",
+    "Evan Bouchard",
+    "Ivan Demidov",
+    "Jack Eichel",
+    "Jack Hughes",
+    "Jake Guentzel",
+    "Jake Sanderson",
+    "Jakob Chychrun",
+    "Jared McCann",
+    "Jason Robertson",
+    "Jesper Bratt",
+    "John Tavares",
+    "Kirill Kaprizov",
+    "Kyle Connor",
+    "Lane Hutson",
+    "Leo Carlsson",
+    "Leon Draisaitl",
+    "Linus Ullmark",
+    "Lucas Raymond",
+    "Macklin Celebrini",
+    "Mark Scheifele",
+    "Mark Stone",
+    "Martin Necas",
+    "Matt Boldy",
+    "Matthew Schaefer",
+    "Matthew Tkachuk",
+    "Matvei Michkov",
+    "Mika Zibanejad",
+    "Mikko Rantanen",
+    "Miro Heiskanen",
+    "Mitch Marner",
+    "Moritz Seider",
+    "Nathan MacKinnon",
+    "Nick Suzuki",
+    "Nikita Kucherov",
+    "Patrick Kane",
+    "Quinn Hughes",
+    "Quinton Byfield",
+    "Rasmus Dahlin",
+    "Robert Thomas",
+    "Sam Reinhart",
+    "Sebastian Aho",
+    "Sidney Crosby",
+    "Steven Stamkos",
+    "Tage Thompson",
+    "Tim Stützle",
+    "Tom Wilson",
+    "William Nylander",
+    "Wyatt Johnston",
+    "Zach Werenski",
+    "Zayne Parekh",
+    "Dylan Larkin",
+    "Nikolaj Ehlers",
+    "Roope Hintz"
+  ],
+  "daily_name": "Connor McDavid",
+  "daily_history": {
+    "1": "Filip Forsberg",
+    "2": "Cole Caufield",
+    "3": "Connor McDavid"
+  },
+  "video_sources": {
+    "Adam Fox": {
+      "URL": "https://youtu.be/VZdDy9x23Fo",
+      "source": "Sportsnet"
+    },
+    "Aleksander Barkov": {
+      "URL": "https://youtu.be/GBv4LkyavcU",
+      "source": "Sportsnet"
+    },
+    "Alex DeBrincat": {
+      "URL": "https://youtu.be/4yu7is9Qm6g",
+      "source": "Sportsnet"
+    },
+    "Alex Ovechkin": {
+      "URL": "https://youtu.be/rbdBRaVdPg4",
+      "source": "the NHL"
+    },
+    "Alexis Lafrenière": {
+      "URL": "https://youtu.be/skJppS73abw",
+      "source": "Sportsnet"
+    },
+    "Andrei Svechnikov": {
+      "URL": "https://youtu.be/mo7_NFIAEEE",
+      "source": "Sportsnet"
+    },
+    "Artemi Panarin": {
+      "URL": "https://youtu.be/qY2lCo94W7Y",
+      "source": "Sportsnet"
+    },
+    "Auston Matthews": {
+      "URL": "https://youtu.be/vY5TIGmTFIA",
+      "source": "Sportsnet"
+    },
+    "Brandon Hagel": {
+      "URL": "https://youtu.be/gHL_YCKJyt0",
+      "source": "Sportsnet"
+    },
+    "Brayden Point": {
+      "URL": "https://youtu.be/MqiH1Xq6FcQ",
+      "source": "Sportsnet"
+    },
+    "Brock Faber": {
+      "URL": "https://youtu.be/o0AsvxuuUZ4",
+      "source": "Sportsnet"
+    },
+    "Cale Makar": {
+      "URL": "https://youtu.be/POu3KUZy_pk",
+      "source": "Sportsnet"
+    },
+    "Clayton Keller": {
+      "URL": "https://youtu.be/L2SsGH0tW5U",
+      "source": "Sportsnet"
+    },
+    "Cole Caufield": {
+      "URL": "https://youtu.be/XEFu3Q305gI",
+      "source": "the NHL"
+    },
+    "Connor Bedard": {
+      "URL": "https://youtu.be/nYXS4imOm8g",
+      "source": "Sportsnet"
+    },
+    "Connor McDavid": {
+      "URL": "https://youtu.be/m2uGGihNIMA",
+      "source": "Sportsnet"
+    },
+    "Cutter Gauthier": {
+      "URL": "https://youtu.be/obMZQ-YT6nI",
+      "source": "the NHL"
+    },
+    "David Pastrnak": {
+      "URL": "https://youtu.be/NABw97A-51k",
+      "source": "the NHL"
+    },
+    "Dylan Guenther": {
+      "URL": "https://youtu.be/U7yPx82yf-s",
+      "source": "Sportsnet"
+    },
+    "Dylan Larkin": {
+      "URL": "https://youtu.be/jXIHwnciPGo",
+      "source": "Sportsnet"
+    },
+    "Elias Pettersson": {
+      "URL": "https://youtu.be/UMNF6EUVvuw",
+      "source": "Sportsnet"
+    },
+    "Erik Karlsson": {
+      "URL": "https://youtu.be/F-GPZizD-iw",
+      "source": "Sportsnet"
+    },
+    "Evan Bouchard": {
+      "URL": "https://youtu.be/7EvbV7_CtWU",
+      "source": "the NHL"
+    },
+    "Filip Forsberg": {
+      "URL": "https://youtu.be/CZDUm3rRhqc",
+      "source": "Sportsnet"
+    },
+    "Ivan Demidov": {
+      "URL": "https://youtu.be/cS5869_d2Io",
+      "source": "Sportsnet"
+    },
+    "Jack Eichel": {
+      "URL": "https://youtu.be/VNYDKFxl-6w",
+      "source": "Sportsnet"
+    },
+    "Jack Hughes": {
+      "URL": "https://youtu.be/VkQGhT2MAmc",
+      "source": "Sportsnet"
+    },
+    "Jake Guentzel": {
+      "URL": "https://youtu.be/_1Jc0xJW2dk",
+      "source": "Sportsnet"
+    },
+    "Jake Sanderson": {
+      "URL": "https://youtu.be/JSMh4uWGMXo",
+      "source": "Sportsnet"
+    },
+    "Jakob Chychrun": {
+      "URL": "https://youtu.be/6aZ302wX-eM",
+      "source": "Sportsnet"
+    },
+    "Jared McCann": {
+      "URL": "https://youtu.be/KD44MxrpQWM",
+      "source": "Sportsnet"
+    },
+    "Jason Robertson": {
+      "URL": "https://youtu.be/nyJGb5kJKKc",
+      "source": "Sportsnet"
+    },
+    "Jesper Bratt": {
+      "URL": "https://youtu.be/0zO6Cs9ZI4E",
+      "source": "Sportsnet"
+    },
+    "John Tavares": {
+      "URL": "https://youtu.be/TJ2sKqO6FFk",
+      "source": "Sportsnet"
+    },
+    "Kirill Kaprizov": {
+      "URL": "https://youtu.be/n-If3Dx62lQ",
+      "source": "Sportsnet"
+    },
+    "Kyle Connor": {
+      "URL": "https://youtu.be/L5Yf06msrTQ",
+      "source": "Sportsnet"
+    },
+    "Lane Hutson": {
+      "URL": "https://youtu.be/INdKQTQmusI",
+      "source": "Sportsnet"
+    },
+    "Leo Carlsson": {
+      "URL": "https://youtu.be/OH99YJ8NbxQ",
+      "source": "Sportsnet"
+    },
+    "Leon Draisaitl": {
+      "URL": "https://youtu.be/kEr5-t0RKwY",
+      "source": "Sportsnet"
+    },
+    "Linus Ullmark": {
+      "URL": "https://youtu.be/B97Kxv7ji-o",
+      "source": "the NHL"
+    },
+    "Lucas Raymond": {
+      "URL": "https://youtu.be/aWpVbudL2_c",
+      "source": "Sportsnet"
+    },
+    "Macklin Celebrini": {
+      "URL": "https://youtu.be/Baz4HviPu0U",
+      "source": "the NHL"
+    },
+    "Mark Scheifele": {
+      "URL": "https://youtu.be/WAul1Kh3YRk",
+      "source": "Sportsnet"
+    },
+    "Mark Stone": {
+      "URL": "https://youtu.be/TmOtEnLJY3k",
+      "source": "Sportsnet"
+    },
+    "Martin Necas": {
+      "URL": "https://youtu.be/Ku73IV-Tb20",
+      "source": "Sportsnet"
+    },
+    "Matt Boldy": {
+      "URL": "https://youtu.be/_GwKZTtpOHY",
+      "source": "Sportsnet"
+    },
+    "Matthew Schaefer": {
+      "URL": "https://youtu.be/EBZvKMEq6Sw",
+      "source": "Sportsnet"
+    },
+    "Matthew Tkachuk": {
+      "URL": "https://youtu.be/268pu91OSjI",
+      "source": "Sportsnet"
+    },
+    "Matvei Michkov": {
+      "URL": "https://youtu.be/ub7BELV4w2k",
+      "source": "Sportsnet"
+    },
+    "Mika Zibanejad": {
+      "URL": "https://youtu.be/pVcN7VmJHKM",
+      "source": "Sportsnet"
+    },
+    "Mikko Rantanen": {
+      "URL": "https://youtu.be/z5E_ypJAGho",
+      "source": "Sportsnet"
+    },
+    "Miro Heiskanen": {
+      "URL": "https://youtu.be/VpjvAOW0GQI",
+      "source": "Sportsnet"
+    },
+    "Mitch Marner": {
+      "URL": "https://youtu.be/Xz-S3j1SU1w",
+      "source": "Sportsnet"
+    },
+    "Moritz Seider": {
+      "URL": "https://youtu.be/k9ue3pRIPNg",
+      "source": "Sportsnet"
+    },
+    "Nathan MacKinnon": {
+      "URL": "https://youtu.be/b-7ogDQRrDs",
+      "source": "Sportsnet"
+    },
+    "Nick Suzuki": {
+      "URL": "https://youtu.be/8Tu3x0j1OA4",
+      "source": "Sportsnet"
+    },
+    "Nikita Kucherov": {
+      "URL": "https://youtu.be/Hajw4hWGjvg",
+      "source": "the NHL"
+    },
+    "Nikolaj Ehlers": {
+      "URL": "https://youtu.be/rjiZXCee718",
+      "source": "Sportsnet"
+    },
+    "Patrick Kane": {
+      "URL": "https://youtu.be/qg5UrHpmjmY",
+      "source": "Sportsnet"
+    },
+    "Quinn Hughes": {
+      "URL": "https://youtu.be/iXPFnh4wBBI",
+      "source": "Sportsnet"
+    },
+    "Quinton Byfield": {
+      "URL": "https://youtu.be/MBqyiZe8_Bs",
+      "source": "Sportsnet"
+    },
+    "Rasmus Dahlin": {
+      "URL": "https://youtu.be/EPXMne8YNsU",
+      "source": "Sportsnet"
+    },
+    "Robert Thomas": {
+      "URL": "https://youtu.be/Xtsoaa9_TxQ",
+      "source": "Sportsnet"
+    },
+    "Roope Hintz": {
+      "URL": "https://youtu.be/lvMaLcMfX70",
+      "source": "Sportsnet"
+    },
+    "Sam Reinhart": {
+      "URL": "https://youtu.be/-DK-q97CJWM",
+      "source": "Sportsnet"
+    },
+    "Sebastian Aho": {
+      "URL": "https://youtu.be/VAFprF3TSXI",
+      "source": "Sportsnet"
+    },
+    "Sidney Crosby": {
+      "URL": "https://youtu.be/tAh0LK1sstI",
+      "source": "Sportsnet"
+    },
+    "Steven Stamkos": {
+      "URL": "https://youtu.be/7SqHNuU6jIs",
+      "source": "Sportsnet"
+    },
+    "Tage Thompson": {
+      "URL": "https://youtu.be/6dX8dRR86c0",
+      "source": "Sportsnet"
+    },
+    "Tim Stützle": {
+      "URL": "https://youtu.be/WgVWQtj3x7w",
+      "source": "the NHL"
+    },
+    "Tom Wilson": {
+      "URL": "https://youtu.be/bzFjcIKDyDU",
+      "source": "Sportsnet"
+    },
+    "William Nylander": {
+      "URL": "https://youtu.be/NOt4rzyGwdY",
+      "source": "the NHL"
+    },
+    "Wyatt Johnston": {
+      "URL": "https://youtu.be/O51kF7kplQM",
+      "source": "Sportsnet"
+    },
+    "Zach Werenski": {
+      "URL": "https://youtu.be/mCfEyeCIgiY",
+      "source": "Sportsnet"
+    },
+    "Zayne Parekh": {
+      "URL": "https://youtu.be/1qWJsCtZUWI",
+      "source": "Sportsnet"
+    }
+  }
 }
