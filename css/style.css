@@ -31,6 +31,38 @@
   color: #65000B !important;
 }
 
+[data-bs-theme="dark"] .win-loss-message {
+  color: white !important;
+}
+
+.win-loss-message {
+  color: black !important;
+}
+
+[data-bs-theme="dark"] #win-answer {
+  color: white;
+}
+
+#win-answer {
+  color: black;
+}
+
+[data-bs-theme="dark"] #loss-answer {
+  color: white;
+}
+
+#loss-answer {
+  color: black;
+}
+
+[data-bs-theme="dark"] .streak-text {
+  color: white !important;
+}
+
+.streak-text {
+  color: black !important;
+}
+
 .nav-pills .nav-link.active {
   background-color: #1434A4 !important; 
   color: white !important;
