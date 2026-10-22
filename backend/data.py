@@ -93,7 +93,7 @@ VIDEO_SOURCES = {"Adam Fantilli": {'URL': 'https://youtu.be/qg5UrHpmjmY', 'sourc
                  "Sam Reinhart": {'URL': 'https://youtu.be/-DK-q97CJWM', 'source': 'Sportsnet'}, "Sebastian Aho": {'URL': 'https://youtu.be/VAFprF3TSXI', 'source': 'Sportsnet'}, 
                  "Seth Jarvis": {'URL': 'https://youtu.be/ZpKJ11Q5auc', 'source': 'Sportsnet'}, "Shea Theodore": {'URL': 'https://youtu.be/AnlrtXftYps', 'source': 'Sportsnet'}, 
                  "Sidney Crosby": {'URL': 'https://youtu.be/tAh0LK1sstI', 'source': 'Sportsnet'}, "Steven Stamkos": {'URL': 'https://youtu.be/7SqHNuU6jIs', 'source': 'Sportsnet'}, 
-                 "Tage Thompson": {'URL': 'https://youtu.be/6dX8dRR86c0', 'source': 'Sportsnet'}, "Tim Stützle": {'URL': 'https://youtu.be/FK1Y2qO0acc', 'source': 'the NHL'}, 
+                 "Tage Thompson": {'URL': 'https://youtu.be/6dX8dRR86c0', 'source': 'Sportsnet'}, "Tim Stützle": {'URL': 'https://youtu.be/FK1Y2qO0acc', 'source': 'Sportsnet'}, 
                  "Tom Wilson": {'URL': 'https://youtu.be/bzFjcIKDyDU', 'source': 'Sportsnet'}, "Travis Konecny": {'URL': 'https://youtu.be/pVcN7VmJHKM', 'source': 'Sportsnet'}, 
                  "Trevor Zegras": {'URL': 'https://youtu.be/koI851piYpk', 'source': 'Sportsnet'}, "Will Smith": {'URL': 'https://youtu.be/HziV28xbsho', 'source': 'Sportsnet'}, 
                  "William Nylander": {'URL': 'https://youtu.be/NOt4rzyGwdY', 'source': 'the NHL'}, "Wyatt Johnston": {'URL': 'https://youtu.be/O51kF7kplQM', 'source': 'Sportsnet'}, 
