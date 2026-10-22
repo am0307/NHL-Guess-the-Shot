@@ -153,10 +153,12 @@ input.addEventListener("input", function() {
     // Loop through each item and show players based on the filter
     currentItems.forEach(item => {
         var playerText = item.textContent.toLowerCase();
-        const playerTextDeaccent = playerText.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        const userInputDeaccent = userInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+        // Normalise text by removing accents and periods
+        const playerTextNormalise = playerText.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "");;
+        const userInputNormalise = userInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "");;
         
-        if (playerTextDeaccent.includes(userInputDeaccent) && userInputDeaccent.length > 0 && numDisplayed < maxDisplayed) {
+        if (playerTextNormalise.includes(userInputNormalise) && userInputNormalise.length > 0 && numDisplayed < maxDisplayed) {
             item.parentElement.style.display = "block";
             hasVisibleItems = true;
             numDisplayed++;
