@@ -61,7 +61,7 @@ export default {
       }
     }
 
-    // Fallback: serve your static files (HTML, JS, CSS) for all other traffic
+    // Static files fallback
     return env.ASSETS.fetch(request);
   },
 };
