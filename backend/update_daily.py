@@ -50,8 +50,8 @@ def run_update():
     # Retrieve unused daily players list
     unused_list = cache_dictionary.setdefault("unused_daily_players", [])
     
-    for name in PLAYER_IDS.keys(): # Loop through all players
-        if name not in existing_cached_players and name not in unused_list: # Adds newly added players to the unused dailies
+    for name in VIDEO_SOURCES.keys(): # Only players with videos can be daily answers
+        if name not in existing_cached_players and name not in unused_list:
             unused_list.append(name)
     
     # If file DNE or is not current, get new data

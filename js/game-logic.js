@@ -74,24 +74,29 @@ async function loadGameData() {
             // Retrieve played players
             const playedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
 
-            // Validate if the requested ID exists in the nameLookup table
-            if (requestedId && nameLookup[requestedId]) {
+            // Verify the requested ID both exists and has a video source
+            const hasVideo = requestedId && Object.keys(window.videoSources).some(name => window.playerData[name]?.id == requestedId);
+
+            if (hasVideo) {
                 window.answerId = requestedId;
             } else {
-                // Create an array of all IDs
-                const allIds = Object.values(window.playerData).map(p => String(p.id));
+                // Create an array of IDs only for players who have a video
+                const videoPlayerNames = Object.keys(window.videoSources);
+                const allIds = videoPlayerNames
+                    .filter(name => window.playerData[name])
+                    .map(name => String(window.playerData[name].id));
                 
-                // Filter out IDs the user has already played
+                // Filter out already played players
                 let availableIds = allIds.filter(id => !playedIds.includes(id));
 
-                // If all players have been played, empty the played pool to reset the cycle
+                // If all available players have been used, reset the cycle
                 if (availableIds.length === 0) {
                     availableIds = allIds;
-                    playedIds.length = 0; // Clear memory array
-                    localStorage.setItem("played_endless_ids", "[]"); // Clear storage array
+                    playedIds.length = 0; 
+                    localStorage.setItem("played_endless_ids", "[]");
                 }
 
-                // Pick random from remaining unplayed pool
+                // Pick random from remaining unplayed video pool
                 const randomId = availableIds[Math.floor(Math.random() * availableIds.length)];
                 window.answerId = randomId;
 
