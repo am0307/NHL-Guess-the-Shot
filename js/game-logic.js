@@ -160,8 +160,8 @@ input.addEventListener("input", function() {
         var playerText = item.textContent.toLowerCase();
 
         // Normalise text by removing accents and periods
-        const playerTextNormalise = playerText.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "");;
-        const userInputNormalise = userInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "");;
+        const playerTextNormalise = playerText.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "").replace(/['’`]/g, "");
+        const userInputNormalise = userInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "").replace(/['’`]/g, "");
         
         if (playerTextNormalise.includes(userInputNormalise) && userInputNormalise.length > 0 && numDisplayed < maxDisplayed) {
             item.parentElement.style.display = "block";
