@@ -153,6 +153,7 @@ video {
   margin-left: 6px;
   margin-right: 6px;
   min-width: 60px;
+  min-height: 40px;
 }
 
 .player-option {
