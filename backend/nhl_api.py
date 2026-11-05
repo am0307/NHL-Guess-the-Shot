@@ -14,7 +14,7 @@ def get_player_info(player_ids):
         for player_id in player_ids:
             url = f"https://api-web.nhle.com/v1/player/{player_id}/landing"
 
-            response = requests.get(url=url)
+            response = session.get(url=url)
             response.raise_for_status()
             data.append(response.json())
         
