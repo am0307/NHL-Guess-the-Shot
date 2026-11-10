@@ -1,8 +1,8 @@
-const MAX_NUM_GUESSES = 8; // Maximum number of guesses before game ends
+const isPWHL = window.league === "pwhl"; // Track whether game is in PWHL mode
+const MAX_NUM_GUESSES = isPWHL ? 6 : 8; // Maximum number of guesses before game ends, fewer for PWHL due to smaller player pool
 const nameLookup = {}; // Empty lookup table for player names based on their IDs
 let gameFinished = false; // Track whether game has finished
 let animating = false; // Track whether boxes are currently flipping
-const isPWHL = window.league === "pwhl"; // Track whether game is in PWHL mode
 const leaguePrefix = isPWHL ? "pwhl_" : ""; // Prefix for league specific files and storage keys
 const videoFolder = isPWHL ? "videos/pwhl" : "videos"; // Folder containing league videos
 

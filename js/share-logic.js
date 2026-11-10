@@ -1,10 +1,11 @@
-const MAX_NUM_GUESSES = 8;
+const MAX_NUM_GUESSES = window.league === "pwhl" ? 6 : 8; // Fewer guesses for PWHL due to smaller player pool
 
 // Create a sharable text representation of the game result
 export function createSharable(numGuesses) {
 
-    // First lines of sharable text
-    let sharable = "PuckGuessr - " + numGuesses + "/" + MAX_NUM_GUESSES + "\n\n";
+    // First lines of sharable text, including league name for PWHL
+    const leagueName = window.league === "pwhl" ? " PWHL" : "";
+    let sharable = "PuckGuessr" + leagueName + " - " + numGuesses + "/" + MAX_NUM_GUESSES + "\n\n";
 
     // If the player lost, set numGuesses to 8 for the purpose of creating the sharable text
     if (numGuesses === "X") {

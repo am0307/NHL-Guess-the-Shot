@@ -27,11 +27,18 @@ export default {
           return new Response("Player not found", { status: 404 });
         }
 
-        // Initialise results if missing from player
+        // Initialise results if missing from player, with fewer guesses for PWHL
         if (!gameData.players[playerName].results) {
-          gameData.players[playerName].results = {
-            "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "X": 0, "total_guesses": 0
-          };
+          const maxGuesses = league === "pwhl" ? 6 : 8;
+          const newResults = {};
+
+          for (let i = 1; i <= maxGuesses; i++) {
+            newResults[String(i)] = 0;
+          }
+          newResults["X"] = 0;
+          newResults["total_guesses"] = 0;
+
+          gameData.players[playerName].results = newResults;
         }
 
         // Increment result stats

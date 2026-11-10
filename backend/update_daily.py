@@ -34,10 +34,10 @@ def load_cache(s3, bucket, key):
         return {"unused_daily_players": []} # Triggers if the file DNE
 
 # Retrieve a player's existing results or initialise them
-def get_results(existing_cached_players, name):
-    return existing_cached_players.get(name, {}).get("results", {
-        "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "X": 0, "total_guesses": 0
-        })
+def get_results(existing_cached_players, name, max_guesses):
+    default_results = {str(i): 0 for i in range(1, max_guesses + 1)}
+    default_results.update({"X": 0, "total_guesses": 0})
+    return existing_cached_players.get(name, {}).get("results", default_results)
 
 # Choose the daily player and update the unused list and daily history
 def pick_daily_player(cache_dictionary, eligible):
@@ -123,7 +123,7 @@ def update_nhl(s3, bucket):
             "age": find_age(player_data["birthDate"]),
             "conference": TEAM_DIVISIONS_CONFERENCES[player_data["currentTeamAbbrev"]][1],
             "id": PLAYER_IDS[name],
-            "results": get_results(existing_cached_players, name)
+            "results": get_results(existing_cached_players, name, 8)
         }
         for name, player_data in zip(PLAYER_IDS.keys(), all_player_data)
     }
@@ -158,7 +158,7 @@ def update_pwhl(s3, bucket):
         if "id" in player_data: # Only players with videos have IDs
             player_dict[name]["id"] = player_data["id"]
 
-        player_dict[name]["results"] = get_results(existing_cached_players, name)
+        player_dict[name]["results"] = get_results(existing_cached_players, name, 6) # Fewer guesses for PWHL
 
     # Create video sources from players with both a video and an ID
     video_sources = {name: player_data["video"] for name, player_data in PWHL_PLAYERS.items() if "video" in player_data and "id" in player_data}
