@@ -114,7 +114,7 @@ def run_update():
     s3.put_object(
         Bucket=bucket,
         Key=S3_CACHE_KEY,
-        Body=json.dumps(json_data, ensure_ascii=False, indent=4),
+        Body=json_data.encode("utf-8"),
         ContentType="application/json",
         CacheControl="no-cache, no-store, must-revalidate"
     )
