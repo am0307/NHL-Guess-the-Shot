@@ -76,7 +76,17 @@
 .nav-pills .nav-link:hover:not(.active) {
   background-color: #1434A4 !important;
   color: white !important;
-  opacity: 0.7; 
+  opacity: 0.7;
+}
+
+.league-dropdown {
+  min-width: 100%;
+}
+
+.league-dropdown .dropdown-item.active,
+.league-dropdown .dropdown-item:active {
+  background-color: #1434A4;
+  color: white;
 }
 
 video {
@@ -108,6 +118,11 @@ video {
   background-color: #4682B4 !important;
   color: white !important;
   opacity: 0.7;
+}
+
+[data-bs-theme="dark"] .league-dropdown .dropdown-item.active,
+[data-bs-theme="dark"] .league-dropdown .dropdown-item:active {
+  background-color: #4682B4;
 }
 
 #theme-switch svg {

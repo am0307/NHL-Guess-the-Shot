@@ -56,11 +56,19 @@
             <!-- Navigation Bar -->
             <div class="d-flex align-items-center">
                 <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link ms-0 active" aria-current="page">Daily</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle ms-0 active" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">NHL</a>
+                        <ul class="dropdown-menu league-dropdown">
+                            <li><a class="dropdown-item active" href="index.html">Daily</a></li>
+                            <li><a class="dropdown-item" href="endless.html">Endless</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="endless.html" class="nav-link">Endless</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">PWHL</a>
+                        <ul class="dropdown-menu league-dropdown">
+                            <li><a class="dropdown-item" href="pwhl-daily.html">Daily</a></li>
+                            <li><a class="dropdown-item" href="pwhl-endless.html">Endless</a></li>
+                        </ul>
                     </li>
                 </ul>
 
@@ -351,6 +359,7 @@
 
     <script>
         window.gameMode = "daily";
+        window.league = "nhl";
 
         // Switch between local videos root and Cloudflare
         const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";

@@ -44,11 +44,19 @@
             <!-- Navigation Bar -->
             <div class="d-flex align-items-center">
                 <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link ms-0">Daily</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle ms-0 active" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">NHL</a>
+                        <ul class="dropdown-menu league-dropdown">
+                            <li><a class="dropdown-item" href="index.html">Daily</a></li>
+                            <li><a class="dropdown-item active" href="endless.html">Endless</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="endless.html" class="nav-link active" aria-current="page">Endless</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">PWHL</a>
+                        <ul class="dropdown-menu league-dropdown">
+                            <li><a class="dropdown-item" href="pwhl-daily.html">Daily</a></li>
+                            <li><a class="dropdown-item" href="pwhl-endless.html">Endless</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
@@ -61,6 +69,26 @@
                 </button>
             </div>
         </header>
+    </div>
+    <!-- First visit modal -->
+    <div class="modal fade" id="first-visit-info" tabindex="-1" aria-labelledby="first-visit-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="share-result-win-label">🏒 Welcome to PuckGuessr!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your objective is to guess which active NHL player is shooting the puck.</p>
+                    <p>Each guess will help you narrow down the correct answer as you play!</p>
+                    <p>Click the column headers above your guesses (e.g. "Age") to get more information on what the colours mean.</p>
+                    <p class="mb-1">Note that not every player is available for guessing.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Show original video, mask video, and source -->
     <div class="d-flex justify-content-center align-items-center">
@@ -301,10 +329,20 @@
 
     <script>
         window.gameMode = "endless"; 
+        window.league = "nhl";
         
         // Switch between local videos root and Cloudflare
         const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
         window.PUBLIC_R2_URL = isLocal ? "" : "https://media.puckguessr.com";
+
+        // Load information for the user's first visit
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem("has_visited_puckguessr")) {
+                const firstVisitModal = new bootstrap.Modal(document.getElementById("first-visit-info"));
+                firstVisitModal.show(); // Display modal
+                localStorage.setItem("has_visited_puckguessr", "true"); // Prevent modal from showing in future visits
+            }
+        });
     </script>
 
     <!-- Load js files -->
