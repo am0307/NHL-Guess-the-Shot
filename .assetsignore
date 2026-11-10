@@ -3,3 +3,4 @@ secrets.env
 backend/
 .github/
 requirements.txt
+js/post-result.js

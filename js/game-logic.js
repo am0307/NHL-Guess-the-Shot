@@ -2,12 +2,20 @@ const MAX_NUM_GUESSES = 8; // Maximum number of guesses before game ends
 const nameLookup = {}; // Empty lookup table for player names based on their IDs
 let gameFinished = false; // Track whether game has finished
 let animating = false; // Track whether boxes are currently flipping
+const isPWHL = window.league === "pwhl"; // Track whether game is in PWHL mode
+const leaguePrefix = isPWHL ? "pwhl_" : ""; // Prefix for league specific files and storage keys
+const videoFolder = isPWHL ? "videos/pwhl" : "videos"; // Folder containing league videos
+
+// Storage keys for the respective league
+const PLAYED_ENDLESS_KEY = `${leaguePrefix}played_endless_ids`;
+const ENDLESS_STREAK_KEY = `${leaguePrefix}endless_streak`;
+const PLAYED_DAILY_KEY = `${leaguePrefix}played_daily_number`;
 
 // Fetch data from Cloudflare
 async function loadGameData() {
     try {
         // Get data without caching issues
-        const response = await fetch(`${window.PUBLIC_R2_URL}/player_data.json?t=${Date.now()}`, {
+        const response = await fetch(`${window.PUBLIC_R2_URL}/${leaguePrefix}player_data.json?t=${Date.now()}`, {
             cache: "no-store"
         });
         const data = await response.json();
@@ -61,19 +69,19 @@ async function loadGameData() {
             window.answerId = data.players[data.daily_name].id;
 
             // Add the daily player to the already played ids so it does not show up in endless mode
-            const currentPlayedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
+            const currentPlayedIds = JSON.parse(localStorage.getItem(PLAYED_ENDLESS_KEY) || "[]").map(String);
             const dailyId = String(window.answerId);
 
             if (!currentPlayedIds.includes(dailyId)) { // Only add if not already there
                 currentPlayedIds.push(dailyId);
-                localStorage.setItem("played_endless_ids", JSON.stringify(currentPlayedIds));
+                localStorage.setItem(PLAYED_ENDLESS_KEY, JSON.stringify(currentPlayedIds));
             }
 
             // Get daily number to identify today's game
             window.dailyNumber = String(Object.keys(data.daily_history).length);
 
             // Trigger already played state if applicable
-            if (localStorage.getItem("played_daily_number") === window.dailyNumber) {
+            if (localStorage.getItem(PLAYED_DAILY_KEY) === window.dailyNumber) {
                 window.alreadyPlayed = true;
             }
 
@@ -83,7 +91,7 @@ async function loadGameData() {
             const requestedId = urlParams.get("id");
 
             // Retrieve played players
-            const playedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
+            const playedIds = JSON.parse(localStorage.getItem(PLAYED_ENDLESS_KEY) || "[]").map(String);
 
             // Verify the requested ID both exists and has a video source
             const hasVideo = requestedId && Object.keys(window.videoSources).some(name => window.playerData[name]?.id == requestedId);
@@ -104,7 +112,7 @@ async function loadGameData() {
                 if (availableIds.length === 0) {
                     availableIds = allIds;
                     playedIds.length = 0; 
-                    localStorage.setItem("played_endless_ids", "[]");
+                    localStorage.setItem(PLAYED_ENDLESS_KEY, "[]");
                 }
 
                 // Pick random from remaining unplayed video pool
@@ -124,8 +132,8 @@ async function loadGameData() {
         }
 
         // Set video sources from Cloudflare
-        document.getElementById("mask-vid").src = `${window.PUBLIC_R2_URL}/videos/masks/${window.answerId}.mp4`;
-        document.getElementById("org-vid").src = `${window.PUBLIC_R2_URL}/videos/original/${window.answerId}.mp4`;
+        document.getElementById("mask-vid").src = `${window.PUBLIC_R2_URL}/${videoFolder}/masks/${window.answerId}.mp4`;
+        document.getElementById("org-vid").src = `${window.PUBLIC_R2_URL}/${videoFolder}/original/${window.answerId}.mp4`;
 
         // If already played, trigger the alert screen without updating streak
         if (window.alreadyPlayed) {
@@ -251,7 +259,8 @@ async function submitGameResult(playerName, gameResult, guessCount) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 playerName: playerName,
-                result: resultKey
+                result: resultKey,
+                league: window.league
             })
         });
     } catch (error) { // Error handling
@@ -357,7 +366,7 @@ function displayAnswer(playerName, updateStreak = true) {
 
             // Display existing endless streak if needed
             if (window.gameMode === "endless") {
-                let currentStreak = parseInt(localStorage.getItem("endless_streak")) || 0;
+                let currentStreak = parseInt(localStorage.getItem(ENDLESS_STREAK_KEY)) || 0;
                 const streakDisplay = lossAlert.querySelector(".streak-text");
                 
                 if (streakDisplay) {
@@ -398,7 +407,7 @@ function displayAnswer(playerName, updateStreak = true) {
 
     // Lock daily game only after a win/loss
     if (gameFinished && window.gameMode === "daily" && (gameResult === "win" || gameResult === "loss")) {
-        localStorage.setItem("played_daily_number", window.dailyNumber);
+        localStorage.setItem(PLAYED_DAILY_KEY, window.dailyNumber);
     }
 
     // Update endless streak logic
@@ -406,18 +415,18 @@ function displayAnswer(playerName, updateStreak = true) {
 
         // Add players to played players only after a win/loss
         if (gameResult === "win" || gameResult === "loss") {
-            const currentPlayedIds = JSON.parse(localStorage.getItem("played_endless_ids") || "[]").map(String);
+            const currentPlayedIds = JSON.parse(localStorage.getItem(PLAYED_ENDLESS_KEY) || "[]").map(String);
             const currentId = String(window.answerId);
             if (!currentPlayedIds.includes(currentId)) {
                 currentPlayedIds.push(currentId);
-                localStorage.setItem("played_endless_ids", JSON.stringify(currentPlayedIds));
+                localStorage.setItem(PLAYED_ENDLESS_KEY, JSON.stringify(currentPlayedIds));
             }
         }
         
         // Send POST request to update streak
         if (window.gameMode === "endless") {
             
-            let currentStreak = parseInt(localStorage.getItem("endless_streak")) || 0; // Read the current streak
+            let currentStreak = parseInt(localStorage.getItem(ENDLESS_STREAK_KEY)) || 0; // Read the current streak
             
             // Update streak accordingly
             if (gameResult === "win") {
@@ -426,7 +435,7 @@ function displayAnswer(playerName, updateStreak = true) {
                 currentStreak = 0;
             }
             
-            localStorage.setItem("endless_streak", currentStreak); // Save streak
+            localStorage.setItem(ENDLESS_STREAK_KEY, currentStreak); // Save streak
             
             // Display appropriate alert
             const targetAlert = gameResult === "win" ? document.getElementById("win-alert") : document.getElementById("loss-alert");
@@ -458,7 +467,15 @@ function colourBox(box, index, playerName) {
             }
             break;
         case 1:
-            if (playerInfo.division === answerInfo.division) {
+            if (isPWHL) { // Only compare conferences for PWHL, never yellow
+                if (playerInfo.conference === answerInfo.conference) {
+                    box.style.backgroundColor = "#538D4E";
+                    box.style.color = "white";
+                } else {
+                    box.style.backgroundColor = "#3A3A3C";
+                    box.style.color = "white";
+                }
+            } else if (playerInfo.division === answerInfo.division) {
                 box.style.backgroundColor = "#538D4E"; 
                 box.style.color = "white";
             } else if (playerInfo.conference === answerInfo.conference) {
@@ -517,7 +534,7 @@ function addGuessInfo(playerName) {
     const playerInfo = window.playerData[playerName];
     if (playerInfo) {
         team.innerText = playerInfo.team;
-        division.innerText = playerInfo.division;
+        division.innerText = isPWHL ? playerInfo.conference : playerInfo.division; // Show conference instead of division for PWHL
         number.innerText = playerInfo.number;
         nation.innerText = playerInfo.nation;
         age.innerText = playerInfo.age;

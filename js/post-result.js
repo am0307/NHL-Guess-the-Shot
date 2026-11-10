@@ -6,14 +6,14 @@ export default {
     if (url.pathname === "/api/submit-score" && request.method === "POST") {
       try {
 
-        const { playerName, result } = await request.json(); // Retrieve game result for player
-        
+        const { playerName, result, league } = await request.json(); // Retrieve game result for player
+
         if (!playerName || !result) { // Handle missing information
           return new Response("Missing playerName or result", { status: 400 });
         }
 
-        // Retrieve player_data file
-        const fileKey = "player_data.json";
+        // Retrieve player data file for the respective league, defaulting to NHL
+        const fileKey = league === "pwhl" ? "pwhl_player_data.json" : "player_data.json";
         const object = await env.MY_BUCKET.get(fileKey);
         
         if (!object) {
