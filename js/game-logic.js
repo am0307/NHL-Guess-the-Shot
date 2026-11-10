@@ -1,5 +1,7 @@
 const MAX_NUM_GUESSES = 8; // Maximum number of guesses before game ends
 const nameLookup = {}; // Empty lookup table for player names based on their IDs
+let gameFinished = false; // Track whether game has finished
+let animating = false; // Track whether boxes are currently flipping
 
 // Fetch data from Cloudflare
 async function loadGameData() {
@@ -34,7 +36,8 @@ async function loadGameData() {
             a.addEventListener("click", function(e) {
                 e.preventDefault();
 
-                if (guessCount >= MAX_NUM_GUESSES) { // Only allow submission if user has guesses left
+                // Only allow submission if game is ongoing, boxes are not flipping, and user has guesses left
+                if (animating || gameFinished || guessCount >= MAX_NUM_GUESSES) { 
                     return;
                 }
 
@@ -199,11 +202,19 @@ form.addEventListener("keydown", function(e) {
 
 // Giving up logic
 confirmForfeit.addEventListener("click", function(e) {
+    
+    // Prevent forfeiting while boxes are flipping or after game has finished
+    if (animating || gameFinished) {
+        return;
+    }
+
     displayAnswer("Loss");
 });
 
 // Make boxes flip
 function flipBoxes(playerName) {
+    animating = true; // Mark boxes as flipping
+
     var boxes = document.getElementsByClassName(`player-info-${guessCount}`);
     var boxArray = Array.from(boxes);
     boxArray.map(function (box, i) {
@@ -217,6 +228,7 @@ function flipBoxes(playerName) {
 
     // Display answer after all boxes have flipped
     setTimeout(() => {
+        animating = false;
         displayAnswer(playerName);
     }, 1500);
 }
@@ -248,9 +260,12 @@ async function submitGameResult(playerName, gameResult, guessCount) {
 
 // Display answer on correct guess/loss
 function displayAnswer(playerName, updateStreak = true) {
-    
-    // Variables to track game state
-    let gameFinished = false;
+
+    if (gameFinished) { // Prevent game from ending more than once
+        return;
+    }
+
+    // Track game result
     let gameResult = "";
 
     // Get answer name and source information
