@@ -1,0 +1,863 @@
+{
+    "updated": "2026-11-10",
+    "players": {
+        "Abby Roque": {
+            "team": "MTL",
+            "number": 11,
+            "nation": "USA",
+            "age": 29,
+            "conference": "Eastern",
+            "id": 8583698,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Alex Carpenter": {
+            "team": "SEA",
+            "number": 25,
+            "nation": "USA",
+            "age": 32,
+            "conference": "Western",
+            "id": 8118077,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Alina Müller": {
+            "team": "HAM",
+            "number": 11,
+            "nation": "CHE",
+            "age": 28,
+            "conference": "Eastern",
+            "id": 8896841,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Brianne Jenner": {
+            "team": "HAM",
+            "number": 19,
+            "nation": "CAN",
+            "age": 35,
+            "conference": "Eastern",
+            "id": 8467387,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Britta Curl-Salemme": {
+            "team": "DET",
+            "number": 77,
+            "nation": "USA",
+            "age": 26,
+            "conference": "Western",
+            "id": 8779557,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Casey O'Brien": {
+            "team": "NY",
+            "number": 26,
+            "nation": "USA",
+            "age": 25,
+            "conference": "Eastern",
+            "id": 8022111,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Claire Dalton": {
+            "team": "TOR",
+            "number": 42,
+            "nation": "CAN",
+            "age": 26,
+            "conference": "Eastern",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Danielle Serdachny": {
+            "team": "SEA",
+            "number": 92,
+            "nation": "CAN",
+            "age": 25,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Daryl Watts": {
+            "team": "DET",
+            "number": 9,
+            "nation": "CAN",
+            "age": 27,
+            "conference": "Western",
+            "id": 8001846,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Fanuza Kadirova": {
+            "team": "OTT",
+            "number": 71,
+            "nation": "RUS",
+            "age": 28,
+            "conference": "Eastern",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Gabbie Hughes": {
+            "team": "OTT",
+            "number": 17,
+            "nation": "USA",
+            "age": 27,
+            "conference": "Eastern",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Grace Zumwinkle": {
+            "team": "MIN",
+            "number": 13,
+            "nation": "USA",
+            "age": 27,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Haley Winn": {
+            "team": "BOS",
+            "number": 8,
+            "nation": "USA",
+            "age": 23,
+            "conference": "Eastern",
+            "id": 8216068,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Hannah Bilka": {
+            "team": "DET",
+            "number": 19,
+            "nation": "USA",
+            "age": 25,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Hannah Miller": {
+            "team": "VAN",
+            "number": 34,
+            "nation": "CAN",
+            "age": 30,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Hayley Scamurra": {
+            "team": "VGS",
+            "number": 16,
+            "nation": "USA",
+            "age": 31,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Hilary Knight": {
+            "team": "DET",
+            "number": 21,
+            "nation": "USA",
+            "age": 37,
+            "conference": "Western",
+            "id": 8635468,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Jamie Lee Rattray": {
+            "team": "TOR",
+            "number": 47,
+            "nation": "CAN",
+            "age": 34,
+            "conference": "Eastern",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Jenn Gardiner": {
+            "team": "VAN",
+            "number": 12,
+            "nation": "CAN",
+            "age": 25,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Jessie Eldridge": {
+            "team": "MTL",
+            "number": 18,
+            "nation": "CAN",
+            "age": 28,
+            "conference": "Eastern",
+            "id": 8895341,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Julia Gosling": {
+            "team": "SEA",
+            "number": 88,
+            "nation": "CAN",
+            "age": 25,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Katy Knoll": {
+            "team": "VGS",
+            "number": 6,
+            "nation": "USA",
+            "age": 25,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Kelly Pannek": {
+            "team": "MIN",
+            "number": 12,
+            "nation": "USA",
+            "age": 30,
+            "conference": "Western",
+            "id": 8357292,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Kendall Cooper": {
+            "team": "VGS",
+            "number": 4,
+            "nation": "CAN",
+            "age": 24,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Kendall Coyne Schofield": {
+            "team": "MIN",
+            "number": 26,
+            "nation": "USA",
+            "age": 34,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Kristýna Kaltounková": {
+            "team": "NY",
+            "number": 98,
+            "nation": "CZE",
+            "age": 24,
+            "conference": "Eastern",
+            "id": 8670338,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Laura Stacey": {
+            "team": "MTL",
+            "number": 7,
+            "nation": "CAN",
+            "age": 32,
+            "conference": "Eastern",
+            "id": 8880896,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Lee Stecklein": {
+            "team": "MIN",
+            "number": 2,
+            "nation": "USA",
+            "age": 32,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Maddi Wheeler": {
+            "team": "SJ",
+            "number": 28,
+            "nation": "CAN",
+            "age": 24,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Mae Batherson": {
+            "team": "VGS",
+            "number": 12,
+            "nation": "DEU",
+            "age": 25,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Marie-Philip Poulin": {
+            "team": "MTL",
+            "number": 29,
+            "nation": "CAN",
+            "age": 35,
+            "conference": "Eastern",
+            "id": 8056057,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Megan Keller": {
+            "team": "BOS",
+            "number": 5,
+            "nation": "USA",
+            "age": 30,
+            "conference": "Eastern",
+            "id": 8107430,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Natálie Mlýnková": {
+            "team": "SJ",
+            "number": 96,
+            "nation": "CZE",
+            "age": 25,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Nicole Gosling": {
+            "team": "HAM",
+            "number": 61,
+            "nation": "CAN",
+            "age": 24,
+            "conference": "Eastern",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Rebecca Leslie": {
+            "team": "OTT",
+            "number": 37,
+            "nation": "CAN",
+            "age": 30,
+            "conference": "Eastern",
+            "id": 8261962,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Renata Fast": {
+            "team": "TOR",
+            "number": 14,
+            "nation": "CAN",
+            "age": 32,
+            "conference": "Eastern",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Sarah Fillier": {
+            "team": "NY",
+            "number": 10,
+            "nation": "CAN",
+            "age": 26,
+            "conference": "Eastern",
+            "id": 8919385,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Sarah Nurse": {
+            "team": "VAN",
+            "number": 20,
+            "nation": "CAN",
+            "age": 31,
+            "conference": "Western",
+            "id": 8256417,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Sarah Wozniewicz": {
+            "team": "OTT",
+            "number": 23,
+            "nation": "CAN",
+            "age": 23,
+            "conference": "Eastern",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Sophie Jaques": {
+            "team": "VAN",
+            "number": 16,
+            "nation": "CAN",
+            "age": 26,
+            "conference": "Western",
+            "id": 8430154,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Susanna Tapani": {
+            "team": "BOS",
+            "number": 77,
+            "nation": "FIN",
+            "age": 33,
+            "conference": "Eastern",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Taylor Fox": {
+            "team": "MIN",
+            "number": 27,
+            "nation": "USA",
+            "age": 26,
+            "conference": "Western",
+            "id": 8316790,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Theresa Schafzahl": {
+            "team": "SEA",
+            "number": 37,
+            "nation": "AUT",
+            "age": 26,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        }
+    },
+    "unused_daily_players": [
+        "Alex Carpenter",
+        "Alina Müller",
+        "Brianne Jenner",
+        "Britta Curl-Salemme",
+        "Casey O'Brien",
+        "Daryl Watts",
+        "Haley Winn",
+        "Hilary Knight",
+        "Jessie Eldridge",
+        "Kelly Pannek",
+        "Kristýna Kaltounková",
+        "Laura Stacey",
+        "Marie-Philip Poulin",
+        "Megan Keller",
+        "Rebecca Leslie",
+        "Sarah Fillier",
+        "Sarah Nurse",
+        "Sophie Jaques",
+        "Taylor Fox"
+    ],
+    "daily_name": "Abby Roque",
+    "daily_history": {
+        "1": "Abby Roque"
+    },
+    "video_sources": {
+        "Abby Roque": {
+            "URL": "https://youtu.be/Mq_yOVxLQf0",
+            "source": "the PWHL"
+        },
+        "Alex Carpenter": {
+            "URL": "https://youtu.be/LuC2t_Mx_g4",
+            "source": "the PWHL"
+        },
+        "Alina Müller": {
+            "URL": "https://youtu.be/zz47oP7HUGE",
+            "source": "the PWHL"
+        },
+        "Brianne Jenner": {
+            "URL": "https://youtu.be/JkYbsWyKx3o",
+            "source": "the PWHL"
+        },
+        "Britta Curl-Salemme": {
+            "URL": "https://youtu.be/1vxz3GQTEDM",
+            "source": "the PWHL"
+        },
+        "Casey O'Brien": {
+            "URL": "https://youtu.be/dG3kv84Z9-E",
+            "source": "the PWHL"
+        },
+        "Daryl Watts": {
+            "URL": "https://youtu.be/E7VfqghspJU",
+            "source": "the PWHL"
+        },
+        "Haley Winn": {
+            "URL": "https://youtu.be/_qlIv5-VY8w",
+            "source": "the PWHL"
+        },
+        "Hilary Knight": {
+            "URL": "https://youtu.be/rby24ufSyaQ",
+            "source": "the PWHL"
+        },
+        "Jessie Eldridge": {
+            "URL": "https://youtu.be/iL3lTEsrwg4",
+            "source": "the PWHL"
+        },
+        "Kelly Pannek": {
+            "URL": "https://youtu.be/KOMgq8zs97k",
+            "source": "the PWHL"
+        },
+        "Kristýna Kaltounková": {
+            "URL": "https://youtu.be/yoAmAgd4l4o",
+            "source": "the PWHL"
+        },
+        "Laura Stacey": {
+            "URL": "https://youtu.be/uKSmhymBknA",
+            "source": "the PWHL"
+        },
+        "Marie-Philip Poulin": {
+            "URL": "https://youtu.be/yXkxAGTK6fo",
+            "source": "the PWHL"
+        },
+        "Megan Keller": {
+            "URL": "https://youtu.be/oBwjywEdsKs",
+            "source": "the PWHL"
+        },
+        "Rebecca Leslie": {
+            "URL": "https://youtu.be/S7jU8ShYpa4",
+            "source": "the PWHL"
+        },
+        "Sarah Fillier": {
+            "URL": "https://youtu.be/o1XyiZ_PgEM",
+            "source": "the PWHL"
+        },
+        "Sarah Nurse": {
+            "URL": "https://youtu.be/Gg9ERf4N6sk",
+            "source": "the PWHL"
+        },
+        "Sophie Jaques": {
+            "URL": "https://youtu.be/cHxDESaua2c",
+            "source": "the PWHL"
+        },
+        "Taylor Fox": {
+            "URL": "https://youtu.be/rby24ufSyaQ",
+            "source": "the PWHL"
+        }
+    }
+}
