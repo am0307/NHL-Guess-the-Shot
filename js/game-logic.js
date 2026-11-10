@@ -66,6 +66,14 @@ async function loadGameData() {
                 localStorage.setItem("played_endless_ids", JSON.stringify(currentPlayedIds));
             }
 
+            // Get daily number to identify today's game
+            window.dailyNumber = String(Object.keys(data.daily_history).length);
+
+            // Trigger already played state if applicable
+            if (localStorage.getItem("played_daily_number") === window.dailyNumber) {
+                window.alreadyPlayed = true;
+            }
+
         } else {
             // Check URL for player ID
             const urlParams = new URLSearchParams(window.location.search);
@@ -116,8 +124,8 @@ async function loadGameData() {
         document.getElementById("mask-vid").src = `${window.PUBLIC_R2_URL}/videos/masks/${window.answerId}.mp4`;
         document.getElementById("org-vid").src = `${window.PUBLIC_R2_URL}/videos/original/${window.answerId}.mp4`;
 
-        // If endless mode and already played, trigger the alert screen without updating streak
-        if (window.gameMode === "endless" && window.alreadyPlayed) {
+        // If already played, trigger the alert screen without updating streak
+        if (window.alreadyPlayed) {
             displayAnswer("Played", false);
         }
 
@@ -364,6 +372,11 @@ function displayAnswer(playerName, updateStreak = true) {
 
             submitGameResult(answerName, "loss", guessCount); // Submit result
         }
+    }
+
+    // Lock daily game only after a win/loss
+    if (gameFinished && window.gameMode === "daily" && (gameResult === "win" || gameResult === "loss")) {
+        localStorage.setItem("played_daily_number", window.dailyNumber);
     }
 
     // Update endless streak logic
