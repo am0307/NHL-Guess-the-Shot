@@ -77,8 +77,8 @@ async function loadGameData() {
                 localStorage.setItem(PLAYED_ENDLESS_KEY, JSON.stringify(currentPlayedIds));
             }
 
-            // Get daily number to identify today's game
-            window.dailyNumber = String(Object.keys(data.daily_history).length);
+            // Get daily number and date to identify today's game
+            window.dailyNumber = `${data.updated}-${Object.keys(data.daily_history).length}`;
 
             // Trigger already played state if applicable
             if (localStorage.getItem(PLAYED_DAILY_KEY) === window.dailyNumber) {
