@@ -147,6 +147,7 @@ const form = document.getElementById("player-form");
 const tooltips = document.querySelectorAll(".column-tooltip");
 const initiateForfeit = document.getElementById("start-forfeit")
 const confirmForfeit = document.getElementById("give-up");
+const forfeitModal = document.getElementById("forfeit-modal");
 import { createSharable } from "./share-logic.js";
 
 let guessCount = 0; // Guess number tracker
@@ -283,6 +284,9 @@ function displayAnswer(playerName, updateStreak = true) {
         const videoSourceLink = document.getElementById("video-source-link");
         const swapVideoBtn = document.getElementById("swap-video-btn")
 
+        // Close forfeit modal if open
+        bootstrap.Modal.getInstance(forfeitModal)?.hide();
+
         // Adjust styles and show/hide relevant elements
         successAlert.classList.remove("d-none");
         winAnswer.textContent = `The answer was ${answerName}!`;
@@ -320,6 +324,9 @@ function displayAnswer(playerName, updateStreak = true) {
         const videoSource = document.getElementById("video-source");
         const videoSourceLink = document.getElementById("video-source-link");
         const swapVideoBtn = document.getElementById("swap-video-btn")
+
+        // Close forfeit modal if open
+        bootstrap.Modal.getInstance(forfeitModal)?.hide();
 
         // Adjust styles and show/hide relevant elements
         lossAlert.classList.remove("d-none");
