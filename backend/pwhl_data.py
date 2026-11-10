@@ -1,4 +1,4 @@
-data = {
+PWHL_PLAYERS = {
   "Abby Roque": {
     "birthdate": "1997-09-25",
     "team": "MTL",
@@ -241,7 +241,7 @@ data = {
   }
 }
 
-extras = {
+PWHL_EXTRAS = {
   "Claire Dalton": {
     "birthdate": "2000-03-20",
     "team": "TOR",
