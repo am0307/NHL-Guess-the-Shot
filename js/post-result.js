@@ -64,4 +64,35 @@ export default {
     // Static files fallback
     return env.ASSETS.fetch(request);
   },
+
+  // Trigger daily update at midnight Eastern time
+  async scheduled(controller, env, ctx) {
+
+    // Get hour in New York to account for daylight saving time
+    const easternHour = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      hour: "numeric",
+      hourCycle: "h23"
+    }).format(new Date(controller.scheduledTime));
+
+    if (Number(easternHour) !== 0) { // Only continue for the trigger that lands on midnight
+      return;
+    }
+
+    // Send POST request to start GitHub workflow
+    const response = await fetch("https://api.github.com/repos/am0307/NHL-Guess-the-Shot/actions/workflows/daily_update.yml/dispatches", {
+      method: "POST",
+      headers: {
+        "Accept": "application/vnd.github+json",
+        "Authorization": `Bearer ${env.GITHUB_TOKEN}`,
+        "User-Agent": "PuckGuessr Daily Update",
+        "X-GitHub-Api-Version": "2022-11-28"
+      },
+      body: JSON.stringify({ ref: "main" })
+    });
+
+    if (!response.ok) { // Error handling
+      throw new Error(`Failed to start daily update: ${response.status} ${await response.text()}`);
+    }
+  },
 };

@@ -9,3 +9,9 @@ binding = "ASSETS"
 [[r2_buckets]]
 binding = "MY_BUCKET"
 bucket_name = "puckguessr"
+
+[triggers]
+crons = ["0 4 * * *", "0 5 * * *"]
+
+[observability]
+enabled = true
