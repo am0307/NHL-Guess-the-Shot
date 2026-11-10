@@ -47,14 +47,19 @@ def run_update():
     # Retrieve all players currently in the game
     existing_cached_players = cache_dictionary.get("players", {})
     
-    # Retrieve unused daily players list
-    unused_list = cache_dictionary.setdefault("unused_daily_players", [])
-    
-    for name in VIDEO_SOURCES.keys(): # Only players with videos can be daily answers
-        if name not in existing_cached_players and name not in unused_list:
+    # Only players with both a video and an ID can be daily answers
+    eligible = [name for name in VIDEO_SOURCES if name in PLAYER_IDS]
+
+    # Keep only eligible names from the saved list
+    unused_list = [n for n in cache_dictionary.get("unused_daily_players", []) if n in eligible]
+
+    # Add video players who have not yet been a daily answer
+    used_names = set(daily_history.values())
+    for name in eligible:
+        if name not in used_names and name not in unused_list:
             unused_list.append(name)
-    
-    # If file DNE or is not current, get new data
+
+    # Retrieve data for all players
     all_player_data = get_player_info(list(PLAYER_IDS.values()))
     
     # Create formatted dictionary with player data
@@ -74,16 +79,14 @@ def run_update():
         for name, player_data in zip(PLAYER_IDS.keys(), all_player_data)
     }
     
-    # Select daily player
-    if cache_dictionary.get("unused_daily_players"): # Unused player list exists
-        # Daily player to guess is randomly selected from players yet to be used
-        daily_name = choice(cache_dictionary["unused_daily_players"])
-    else:
-        # Daily player to guess is randomly selected from all players
-        cache_dictionary["unused_daily_players"] = list(PLAYER_IDS.keys())
-        daily_name = choice(list(PLAYER_IDS.keys()))
-        
-    cache_dictionary["unused_daily_players"].remove(daily_name) # Remove new daily player name
+    # Refill from eligible players only, avoiding an immediate repeat of yesterday's answer
+    if not unused_list:
+        last_daily = daily_history.get(str(len(daily_history)))
+        unused_list = [n for n in eligible if n != last_daily] or eligible
+
+    daily_name = choice(unused_list)
+    unused_list.remove(daily_name)
+    cache_dictionary["unused_daily_players"] = unused_list
 
     # Append the new daily player to the daily history
     next_index = str(len(daily_history) + 1)
@@ -111,7 +114,7 @@ def run_update():
     s3.put_object(
         Bucket=bucket,
         Key=S3_CACHE_KEY,
-        Body=json.dumps(new_cache, ensure_ascii=False, indent=4),
+        Body=json.dumps(json_data, ensure_ascii=False, indent=4),
         ContentType="application/json",
         CacheControl="no-cache, no-store, must-revalidate"
     )
