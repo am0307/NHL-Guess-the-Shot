@@ -17,6 +17,7 @@
 [data-bs-theme="dark"] .win-loss-btn {
   background-color: white !important;
   color: black !important;
+  min-width: 145px !important;
 }
 
 [data-bs-theme="dark"] .alert-success {
@@ -192,7 +193,7 @@ video {
 
 .share-result-btn {
   width: 35%; 
-  min-width: 120px !important;
+  min-width: 140px !important;
 }
 
 @keyframes flip {
