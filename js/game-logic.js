@@ -79,6 +79,7 @@ async function loadGameData() {
 
             // Get daily number and date to identify today's game
             window.dailyNumber = `${data.updated}-${Object.keys(data.daily_history).length}`;
+            window.dailyGameNumber = Object.keys(data.daily_history).length; // Daily number shown in sharable text
 
             // Trigger already played state if applicable
             if (localStorage.getItem(PLAYED_DAILY_KEY) === window.dailyNumber) {
@@ -385,8 +386,7 @@ function displayAnswer(playerName, updateStreak = true) {
             
             // Create sharable based on whether player forfeited or lost traditionally
             if (playerName === "Loss") {
-                sharable = createSharable(guessCount);
-                sharable = sharable.replace(guessCount, "X"); // Replace guess count with "X" to mark loss
+                sharable = createSharable("X", guessCount); // Mark loss with "X" but only show rows guessed
             } else {
                 sharable = createSharable("X");
             }

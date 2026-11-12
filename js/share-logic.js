@@ -1,18 +1,21 @@
 const MAX_NUM_GUESSES = window.league === "pwhl" ? 6 : 8; // Fewer guesses for PWHL due to smaller player pool
 
 // Create a sharable text representation of the game result
-export function createSharable(numGuesses) {
+export function createSharable(numGuesses, rowsToShow = numGuesses) {
+
+    // Show daily number only in daily mode
+    const dailyLabel = window.gameMode === "daily" ? `#${window.dailyGameNumber}` : "";
 
     // First lines of sharable text
-    let sharable = "PuckGuessr - " + numGuesses + "/" + MAX_NUM_GUESSES + "\n\n";
+    let sharable = `PuckGuessr ${dailyLabel} 🏒 - ${numGuesses}/${MAX_NUM_GUESSES}\n\n`;
 
-    // If the player lost, set numGuesses to MAX_NUM_GUESSES for the purpose of creating the sharable text
-    if (numGuesses === "X") {
-        numGuesses = MAX_NUM_GUESSES;
+    // If the player lost without forfeiting, show all rows
+    if (rowsToShow === "X") {
+        rowsToShow = MAX_NUM_GUESSES;
     }
-    
+
     // Cycle through player info boxes and create a string of emojis based on colour of boxes
-    for (let i = 1; i <= numGuesses; i++) {
+    for (let i = 1; i <= rowsToShow; i++) {
         var rowBoxes = document.getElementsByClassName(`player-info-${i}`);
         var rowBoxesArray = Array.from(rowBoxes);
         
