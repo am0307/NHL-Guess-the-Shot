@@ -160,6 +160,7 @@ const forfeitModal = document.getElementById("forfeit-modal");
 import { createSharable } from "./share-logic.js";
 
 let guessCount = 0; // Guess number tracker
+let shareText = ""; // Plain text version of the sharable result
 
 // Create Bootstrap tooltips
 tooltips.forEach(tt => {
@@ -312,6 +313,7 @@ function displayAnswer(playerName, updateStreak = true) {
         maskVideo.classList.add("d-none");
         
         const sharable = createSharable(guessCount); // Create sharable text for a win
+        shareText = sharable.replace(/<br>/g, "\n"); // Plain text for the share menu
 
         // Retrieve win alert
         const winModalBody = document.querySelector("#share-result-win .modal-body")
@@ -390,7 +392,8 @@ function displayAnswer(playerName, updateStreak = true) {
             } else {
                 sharable = createSharable("X");
             }
-            
+            shareText = sharable.replace(/<br>/g, "\n"); // Plain text for the share menu
+
             // Retrieve loss alert
             const lossModalBody = document.querySelector("#share-result-loss .modal-body");
             if (lossModalBody) {
@@ -602,5 +605,23 @@ if (swapVideoBtn) { // Check if button exists prior to adding event listener
             originalVideo.classList.remove("d-none");
             maskVideo.classList.add("d-none");
         }
+    });
+}
+
+// Use the share menu on phones and tablets, otherwise keep the share modal
+if (navigator.share && window.matchMedia("(pointer: coarse)").matches) {
+    document.querySelectorAll(".share-result-btn").forEach(shareBtn => {
+        shareBtn.removeAttribute("data-bs-toggle"); // Stop the modal opening automatically
+
+        // Open share menu on click
+        shareBtn.addEventListener("click", async function() {
+            try {
+                await navigator.share({ text: shareText });
+            } catch (error) { // Error handling
+                if (error.name !== "AbortError") { // Open the modal if sharing fails, ignoring cancelled shares
+                    bootstrap.Modal.getOrCreateInstance(this.getAttribute("data-bs-target")).show();
+                }
+            }
+        });
     });
 }
