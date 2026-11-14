@@ -176,6 +176,15 @@ video {
   cursor: pointer;
 }
 
+#player-dropdown .dropdown-item.active {
+  background-color: #1434A4;
+  color: white;
+}
+
+[data-bs-theme="dark"] #player-dropdown .dropdown-item.active {
+  background-color: #4682B4;
+}
+
 .form-control {
   border-color: #1434A4;
   border-width: 2px;

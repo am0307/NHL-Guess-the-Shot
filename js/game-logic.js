@@ -1,6 +1,7 @@
 const isPWHL = window.league === "pwhl"; // Track whether game is in PWHL mode
 const MAX_NUM_GUESSES = isPWHL ? 6 : 8; // Maximum number of guesses before game ends, fewer for PWHL due to smaller player pool
 const nameLookup = {}; // Empty lookup table for player names based on their IDs
+const playerOptions = []; // Dropdown options with their names prepared for searching
 let gameFinished = false; // Track whether game has finished
 let animating = false; // Track whether boxes are currently flipping
 const leaguePrefix = isPWHL ? "pwhl_" : ""; // Prefix for league specific files and storage keys
@@ -62,6 +63,7 @@ async function loadGameData() {
 
             li.appendChild(a);
             dropdown.appendChild(li);
+            playerOptions.push({ name: name, searchName: normaliseText(name), li: li });
         }
 
         if (window.gameMode === "daily") {
@@ -161,40 +163,79 @@ import { createSharable } from "./share-logic.js";
 
 let guessCount = 0; // Guess number tracker
 let shareText = ""; // Plain text version of the sharable result
+let activeIndex = -1; // Index of the player highlighted with the arrow keys, -1 when none
 
 // Create Bootstrap tooltips
 tooltips.forEach(tt => {
     new bootstrap.Tooltip(tt)
 })
 
-// Show and filter dropdown as the user types
-input.addEventListener("input", function() {
-    const userInput = input.value.toLowerCase();
-    const maxDisplayed = 5;
-    let numDisplayed = 0;
-    let hasVisibleItems = false;
+// Normalise text by removing accents, periods, and apostrophes, and treating hyphens as spaces
+function normaliseText(text) {
+    return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[.'’`]/g, "").replace(/-/g, " ").trim();
+}
 
-    // Get current options
-    const currentItems = dropdown.querySelectorAll(".player-option");
+// Rank how well a player's name matches the user's input, lower is better
+function getMatchRank(searchName, userInput) {
+    const nameWords = searchName.split(" ");
 
-    // Loop through each item and show players based on the filter
-    currentItems.forEach(item => {
-        var playerText = item.textContent.toLowerCase();
+    if (searchName.startsWith(userInput)) { // Full name starts with input
+        return 0;
+    } else if (nameWords.some(word => word.startsWith(userInput))) { // Part of the name starts with input
+        return 1;
+    } else if (searchName.includes(userInput)) { // Input appears anywhere
+        return 2;
+    }
 
-        // Normalise text by removing accents and periods
-        const playerTextNormalise = playerText.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "").replace(/['’`]/g, "");
-        const userInputNormalise = userInput.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\./g, "").replace(/['’`]/g, "");
-        
-        if (playerTextNormalise.includes(userInputNormalise) && userInputNormalise.length > 0 && numDisplayed < maxDisplayed) {
-            item.parentElement.style.display = "block";
-            hasVisibleItems = true;
-            numDisplayed++;
-        } else {
-            item.parentElement.style.display = "none";
-        }
+    return null; // No match
+}
+
+// Highlight the player at the given index in the dropdown
+function highlightOption(index) {
+    const options = dropdown.querySelectorAll(".player-option");
+    activeIndex = index;
+
+    options.forEach((option, i) => {
+        option.classList.toggle("active", i === activeIndex);
     });
+}
 
-    dropdown.style.display = (hasVisibleItems && userInput.length > 0) ? "block" : "none";
+// Show the best matching players as the user types
+input.addEventListener("input", function() {
+    const userInput = normaliseText(input.value);
+    const maxDisplayed = 5;
+
+    // Rank matching players, then sort by rank and name
+    const matches = userInput.length === 0 ? [] : playerOptions
+        .map(option => ({ ...option, rank: getMatchRank(option.searchName, userInput) }))
+        .filter(option => option.rank !== null)
+        .sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name))
+        .slice(0, maxDisplayed);
+
+    // Show only the best matches
+    dropdown.replaceChildren(...matches.map(option => option.li));
+    dropdown.style.display = matches.length > 0 ? "block" : "none";
+
+    highlightOption(-1); // Clear highlight as the list has changed
+});
+
+// Navigate the dropdown with the arrow keys and select the highlighted player with enter
+input.addEventListener("keydown", function(e) {
+    const options = dropdown.querySelectorAll(".player-option");
+
+    if (dropdown.style.display !== "block" || options.length === 0) { // Dropdown is closed
+        return;
+    }
+
+    if (e.key === "ArrowDown") {
+        e.preventDefault(); // Stop the cursor moving
+        highlightOption(Math.min(activeIndex + 1, options.length - 1));
+    } else if (e.key === "ArrowUp") {
+        e.preventDefault(); // Stop the cursor moving
+        highlightOption(Math.max(activeIndex - 1, -1)); // Moving up from the top returns to typing
+    } else if (e.key === "Enter" && activeIndex >= 0) { // Only select a player highlighted with the arrows
+        options[activeIndex].click();
+    }
 });
 
 // Hide dropdown on outside click
