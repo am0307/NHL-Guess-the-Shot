@@ -9,7 +9,8 @@ from nhl_api import get_player_info, get_team_rosters
 from age_calculator import find_age
 from random import choice
 from data import TEAM_DIVISIONS_CONFERENCES, PLAYER_IDS, VIDEO_SOURCES
-from pwhl_data import PWHL_PLAYERS, PWHL_EXTRAS
+from pwhl_api import get_pwhl_rosters
+from pwhl_data import PWHL_PLAYERS, PWHL_TEAM_CONFERENCES, PWHL_NATIONS, HOMETOWN_NATIONS
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -156,6 +157,14 @@ def update_nhl(s3, bucket):
 
     save_cache(s3, bucket, NHL_S3_CACHE_KEY, NHL_LOCAL_CACHE_PATH, player_dict, VIDEO_SOURCES, daily_name, unused_list, daily_history)
 
+# Retrieve a PWHL player's nation, using their hometown if their birth country is missing
+def get_pwhl_nation(player):
+    if player["birthcntry"] in PWHL_NATIONS:
+        return PWHL_NATIONS[player["birthcntry"]]
+
+    hometown_region = player["hometown"].split(",")[-1].strip()
+    return HOMETOWN_NATIONS.get(hometown_region)
+
 # Create and upload the PWHL player data
 def update_pwhl(s3, bucket):
 
@@ -165,24 +174,50 @@ def update_pwhl(s3, bucket):
     # Retrieve all players currently in the game
     existing_cached_players = cache_dictionary.get("players", {})
 
-    # Combine players with and without videos, sorted by name
-    all_players = dict(sorted({**PWHL_PLAYERS, **PWHL_EXTRAS}.items()))
+    # Retrieve every rostered player, excluding camp invitees
+    roster_players = [player_data for player_data in get_pwhl_rosters().values() if player_data["status"] != "Camp Invitee"]
 
-    # Create formatted dictionary with player data
+    # Count names to find players who share one
+    name_counts = Counter(player_data["name"] for player_data in roster_players)
+
+    # Create formatted dictionary with player data from the rosters
     player_dict = {}
-    for name, player_data in all_players.items():
+    for player_data in roster_players:
+        name = player_data["name"]
+        if name_counts[name] > 1: # Duplicate name
+            name = f"{name} ({player_data['position']})"
+
+        nation = get_pwhl_nation(player_data)
+        if not nation or not player_data["tp_jersey_number"]: # Missing information
+            print(f"Skipped {name}: missing nation or number")
+            continue
+
         player_dict[name] = {
             "team": player_data["team"],
-            "number": player_data["number"],
-            "nation": player_data["nation"],
-            "age": find_age(player_data["birthdate"]),
-            "conference": player_data["conference"]
+            "number": int(player_data["tp_jersey_number"]),
+            "nation": nation,
+            "age": find_age(player_data["rawbirthdate"]),
+            "conference": PWHL_TEAM_CONFERENCES[player_data["team"]]
         }
 
-        if "id" in player_data: # Only players with videos have IDs
-            player_dict[name]["id"] = player_data["id"]
+    # Add video players missing from rosters (e.g. camp invitees) using their saved data
+    for name, player_data in PWHL_PLAYERS.items():
+        if name not in player_dict:
+            player_dict[name] = {
+                "team": player_data["team"],
+                "number": player_data["number"],
+                "nation": player_data["nation"],
+                "age": find_age(player_data["birthdate"]),
+                "conference": player_data["conference"]
+            }
+
+    # Add IDs for video players and results for everyone
+    for name in player_dict:
+        if name in PWHL_PLAYERS: # Only players with videos have IDs
+            player_dict[name]["id"] = PWHL_PLAYERS[name]["id"]
 
         player_dict[name]["results"] = get_results(existing_cached_players, name, 6) # Fewer guesses for PWHL
+    player_dict = dict(sorted(player_dict.items()))
 
     # Create video sources from players with both a video and an ID
     video_sources = {name: player_data["video"] for name, player_data in PWHL_PLAYERS.items() if "video" in player_data and "id" in player_data}

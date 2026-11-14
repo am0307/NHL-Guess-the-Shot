@@ -241,166 +241,26 @@ PWHL_PLAYERS = {
   }
 }
 
-PWHL_EXTRAS = {
-  "Claire Dalton": {
-    "birthdate": "2000-03-20",
-    "team": "TOR",
-    "conference": "Eastern",
-    "number": 42,
-    "nation": "CAN",
-  },
-  "Danielle Serdachny": {
-    "birthdate": "2001-05-12",
-    "team": "SEA",
-    "conference": "Western",
-    "number": 92,
-    "nation": "CAN",
-  },
-  "Fanuza Kadirova": {
-    "birthdate": "1998-04-06",
-    "team": "OTT",
-    "conference": "Eastern",
-    "number": 71,
-    "nation": "RUS",
-  },
-  "Gabbie Hughes": {
-    "birthdate": "1999-10-04",
-    "team": "OTT",
-    "conference": "Eastern",
-    "number": 17,
-    "nation": "USA",
-  },
-  "Grace Zumwinkle": {
-    "birthdate": "1999-04-23",
-    "team": "MIN",
-    "conference": "Western",
-    "number": 13,
-    "nation": "USA",
-  },
-  "Hannah Bilka": {
-    "birthdate": "2001-03-24",
-    "team": "DET",
-    "conference": "Western",
-    "number": 19,
-    "nation": "USA",
-  },
-  "Hannah Miller": {
-    "birthdate": "1996-02-16",
-    "team": "VAN",
-    "conference": "Western",
-    "number": 34,
-    "nation": "CAN",
-  },
-  "Hayley Scamurra": {
-    "birthdate": "1994-12-14",
-    "team": "VGS",
-    "conference": "Western",
-    "number": 16,
-    "nation": "USA",
-  },
-  "Jamie Lee Rattray": {
-    "birthdate": "1992-09-30",
-    "team": "TOR",
-    "conference": "Eastern",
-    "number": 47,
-    "nation": "CAN",
-  },
-  "Jenn Gardiner": {
-    "birthdate": "2001-09-18",
-    "team": "VAN",
-    "conference": "Western",
-    "number": 12,
-    "nation": "CAN",
-  },
-  "Julia Gosling": {
-    "birthdate": "2001-02-21",
-    "team": "SEA",
-    "conference": "Western",
-    "number": 88,
-    "nation": "CAN",
-  },
-  "Katy Knoll": {
-    "birthdate": "2001-01-16",
-    "team": "VGS",
-    "conference": "Western",
-    "number": 6,
-    "nation": "USA",
-  },
-  "Kendall Cooper": {
-    "birthdate": "2002-05-19",
-    "team": "VGS",
-    "conference": "Western",
-    "number": 4,
-    "nation": "CAN",
-  },
-  "Kendall Coyne Schofield": {
-    "birthdate": "1992-05-25",
-    "team": "MIN",
-    "conference": "Western",
-    "number": 26,
-    "nation": "USA",
-  },
-  "Lee Stecklein": {
-    "birthdate": "1994-04-23",
-    "team": "MIN",
-    "conference": "Western",
-    "number": 2,
-    "nation": "USA",
-  },
-  "Maddi Wheeler": {
-    "birthdate": "2002-10-10",
-    "team": "SJ",
-    "conference": "Western",
-    "number": 28,
-    "nation": "CAN",
-  },
-  "Mae Batherson": {
-    "birthdate": "2000-12-05",
-    "team": "VGS",
-    "conference": "Western",
-    "number": 12,
-    "nation": "DEU",
-  },
-  "Natálie Mlýnková": {
-    "birthdate": "2001-05-24",
-    "team": "SJ",
-    "conference": "Western",
-    "number": 96,
-    "nation": "CZE",
-  },
-  "Nicole Gosling": {
-    "birthdate": "2002-04-21",
-    "team": "HAM",
-    "conference": "Eastern",
-    "number": 61,
-    "nation": "CAN",
-  },
-  "Renata Fast": {
-    "birthdate": "1994-10-06",
-    "team": "TOR",
-    "conference": "Eastern",
-    "number": 14,
-    "nation": "CAN",
-  },
-  "Sarah Wozniewicz": {
-    "birthdate": "2003-08-25",
-    "team": "OTT",
-    "conference": "Eastern",
-    "number": 23,
-    "nation": "CAN",
-  },
-  "Susanna Tapani": {
-    "birthdate": "1993-03-02",
-    "team": "BOS",
-    "conference": "Eastern",
-    "number": 77,
-    "nation": "FIN",
-  },
-  "Theresa Schafzahl": {
-    "birthdate": "2000-04-12",
-    "team": "SEA",
-    "conference": "Western",
-    "number": 37,
-    "nation": "AUT",
-  }
-}
+# Dictionary of PWHL team abbreviations and their conference
+PWHL_TEAM_CONFERENCES = {"BOS": "Eastern", "HAM": "Eastern", "MTL": "Eastern", "NY": "Eastern", "OTT": "Eastern", "TOR": "Eastern",
+                         "DET": "Western", "MIN": "Western", "SEA": "Western", "SJ": "Western", "VAN": "Western", "VGS": "Western"
+                         }
+
+# Country names from the PWHL feed and their abbreviations
+PWHL_NATIONS = {"Canada": "CAN", "United States": "USA", "Czechia": "CZE", "Czech Republic": "CZE", "Sweden": "SWE",
+                "Finland": "FIN", "Germany": "DEU", "Russia": "RUS", "Switzerland": "CHE", "Denmark": "DNK",
+                "Norway": "NOR", "Belarus": "BLR", "Italy": "ITA", "Austria": "AUT", "Hungary": "HUN",
+                "Japan": "JPN", "Slovakia": "SVK", "France": "FRA", "China": "CHN", "Latvia": "LVA",
+                "Netherlands": "NLD", "Great Britain": "GBR", "United Kingdom": "GBR", "Poland": "POL", "Ukraine": "UKR"
+                }
+
+# Hometown regions and abbreviations from the PWHL feed and their nation, used when birth country is missing
+HOMETOWN_NATIONS = {**{region: "CAN" for region in ["AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "PEI", "QC", "SK", "YT"]},
+                    **{state: "USA" for state in ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN",
+                                                  "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
+                                                  "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT",
+                                                  "VT", "VA", "WA", "WV", "WI", "WY"]},
+                    **{nation: nation for nation in PWHL_NATIONS.values()},
+                    **PWHL_NATIONS,
+                    "GER": "DEU", "SWI": "CHE", "SUI": "CHE", "DEN": "DNK"
+                    }
