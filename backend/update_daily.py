@@ -70,13 +70,17 @@ def pick_daily_player(cache_dictionary, eligible):
 
     return daily_name, unused_list, daily_history
 
-# Save local copy and upload to Cloudflare R2
-def save_cache(s3, bucket, key, local_path, player_dict, video_sources, daily_name, unused_list, daily_history):
+# Keep the current daily player, unused list, and daily history
+def keep_daily_player(cache_dictionary):
+    return cache_dictionary["daily_name"], cache_dictionary.get("unused_daily_players", []), cache_dictionary.get("daily_history", {})
 
-    # Update file with new date and player dictionary
+# Save local copy and upload to Cloudflare R2
+def save_cache(s3, bucket, key, local_path, player_dict, video_sources, daily_name, unused_list, daily_history, updated=None):
+
+    # Update file with new date (unless one is kept) and player dictionary
     est = ZoneInfo("America/New_York")
     new_cache = {
-        "updated": datetime.now(tz=est).strftime("%Y-%m-%d"),
+        "updated": updated or datetime.now(tz=est).strftime("%Y-%m-%d"),
         "players": player_dict,
         "unused_daily_players": unused_list,
         "daily_name": daily_name,
@@ -110,13 +114,7 @@ def get_player_name(player, player_id, name_counts):
     return name
 
 # Create and upload the NHL player data
-def update_nhl(s3, bucket):
-
-    # Fetch existing cache from R2
-    cache_dictionary = load_cache(s3, bucket, NHL_S3_CACHE_KEY)
-
-    # Retrieve all players currently in the game
-    existing_cached_players = cache_dictionary.get("players", {})
+def update_nhl(s3, bucket, pick_daily=True):
 
     # Retrieve every rostered player
     roster_players = get_team_rosters(TEAM_DIVISIONS_CONFERENCES.keys())
@@ -133,6 +131,12 @@ def update_nhl(s3, bucket):
 
     # Count names to find players who share one
     name_counts = Counter(f"{p['firstName']['default']} {p['lastName']['default']}" for p in roster_players.values())
+
+    # Fetch existing cache from R2 after the API calls so fewer submitted results are overwritten
+    cache_dictionary = load_cache(s3, bucket, NHL_S3_CACHE_KEY)
+
+    # Retrieve all players currently in the game
+    existing_cached_players = cache_dictionary.get("players", {})
 
     # Create formatted dictionary with player data, sorted by name
     player_dict = {}
@@ -153,9 +157,15 @@ def update_nhl(s3, bucket):
     # Only players with a video who are in the game can be daily answers
     eligible = [name for name in VIDEO_SOURCES if name in player_dict]
 
-    daily_name, unused_list, daily_history = pick_daily_player(cache_dictionary, eligible)
+    # Choose a new daily player, or keep the current one when only refreshing players
+    if pick_daily or "daily_name" not in cache_dictionary:
+        daily_name, unused_list, daily_history = pick_daily_player(cache_dictionary, eligible)
+        updated = None
+    else:
+        daily_name, unused_list, daily_history = keep_daily_player(cache_dictionary)
+        updated = cache_dictionary["updated"] # Keep the date so today's game stays locked for those who played
 
-    save_cache(s3, bucket, NHL_S3_CACHE_KEY, NHL_LOCAL_CACHE_PATH, player_dict, VIDEO_SOURCES, daily_name, unused_list, daily_history)
+    save_cache(s3, bucket, NHL_S3_CACHE_KEY, NHL_LOCAL_CACHE_PATH, player_dict, VIDEO_SOURCES, daily_name, unused_list, daily_history, updated)
 
 # Retrieve a PWHL player's nation, using their hometown if their birth country is missing
 def get_pwhl_nation(player):
@@ -166,13 +176,7 @@ def get_pwhl_nation(player):
     return HOMETOWN_NATIONS.get(hometown_region)
 
 # Create and upload the PWHL player data
-def update_pwhl(s3, bucket):
-
-    # Fetch existing cache from R2
-    cache_dictionary = load_cache(s3, bucket, PWHL_S3_CACHE_KEY)
-
-    # Retrieve all players currently in the game
-    existing_cached_players = cache_dictionary.get("players", {})
+def update_pwhl(s3, bucket, pick_daily=True):
 
     # Retrieve every rostered player, excluding camp invitees
     roster_players = [player_data for player_data in get_pwhl_rosters().values() if player_data["status"] != "Camp Invitee"]
@@ -211,6 +215,12 @@ def update_pwhl(s3, bucket):
                 "conference": player_data["conference"]
             }
 
+    # Fetch existing cache from R2 after the API calls so fewer submitted results are overwritten
+    cache_dictionary = load_cache(s3, bucket, PWHL_S3_CACHE_KEY)
+
+    # Retrieve all players currently in the game
+    existing_cached_players = cache_dictionary.get("players", {})
+
     # Add IDs for video players and results for everyone
     for name in player_dict:
         if name in PWHL_PLAYERS: # Only players with videos have IDs
@@ -225,11 +235,17 @@ def update_pwhl(s3, bucket):
     # Only players with both a video and an ID can be daily answers
     eligible = list(video_sources)
 
-    daily_name, unused_list, daily_history = pick_daily_player(cache_dictionary, eligible)
+    # Choose a new daily player, or keep the current one when only refreshing players
+    if pick_daily or "daily_name" not in cache_dictionary:
+        daily_name, unused_list, daily_history = pick_daily_player(cache_dictionary, eligible)
+        updated = None
+    else:
+        daily_name, unused_list, daily_history = keep_daily_player(cache_dictionary)
+        updated = cache_dictionary["updated"] # Keep the date so today's game stays locked for those who played
 
-    save_cache(s3, bucket, PWHL_S3_CACHE_KEY, PWHL_LOCAL_CACHE_PATH, player_dict, video_sources, daily_name, unused_list, daily_history)
+    save_cache(s3, bucket, PWHL_S3_CACHE_KEY, PWHL_LOCAL_CACHE_PATH, player_dict, video_sources, daily_name, unused_list, daily_history, updated)
 
-def run_update():
+def run_update(pick_daily=True):
 
     # Connect to Cloudflare R2
     s3 = boto3.client(
@@ -245,7 +261,7 @@ def run_update():
     failed_leagues = []
     for league, update_league in (("NHL", update_nhl), ("PWHL", update_pwhl)):
         try:
-            update_league(s3, bucket)
+            update_league(s3, bucket, pick_daily)
         except Exception: # Error handling
             print(f"Failed to update {league} player data:")
             traceback.print_exc()
