@@ -19,5 +19,29 @@ def get_player_info(player_ids):
             data.append(response.json())
         
             time.sleep(0.5) # Avoid rate limiting
-    
+
+    return data
+
+# Retrieves every rostered player for each team, keyed by ID
+def get_team_rosters(teams):
+
+    data = {}
+
+    with requests.Session() as session: # Session for more efficient requests
+
+        session.headers.update({"User-Agent": "NHL PuckGuessr Game"}) # Identifying header
+
+        # Loop through teams to receive forwards, defencemen, and goalies
+        for team in teams:
+            url = f"https://api-web.nhle.com/v1/roster/{team}/current"
+
+            response = session.get(url=url)
+            response.raise_for_status()
+
+            for position_group in response.json().values():
+                for player in position_group:
+                    data[player["id"]] = {**player, "team": team}
+
+            time.sleep(0.5) # Avoid rate limiting
+
     return data

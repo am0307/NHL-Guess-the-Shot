@@ -2,9 +2,10 @@ import os
 import json
 import boto3
 import traceback
+from collections import Counter
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from nhl_api import get_player_info
+from nhl_api import get_player_info, get_team_rosters
 from age_calculator import find_age
 from random import choice
 from data import TEAM_DIVISIONS_CONFERENCES, PLAYER_IDS, VIDEO_SOURCES
@@ -98,6 +99,15 @@ def save_cache(s3, bucket, key, local_path, player_dict, video_sources, daily_na
         CacheControl="no-cache, no-store, must-revalidate"
     )
 
+# Create a unique name for each player, keeping existing names so results are preserved
+def get_player_name(player, player_id, name_counts):
+    name = f"{player['firstName']['default']} {player['lastName']['default']}"
+
+    if name_counts[name] > 1 and PLAYER_IDS.get(name) != player_id: # Duplicate name
+        name = f"{name} ({player['positionCode']})"
+
+    return name
+
 # Create and upload the NHL player data
 def update_nhl(s3, bucket):
 
@@ -107,26 +117,40 @@ def update_nhl(s3, bucket):
     # Retrieve all players currently in the game
     existing_cached_players = cache_dictionary.get("players", {})
 
-    # Only players with both a video and an ID can be daily answers
-    eligible = [name for name in VIDEO_SOURCES if name in PLAYER_IDS]
+    # Retrieve every rostered player
+    roster_players = get_team_rosters(TEAM_DIVISIONS_CONFERENCES.keys())
 
-    # Retrieve data for all players
-    all_player_data = get_player_info(list(PLAYER_IDS.values()))
+    # Retrieve players missing from rosters (e.g. injured reserve) so no video players are lost
+    missing_ids = [player_id for player_id in PLAYER_IDS.values() if player_id not in roster_players]
+    for player_data in get_player_info(missing_ids):
+        if player_data.get("currentTeamAbbrev") not in TEAM_DIVISIONS_CONFERENCES: # No longer on an NHL team
+            continue
 
-    # Create formatted dictionary with player data
-    player_dict = {
-        name: {
-            "team": player_data["currentTeamAbbrev"],
-            "division": TEAM_DIVISIONS_CONFERENCES[player_data["currentTeamAbbrev"]][0],
+        player_data["team"] = player_data["currentTeamAbbrev"]
+        player_data["positionCode"] = player_data["position"]
+        roster_players[player_data["playerId"]] = player_data
+
+    # Count names to find players who share one
+    name_counts = Counter(f"{p['firstName']['default']} {p['lastName']['default']}" for p in roster_players.values())
+
+    # Create formatted dictionary with player data, sorted by name
+    player_dict = {}
+    for player_id, player_data in roster_players.items():
+        name = get_player_name(player_data, player_id, name_counts)
+        player_dict[name] = {
+            "team": player_data["team"],
+            "division": TEAM_DIVISIONS_CONFERENCES[player_data["team"]][0],
             "number": player_data["sweaterNumber"],
             "nation": player_data["birthCountry"],
             "age": find_age(player_data["birthDate"]),
-            "conference": TEAM_DIVISIONS_CONFERENCES[player_data["currentTeamAbbrev"]][1],
-            "id": PLAYER_IDS[name],
+            "conference": TEAM_DIVISIONS_CONFERENCES[player_data["team"]][1],
+            "id": player_id,
             "results": get_results(existing_cached_players, name, 8)
         }
-        for name, player_data in zip(PLAYER_IDS.keys(), all_player_data)
-    }
+    player_dict = dict(sorted(player_dict.items()))
+
+    # Only players with a video who are in the game can be daily answers
+    eligible = [name for name in VIDEO_SOURCES if name in player_dict]
 
     daily_name, unused_list, daily_history = pick_daily_player(cache_dictionary, eligible)
 
