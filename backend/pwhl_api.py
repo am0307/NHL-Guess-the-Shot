@@ -5,14 +5,19 @@ import time
 PWHL_FEED_URL = "https://lscluster.hockeytech.com/feed/index.php"
 PWHL_FEED_PARAMS = {"feed": "modulekit", "key": "446521baf8c38984", "client_code": "pwhl"}
 
-# Retrieves a view from the feed
-def get_feed(session, view, **params):
-    response = session.get(url=PWHL_FEED_URL, params={**PWHL_FEED_PARAMS, "view": view, **params})
-    response.raise_for_status()
+# Retrieves a view from the feed, retrying if an error page is returned instead of JSON
+def get_feed(session, view, attempts=3, **params):
+    for attempt in range(attempts):
+        response = session.get(url=PWHL_FEED_URL, params={**PWHL_FEED_PARAMS, "view": view, **params})
+        response.raise_for_status()
 
-    time.sleep(0.5) # Avoid rate limiting
+        time.sleep(0.5) # Avoid rate limiting
 
-    return response.json()["SiteKit"]
+        try:
+            return response.json()["SiteKit"]
+        except requests.exceptions.JSONDecodeError:
+            if attempt == attempts - 1: # Out of attempts
+                raise
 
 # Retrieves every rostered player for each team, keyed by ID
 def get_pwhl_rosters():

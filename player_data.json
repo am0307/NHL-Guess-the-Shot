@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-14",
+    "updated": "2026-11-15",
     "players": {
         "A.J. Greer": {
             "team": "ANA",
@@ -487,7 +487,7 @@
         "Alex Gagne": {
             "team": "COL",
             "division": "Central",
-            "number": 45,
+            "number": 28,
             "nation": "USA",
             "age": 24,
             "conference": "Western",
@@ -873,14 +873,14 @@
             "results": {
                 "1": 0,
                 "2": 0,
-                "3": 0,
+                "3": 1,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Aliaksei Protas": {
@@ -1749,7 +1749,7 @@
             "division": "Pacific",
             "number": 59,
             "nation": "USA",
-            "age": 27,
+            "age": 28,
             "conference": "Western",
             "id": 8483570,
             "results": {
@@ -2416,6 +2416,27 @@
                 "total_guesses": 0
             }
         },
+        "Brett Berard": {
+            "team": "MTL",
+            "division": "Atlantic",
+            "number": 37,
+            "nation": "USA",
+            "age": 24,
+            "conference": "Eastern",
+            "id": 8482132,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Brett Howden": {
             "team": "VGK",
             "division": "Pacific",
@@ -2463,7 +2484,7 @@
             "division": "Metro",
             "number": 22,
             "nation": "USA",
-            "age": 31,
+            "age": 32,
             "conference": "Eastern",
             "id": 8477488,
             "results": {
@@ -4146,6 +4167,27 @@
             "age": 38,
             "conference": "Western",
             "id": 8474102,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "David Reinbacher": {
+            "team": "MTL",
+            "division": "Atlantic",
+            "number": 64,
+            "nation": "AUT",
+            "age": 22,
+            "conference": "Eastern",
+            "id": 8484220,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -6436,7 +6478,7 @@
             "conference": "Eastern",
             "id": 8481559,
             "results": {
-                "1": 1,
+                "1": 2,
                 "2": 1,
                 "3": 0,
                 "4": 0,
@@ -6445,7 +6487,7 @@
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 2
+                "total_guesses": 3
             }
         },
         "Jack McBain": {
@@ -8427,7 +8469,7 @@
             "division": "Central",
             "number": 72,
             "nation": "CAN",
-            "age": 24,
+            "age": 25,
             "conference": "Western",
             "id": 8482111,
             "results": {
@@ -9039,6 +9081,27 @@
             "age": 39,
             "conference": "Eastern",
             "id": 8471724,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Kyle Burroughs": {
+            "team": "DAL",
+            "division": "Central",
+            "number": 28,
+            "nation": "CAN",
+            "age": 31,
+            "conference": "Western",
+            "id": 8477335,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -9729,7 +9792,7 @@
             "division": "Pacific",
             "number": 11,
             "nation": "USA",
-            "age": 23,
+            "age": 24,
             "conference": "Western",
             "id": 8482713,
             "results": {
@@ -10072,13 +10135,13 @@
                 "1": 0,
                 "2": 1,
                 "3": 1,
-                "4": 1,
+                "4": 2,
                 "5": 0,
                 "6": 0,
-                "7": 0,
+                "7": 1,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 3
+                "total_guesses": 5
             }
         },
         "Martin Pospisil": {
@@ -11173,6 +11236,27 @@
                 "total_guesses": 0
             }
         },
+        "Mike Reilly": {
+            "team": "COL",
+            "division": "Central",
+            "number": 5,
+            "nation": "USA",
+            "age": 33,
+            "conference": "Western",
+            "id": 8476422,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Mikey Anderson": {
             "team": "LAK",
             "division": "Pacific",
@@ -11929,6 +12013,27 @@
                 "total_guesses": 0
             }
         },
+        "Nikita Tolopilo": {
+            "team": "VAN",
+            "division": "Pacific",
+            "number": 60,
+            "nation": "BLR",
+            "age": 26,
+            "conference": "Western",
+            "id": 8484268,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Nikita Zadorov": {
             "team": "BOS",
             "division": "Atlantic",
@@ -11988,8 +12093,8 @@
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 0
+                "X": 1,
+                "total_guesses": 1
             }
         },
         "Nikolas Matinpalo": {
@@ -13672,27 +13777,6 @@
                 "total_guesses": 0
             }
         },
-        "Rémi Poirier": {
-            "team": "DAL",
-            "division": "Central",
-            "number": 31,
-            "nation": "CAN",
-            "age": 25,
-            "conference": "Western",
-            "id": 8482465,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
         "Sam Bennett": {
             "team": "FLA",
             "division": "Atlantic",
@@ -15247,6 +15331,27 @@
                 "total_guesses": 0
             }
         },
+        "Trey Taylor": {
+            "team": "DAL",
+            "division": "Central",
+            "number": 27,
+            "nation": "CAN",
+            "age": 24,
+            "conference": "Western",
+            "id": 8485468,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Tristan Jarry": {
             "team": "EDM",
             "division": "Pacific",
@@ -16666,7 +16771,6 @@
         "Ivan Demidov",
         "J.T. Miller",
         "Jack Eichel",
-        "Jack Hughes",
         "Jackson LaCombe",
         "Jake Guentzel",
         "Jake Sanderson",
@@ -16730,13 +16834,14 @@
         "Zach Werenski",
         "Zayne Parekh"
     ],
-    "daily_name": "Martin Necas",
+    "daily_name": "Jack Hughes",
     "daily_history": {
         "1": "Erik Karlsson",
         "2": "Matthew Schaefer",
         "3": "Moritz Seider",
         "4": "Brandon Hagel",
-        "5": "Martin Necas"
+        "5": "Martin Necas",
+        "6": "Jack Hughes"
     },
     "video_sources": {
         "Adam Fantilli": {
@@ -16761,7 +16866,7 @@
         },
         "Alex Ovechkin": {
             "URL": "https://youtu.be/rbdBRaVdPg4",
-            "source": "the NHL"
+            "source": "theNHL"
         },
         "Alexis Lafrenière": {
             "URL": "https://youtu.be/skJppS73abw",
@@ -16779,6 +16884,10 @@
             "URL": "https://youtu.be/vY5TIGmTFIA",
             "source": "Sportsnet"
         },
+        "Blake Coleman": {
+            "URL": "https://youtu.be/pSWSb8rluV4",
+            "source": "Sportsnet"
+        },
         "Brad Marchand": {
             "URL": "https://youtu.be/apTiZTXbtZU",
             "source": "Sportsnet"
@@ -16793,6 +16902,10 @@
         },
         "Brock Faber": {
             "URL": "https://youtu.be/o0AsvxuuUZ4",
+            "source": "Sportsnet"
+        },
+        "Brock Nelson": {
+            "URL": "https://youtu.be/A4vfeeqaeJY",
             "source": "Sportsnet"
         },
         "Cale Makar": {
@@ -16937,7 +17050,7 @@
         },
         "Linus Ullmark": {
             "URL": "https://youtu.be/B97Kxv7ji-o",
-            "source": "the NHL"
+            "source": "theNHL"
         },
         "Logan Cooley": {
             "URL": "https://youtu.be/xgaFTozt6_4",
@@ -16989,6 +17102,10 @@
         },
         "Matvei Michkov": {
             "URL": "https://youtu.be/ub7BELV4w2k",
+            "source": "Sportsnet"
+        },
+        "Michael Amadio": {
+            "URL": "https://youtu.be/4P9kvtW0_nI",
             "source": "Sportsnet"
         },
         "Mika Zibanejad": {
@@ -17061,6 +17178,10 @@
         },
         "Roope Hintz": {
             "URL": "https://youtu.be/lvMaLcMfX70",
+            "source": "Sportsnet"
+        },
+        "Ryan Leonard": {
+            "URL": "https://youtu.be/qgsLfHUdP9k",
             "source": "Sportsnet"
         },
         "Ryan Nugent-Hopkins": {
