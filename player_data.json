@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-15",
+    "updated": "2026-11-17",
     "players": {
         "A.J. Greer": {
             "team": "ANA",
@@ -69,7 +69,7 @@
             "division": "Atlantic",
             "number": 42,
             "nation": "SWE",
-            "age": 22,
+            "age": 23,
             "conference": "Eastern",
             "id": 8483686,
             "results": {
@@ -97,13 +97,13 @@
                 "1": 0,
                 "2": 0,
                 "3": 0,
-                "4": 0,
+                "4": 1,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Adam Fox": {
@@ -1408,6 +1408,27 @@
                 "total_guesses": 0
             }
         },
+        "Artem Duda": {
+            "team": "UTA",
+            "division": "Central",
+            "number": 84,
+            "nation": "RUS",
+            "age": 22,
+            "conference": "Western",
+            "id": 8483436,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Artem Zub": {
             "team": "OTT",
             "division": "Atlantic",
@@ -1581,7 +1602,7 @@
             "division": "Pacific",
             "number": 61,
             "nation": "RUS",
-            "age": 21,
+            "age": 22,
             "conference": "Western",
             "id": 8484234,
             "results": {
@@ -1731,6 +1752,27 @@
             "age": 19,
             "conference": "Eastern",
             "id": 8485414,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Ben McCartney": {
+            "team": "UTA",
+            "division": "Central",
+            "number": 62,
+            "nation": "CAN",
+            "age": 25,
+            "conference": "Western",
+            "id": 8481827,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -1986,14 +2028,14 @@
             "results": {
                 "1": 0,
                 "2": 0,
-                "3": 1,
+                "3": 2,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 1
+                "total_guesses": 2
             }
         },
         "Braden Schneider": {
@@ -2153,7 +2195,7 @@
             "id": 8479542,
             "results": {
                 "1": 0,
-                "2": 0,
+                "2": 1,
                 "3": 0,
                 "4": 1,
                 "5": 0,
@@ -2161,7 +2203,7 @@
                 "7": 0,
                 "8": 1,
                 "X": 0,
-                "total_guesses": 3
+                "total_guesses": 4
             }
         },
         "Brandon Montour": {
@@ -2265,8 +2307,8 @@
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 1,
-                "total_guesses": 1
+                "X": 2,
+                "total_guesses": 2
             }
         },
         "Brayden Schenn": {
@@ -2466,6 +2508,27 @@
             "age": 32,
             "conference": "Western",
             "id": 8476967,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
+        "Brett Leason": {
+            "team": "SJS",
+            "division": "Pacific",
+            "number": 17,
+            "nation": "CAN",
+            "age": 27,
+            "conference": "Western",
+            "id": 8481517,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -3560,7 +3623,7 @@
             "id": 8484144,
             "results": {
                 "1": 0,
-                "2": 0,
+                "2": 1,
                 "3": 0,
                 "4": 0,
                 "5": 0,
@@ -3568,7 +3631,7 @@
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Connor Brown": {
@@ -4012,6 +4075,27 @@
                 "total_guesses": 0
             }
         },
+        "Danil Zhilkin": {
+            "team": "WPG",
+            "division": "Central",
+            "number": 53,
+            "nation": "RUS",
+            "age": 22,
+            "conference": "Western",
+            "id": 8483526,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Danila Yurov": {
             "team": "MIN",
             "division": "Central",
@@ -4149,14 +4233,14 @@
             "results": {
                 "1": 0,
                 "2": 0,
-                "3": 0,
+                "3": 1,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "David Perron": {
@@ -4804,10 +4888,10 @@
                 "4": 0,
                 "5": 0,
                 "6": 0,
-                "7": 0,
+                "7": 1,
                 "8": 0,
-                "X": 1,
-                "total_guesses": 1
+                "X": 2,
+                "total_guesses": 3
             }
         },
         "Dylan Larkin": {
@@ -5046,7 +5130,7 @@
             "division": "Metro",
             "number": 51,
             "nation": "SWE",
-            "age": 24,
+            "age": 25,
             "conference": "Eastern",
             "id": 8482476,
             "results": {
@@ -5839,27 +5923,6 @@
                 "total_guesses": 0
             }
         },
-        "Gregor Biber": {
-            "team": "UTA",
-            "division": "Central",
-            "number": 94,
-            "nation": "AUT",
-            "age": 20,
-            "conference": "Western",
-            "id": 8485010,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
         "Guillaume Brisebois": {
             "team": "VAN",
             "division": "Pacific",
@@ -6175,27 +6238,6 @@
                 "total_guesses": 0
             }
         },
-        "Isaac Howard": {
-            "team": "EDM",
-            "division": "Pacific",
-            "number": 53,
-            "nation": "USA",
-            "age": 22,
-            "conference": "Western",
-            "id": 8483455,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
         "Isak Rosen": {
             "team": "WPG",
             "division": "Central",
@@ -6255,8 +6297,8 @@
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 1,
-                "total_guesses": 1
+                "X": 2,
+                "total_guesses": 2
             }
         },
         "Ivan Miroshnichenko": {
@@ -6479,15 +6521,15 @@
             "id": 8481559,
             "results": {
                 "1": 2,
-                "2": 1,
+                "2": 3,
                 "3": 0,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 3
+                "X": 1,
+                "total_guesses": 6
             }
         },
         "Jack McBain": {
@@ -7074,8 +7116,8 @@
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 0
+                "X": 1,
+                "total_guesses": 1
             }
         },
         "Jakub Dobes": {
@@ -7237,13 +7279,13 @@
                 "1": 0,
                 "2": 0,
                 "3": 0,
-                "4": 0,
+                "4": 1,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 1,
-                "total_guesses": 1
+                "X": 2,
+                "total_guesses": 3
             }
         },
         "Jared Spurgeon": {
@@ -7322,12 +7364,12 @@
                 "2": 0,
                 "3": 0,
                 "4": 0,
-                "5": 0,
+                "5": 1,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Jason Zucker": {
@@ -7509,14 +7551,14 @@
             "results": {
                 "1": 0,
                 "2": 1,
-                "3": 0,
+                "3": 1,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 1
+                "total_guesses": 2
             }
         },
         "Jesper Wallstedt": {
@@ -9194,9 +9236,9 @@
                 "5": 0,
                 "6": 0,
                 "7": 0,
-                "8": 0,
+                "8": 1,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Lars Eller": {
@@ -9315,14 +9357,14 @@
             "results": {
                 "1": 0,
                 "2": 0,
-                "3": 0,
+                "3": 1,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Leon Draisaitl": {
@@ -9340,10 +9382,10 @@
                 "4": 0,
                 "5": 0,
                 "6": 0,
-                "7": 0,
+                "7": 1,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Liam O'Brien": {
@@ -9414,7 +9456,7 @@
             "division": "Pacific",
             "number": 94,
             "nation": "SWE",
-            "age": 26,
+            "age": 27,
             "conference": "Western",
             "id": 8481024,
             "results": {
@@ -9444,11 +9486,11 @@
                 "3": 0,
                 "4": 0,
                 "5": 0,
-                "6": 0,
+                "6": 2,
                 "7": 0,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 0
+                "X": 1,
+                "total_guesses": 3
             }
         },
         "Logan Cooley": {
@@ -9461,7 +9503,7 @@
             "id": 8483431,
             "results": {
                 "1": 0,
-                "2": 0,
+                "2": 1,
                 "3": 0,
                 "4": 0,
                 "5": 0,
@@ -9469,7 +9511,7 @@
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Logan Mailloux": {
@@ -9631,13 +9673,13 @@
                 "1": 0,
                 "2": 0,
                 "3": 0,
-                "4": 0,
+                "4": 1,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Lukas Dostal": {
@@ -9716,12 +9758,12 @@
                 "2": 0,
                 "3": 0,
                 "4": 0,
-                "5": 0,
+                "5": 1,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Luke Schenn": {
@@ -9837,27 +9879,6 @@
             "age": 24,
             "conference": "Eastern",
             "id": 8482177,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Marc Del Gaizo": {
-            "team": "NYR",
-            "division": "Metro",
-            "number": 27,
-            "nation": "USA",
-            "age": 27,
-            "conference": "Eastern",
-            "id": 8481743,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -10074,11 +10095,11 @@
                 "3": 0,
                 "4": 0,
                 "5": 0,
-                "6": 0,
+                "6": 1,
                 "7": 1,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 1
+                "X": 1,
+                "total_guesses": 3
             }
         },
         "Marshall Rifai": {
@@ -10259,7 +10280,7 @@
             "id": 8478445,
             "results": {
                 "1": 0,
-                "2": 0,
+                "2": 1,
                 "3": 0,
                 "4": 0,
                 "5": 0,
@@ -10267,7 +10288,7 @@
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Mathieu Joseph": {
@@ -10366,13 +10387,13 @@
                 "1": 0,
                 "2": 0,
                 "3": 0,
-                "4": 0,
+                "4": 1,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Matt Coronato": {
@@ -10617,14 +10638,14 @@
             "results": {
                 "1": 1,
                 "2": 0,
-                "3": 0,
+                "3": 1,
                 "4": 1,
                 "5": 1,
                 "6": 1,
                 "7": 1,
                 "8": 1,
                 "X": 2,
-                "total_guesses": 8
+                "total_guesses": 9
             }
         },
         "Matthew Tkachuk": {
@@ -10638,14 +10659,14 @@
             "results": {
                 "1": 0,
                 "2": 0,
-                "3": 0,
+                "3": 2,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 2
             }
         },
         "Matthew Wood": {
@@ -10787,12 +10808,12 @@
                 "2": 1,
                 "3": 0,
                 "4": 0,
-                "5": 0,
+                "5": 1,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 1
+                "total_guesses": 2
             }
         },
         "Maveric Lamoureux": {
@@ -10958,9 +10979,9 @@
                 "5": 0,
                 "6": 0,
                 "7": 0,
-                "8": 0,
+                "8": 1,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Michael Brandsegg-Nygård": {
@@ -11312,12 +11333,12 @@
                 "2": 0,
                 "3": 0,
                 "4": 0,
-                "5": 0,
+                "5": 1,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Miles Wood": {
@@ -11538,6 +11559,27 @@
             "age": 31,
             "conference": "Western",
             "id": 8477492,
+            "results": {
+                "1": 0,
+                "2": 1,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 1
+            }
+        },
+        "Nathan Walker": {
+            "team": "STL",
+            "division": "Central",
+            "number": 26,
+            "nation": "GBR",
+            "age": 32,
+            "conference": "Western",
+            "id": 8477573,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -11770,16 +11812,16 @@
             "conference": "Western",
             "id": 8477951,
             "results": {
-                "1": 0,
+                "1": 1,
                 "2": 0,
-                "3": 0,
+                "3": 1,
                 "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
+                "5": 1,
+                "6": 1,
+                "7": 2,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 0
+                "X": 2,
+                "total_guesses": 8
             }
         },
         "Nick Seeler": {
@@ -11820,8 +11862,8 @@
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 0
+                "X": 1,
+                "total_guesses": 1
             }
         },
         "Nico Daws": {
@@ -11983,13 +12025,13 @@
                 "1": 0,
                 "2": 0,
                 "3": 0,
-                "4": 0,
+                "4": 1,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Nikita Nesterenko": {
@@ -12000,27 +12042,6 @@
             "age": 25,
             "conference": "Western",
             "id": 8481754,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
-        "Nikita Tolopilo": {
-            "team": "VAN",
-            "division": "Pacific",
-            "number": 60,
-            "nation": "BLR",
-            "age": 26,
-            "conference": "Western",
-            "id": 8484268,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -12091,10 +12112,10 @@
                 "4": 0,
                 "5": 0,
                 "6": 0,
-                "7": 0,
+                "7": 1,
                 "8": 0,
                 "X": 1,
-                "total_guesses": 1
+                "total_guesses": 2
             }
         },
         "Nikolas Matinpalo": {
@@ -12711,7 +12732,7 @@
             "division": "Pacific",
             "number": 47,
             "nation": "USA",
-            "age": 26,
+            "age": 27,
             "conference": "Western",
             "id": 8481032,
             "results": {
@@ -13240,7 +13261,7 @@
             "conference": "Eastern",
             "id": 8482092,
             "results": {
-                "1": 0,
+                "1": 1,
                 "2": 0,
                 "3": 0,
                 "4": 0,
@@ -13249,7 +13270,7 @@
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Robert Thomas": {
@@ -13269,8 +13290,8 @@
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 0
+                "X": 1,
+                "total_guesses": 1
             }
         },
         "Roger McQueen": {
@@ -13341,7 +13362,7 @@
             "division": "Central",
             "number": 24,
             "nation": "FIN",
-            "age": 29,
+            "age": 30,
             "conference": "Western",
             "id": 8478449,
             "results": {
@@ -13353,8 +13374,8 @@
                 "6": 0,
                 "7": 0,
                 "8": 0,
-                "X": 2,
-                "total_guesses": 2
+                "X": 3,
+                "total_guesses": 3
             }
         },
         "Ross Colton": {
@@ -13493,7 +13514,7 @@
             "id": 8484186,
             "results": {
                 "1": 0,
-                "2": 0,
+                "2": 1,
                 "3": 0,
                 "4": 0,
                 "5": 0,
@@ -13501,7 +13522,7 @@
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Ryan Lindgren": {
@@ -13599,14 +13620,14 @@
             "results": {
                 "1": 0,
                 "2": 0,
-                "3": 0,
+                "3": 1,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 1,
-                "total_guesses": 1
+                "total_guesses": 2
             }
         },
         "Ryan O'Reilly": {
@@ -13626,8 +13647,8 @@
                 "6": 1,
                 "7": 0,
                 "8": 0,
-                "X": 0,
-                "total_guesses": 1
+                "X": 1,
+                "total_guesses": 2
             }
         },
         "Ryan Poehling": {
@@ -14296,10 +14317,10 @@
                 "4": 0,
                 "5": 0,
                 "6": 0,
-                "7": 0,
+                "7": 1,
                 "8": 0,
                 "X": 1,
-                "total_guesses": 1
+                "total_guesses": 2
             }
         },
         "Sebastian Cossa": {
@@ -14565,14 +14586,14 @@
             "results": {
                 "1": 0,
                 "2": 0,
-                "3": 0,
-                "4": 0,
+                "3": 1,
+                "4": 1,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 2
             }
         },
         "Simon Benoit": {
@@ -14754,14 +14775,14 @@
             "results": {
                 "1": 0,
                 "2": 0,
-                "3": 1,
-                "4": 0,
+                "3": 2,
+                "4": 1,
                 "5": 0,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 1
+                "total_guesses": 3
             }
         },
         "Stuart Skinner": {
@@ -15175,13 +15196,13 @@
                 "1": 0,
                 "2": 0,
                 "3": 0,
-                "4": 0,
+                "4": 1,
                 "5": 1,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 1
+                "total_guesses": 2
             }
         },
         "Travis Mitchell": {
@@ -16255,27 +16276,6 @@
                 "total_guesses": 0
             }
         },
-        "William Stromgren": {
-            "team": "CGY",
-            "division": "Pacific",
-            "number": 65,
-            "nation": "SWE",
-            "age": 23,
-            "conference": "Western",
-            "id": 8482766,
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "7": 0,
-                "8": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
         "William Trudeau": {
             "team": "NSH",
             "division": "Central",
@@ -16465,6 +16465,27 @@
                 "total_guesses": 0
             }
         },
+        "Zac Jones": {
+            "team": "UTA",
+            "division": "Central",
+            "number": 15,
+            "nation": "USA",
+            "age": 26,
+            "conference": "Western",
+            "id": 8481708,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Zach Benson": {
             "team": "BUF",
             "division": "Atlantic",
@@ -16562,12 +16583,12 @@
                 "2": 0,
                 "3": 0,
                 "4": 0,
-                "5": 0,
+                "5": 1,
                 "6": 0,
                 "7": 0,
                 "8": 0,
                 "X": 0,
-                "total_guesses": 0
+                "total_guesses": 1
             }
         },
         "Zach Whitecloud": {
@@ -16804,7 +16825,6 @@
         "Mitch Marner",
         "Morgan Rielly",
         "Nathan MacKinnon",
-        "Nick Schmaltz",
         "Nick Suzuki",
         "Nikita Kucherov",
         "Nikolaj Ehlers",
@@ -16822,7 +16842,6 @@
         "Seth Jarvis",
         "Shea Theodore",
         "Sidney Crosby",
-        "Steven Stamkos",
         "Tage Thompson",
         "Tim Stützle",
         "Tom Wilson",
@@ -16832,16 +16851,24 @@
         "William Nylander",
         "Wyatt Johnston",
         "Zach Werenski",
-        "Zayne Parekh"
+        "Zayne Parekh",
+        "Blake Coleman",
+        "Brock Nelson",
+        "Michael Amadio",
+        "Ryan Leonard",
+        "Mikael Backlund",
+        "Zach Hyman"
     ],
-    "daily_name": "Jack Hughes",
+    "daily_name": "Steven Stamkos",
     "daily_history": {
         "1": "Erik Karlsson",
         "2": "Matthew Schaefer",
         "3": "Moritz Seider",
         "4": "Brandon Hagel",
         "5": "Martin Necas",
-        "6": "Jack Hughes"
+        "6": "Jack Hughes",
+        "7": "Nick Schmaltz",
+        "8": "Steven Stamkos"
     },
     "video_sources": {
         "Adam Fantilli": {
@@ -16866,7 +16893,7 @@
         },
         "Alex Ovechkin": {
             "URL": "https://youtu.be/rbdBRaVdPg4",
-            "source": "theNHL"
+            "source": "the NHL"
         },
         "Alexis Lafrenière": {
             "URL": "https://youtu.be/skJppS73abw",
@@ -17050,7 +17077,7 @@
         },
         "Linus Ullmark": {
             "URL": "https://youtu.be/B97Kxv7ji-o",
-            "source": "theNHL"
+            "source": "the NHL"
         },
         "Logan Cooley": {
             "URL": "https://youtu.be/xgaFTozt6_4",
@@ -17110,6 +17137,10 @@
         },
         "Mika Zibanejad": {
             "URL": "https://youtu.be/pVcN7VmJHKM",
+            "source": "Sportsnet"
+        },
+        "Mikael Backlund": {
+            "URL": "https://youtu.be/Zn_ps-_XjtM",
             "source": "Sportsnet"
         },
         "Mikko Rantanen": {
@@ -17246,6 +17277,10 @@
         },
         "Wyatt Johnston": {
             "URL": "https://youtu.be/O51kF7kplQM",
+            "source": "Sportsnet"
+        },
+        "Zach Hyman": {
+            "URL": "https://youtu.be/NDDFrx9kEi0",
             "source": "Sportsnet"
         },
         "Zach Werenski": {

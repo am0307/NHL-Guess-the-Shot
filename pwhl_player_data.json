@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-14",
+    "updated": "2026-11-17",
     "players": {
         "Abbey Levy": {
             "team": "SJ",
@@ -94,14 +94,14 @@
             "conference": "Eastern",
             "id": 8583698,
             "results": {
-                "1": 0,
-                "2": 3,
+                "1": 1,
+                "2": 5,
                 "3": 0,
                 "4": 0,
                 "5": 0,
-                "6": 0,
+                "6": 1,
                 "X": 1,
-                "total_guesses": 4
+                "total_guesses": 8
             }
         },
         "Aerin Frankel": {
@@ -235,11 +235,11 @@
                 "1": 0,
                 "2": 2,
                 "3": 0,
-                "4": 0,
+                "4": 2,
                 "5": 0,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 2
+                "total_guesses": 4
             }
         },
         "Allie Munroe": {
@@ -591,13 +591,13 @@
             "id": 8467387,
             "results": {
                 "1": 0,
-                "2": 1,
-                "3": 2,
+                "2": 2,
+                "3": 3,
                 "4": 1,
                 "5": 0,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 4
+                "total_guesses": 6
             }
         },
         "Britta Curl-Salemme": {
@@ -613,9 +613,9 @@
                 "3": 1,
                 "4": 2,
                 "5": 0,
-                "6": 0,
+                "6": 1,
                 "X": 4,
-                "total_guesses": 10
+                "total_guesses": 11
             }
         },
         "Brooke Becker": {
@@ -800,10 +800,10 @@
                 "2": 0,
                 "3": 3,
                 "4": 0,
-                "5": 0,
+                "5": 1,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 3
+                "total_guesses": 4
             }
         },
         "Catherine Dubois": {
@@ -1053,13 +1053,13 @@
             "id": 8001846,
             "results": {
                 "1": 0,
-                "2": 0,
+                "2": 1,
                 "3": 1,
                 "4": 0,
                 "5": 1,
-                "6": 1,
-                "X": 0,
-                "total_guesses": 3
+                "6": 2,
+                "X": 1,
+                "total_guesses": 6
             }
         },
         "Dayle Ross": {
@@ -1629,6 +1629,7 @@
             "nation": "USA",
             "age": 27,
             "conference": "Western",
+            "id": 8223251,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -1717,13 +1718,13 @@
             "id": 8216068,
             "results": {
                 "1": 0,
-                "2": 1,
+                "2": 2,
                 "3": 0,
-                "4": 0,
+                "4": 1,
                 "5": 0,
                 "6": 1,
                 "X": 0,
-                "total_guesses": 2
+                "total_guesses": 4
             }
         },
         "Hanna Baskin": {
@@ -1821,12 +1822,12 @@
             "results": {
                 "1": 2,
                 "2": 4,
-                "3": 2,
+                "3": 3,
                 "4": 1,
                 "5": 1,
                 "6": 1,
                 "X": 3,
-                "total_guesses": 14
+                "total_guesses": 15
             }
         },
         "Hope Walinski": {
@@ -2016,6 +2017,24 @@
                 "total_guesses": 0
             }
         },
+        "Jenn Gardiner": {
+            "team": "VAN",
+            "number": 12,
+            "nation": "CAN",
+            "age": 25,
+            "conference": "Western",
+            "id": 8047298,
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Jenna Buglioni": {
             "team": "OTT",
             "number": 10,
@@ -2111,12 +2130,12 @@
             "results": {
                 "1": 1,
                 "2": 1,
-                "3": 1,
+                "3": 2,
                 "4": 0,
                 "5": 1,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 4
+                "total_guesses": 5
             }
         },
         "Jessie McPherson": {
@@ -2227,6 +2246,7 @@
             "nation": "CAN",
             "age": 25,
             "conference": "Western",
+            "id": 8526806,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -2501,14 +2521,14 @@
             "conference": "Western",
             "id": 8357292,
             "results": {
-                "1": 0,
+                "1": 1,
                 "2": 1,
-                "3": 2,
+                "3": 3,
                 "4": 0,
                 "5": 1,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 4
+                "total_guesses": 6
             }
         },
         "Kendall Butze": {
@@ -2551,6 +2571,7 @@
             "nation": "USA",
             "age": 34,
             "conference": "Western",
+            "id": 8708355,
             "results": {
                 "1": 0,
                 "2": 0,
@@ -2681,6 +2702,23 @@
                 "total_guesses": 0
             }
         },
+        "Knight Hilary ": {
+            "team": "DET",
+            "number": 21,
+            "nation": "USA",
+            "age": 37,
+            "conference": "Western",
+            "results": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0,
+                "X": 0,
+                "total_guesses": 0
+            }
+        },
         "Kristen Campbell": {
             "team": "VAN",
             "number": 50,
@@ -2743,11 +2781,11 @@
                 "1": 1,
                 "2": 1,
                 "3": 0,
-                "4": 0,
+                "4": 1,
                 "5": 1,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 3
+                "total_guesses": 4
             }
         },
         "Kyla Josifovic": {
@@ -2862,12 +2900,12 @@
             "results": {
                 "1": 1,
                 "2": 0,
-                "3": 2,
+                "3": 3,
                 "4": 1,
-                "5": 0,
+                "5": 1,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 4
+                "total_guesses": 6
             }
         },
         "Lauren Bench": {
@@ -3265,7 +3303,7 @@
             "team": "VAN",
             "number": 7,
             "nation": "USA",
-            "age": 23,
+            "age": 24,
             "conference": "Western",
             "results": {
                 "1": 0,
@@ -3439,14 +3477,14 @@
             "conference": "Eastern",
             "id": 8056057,
             "results": {
-                "1": 1,
+                "1": 2,
                 "2": 1,
                 "3": 0,
                 "4": 0,
-                "5": 1,
+                "5": 2,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 3
+                "total_guesses": 5
             }
         },
         "Marlène Boissonnault": {
@@ -3561,12 +3599,12 @@
             "results": {
                 "1": 1,
                 "2": 0,
-                "3": 0,
+                "3": 1,
                 "4": 1,
                 "5": 0,
                 "6": 1,
                 "X": 0,
-                "total_guesses": 3
+                "total_guesses": 4
             }
         },
         "Megan McKay": {
@@ -4054,13 +4092,13 @@
             "id": 8261962,
             "results": {
                 "1": 0,
-                "2": 0,
+                "2": 1,
                 "3": 0,
-                "4": 1,
+                "4": 3,
                 "5": 1,
-                "6": 0,
-                "X": 1,
-                "total_guesses": 3
+                "6": 2,
+                "X": 2,
+                "total_guesses": 9
             }
         },
         "Reichen Kirchmair": {
@@ -4295,11 +4333,11 @@
                 "1": 1,
                 "2": 3,
                 "3": 1,
-                "4": 0,
+                "4": 1,
                 "5": 0,
                 "6": 0,
                 "X": 3,
-                "total_guesses": 8
+                "total_guesses": 9
             }
         },
         "Sarah Nurse": {
@@ -4312,12 +4350,12 @@
             "results": {
                 "1": 4,
                 "2": 0,
-                "3": 0,
+                "3": 1,
                 "4": 0,
                 "5": 0,
                 "6": 0,
                 "X": 0,
-                "total_guesses": 4
+                "total_guesses": 5
             }
         },
         "Sarah Wozniewicz": {
@@ -4468,10 +4506,10 @@
                 "2": 0,
                 "3": 1,
                 "4": 0,
-                "5": 0,
+                "5": 1,
                 "6": 0,
-                "X": 3,
-                "total_guesses": 6
+                "X": 4,
+                "total_guesses": 8
             }
         },
         "Sophie Shirley": {
@@ -4976,23 +5014,23 @@
         "Brianne Jenner",
         "Casey O'Brien",
         "Daryl Watts",
-        "Haley Winn",
         "Jessie Eldridge",
         "Kristýna Kaltounková",
         "Laura Stacey",
-        "Marie-Philip Poulin",
         "Megan Keller",
-        "Rebecca Leslie",
         "Sarah Nurse",
         "Taylor Fox"
     ],
-    "daily_name": "Sophie Jaques",
+    "daily_name": "Marie-Philip Poulin",
     "daily_history": {
         "1": "Hilary Knight",
         "2": "Britta Curl-Salemme",
         "3": "Sarah Fillier",
         "4": "Kelly Pannek",
-        "5": "Sophie Jaques"
+        "5": "Sophie Jaques",
+        "6": "Haley Winn",
+        "7": "Rebecca Leslie",
+        "8": "Marie-Philip Poulin"
     },
     "video_sources": {
         "Abby Roque": {
@@ -5023,6 +5061,10 @@
             "URL": "https://youtu.be/E7VfqghspJU",
             "source": "the PWHL"
         },
+        "Grace Zumwinkle": {
+            "URL": "https://youtu.be/1fCkCVWd4io",
+            "source": "the PWHL"
+        },
         "Haley Winn": {
             "URL": "https://youtu.be/_qlIv5-VY8w",
             "source": "the PWHL"
@@ -5031,12 +5073,24 @@
             "URL": "https://youtu.be/rby24ufSyaQ",
             "source": "the PWHL"
         },
+        "Jenn Gardiner": {
+            "URL": "https://youtu.be/4OqQfoHvEgQ",
+            "source": "the PWHL"
+        },
         "Jessie Eldridge": {
             "URL": "https://youtu.be/iL3lTEsrwg4",
             "source": "the PWHL"
         },
+        "Julia Gosling": {
+            "URL": "https://youtu.be/OZ_nt-L3bjs",
+            "source": "the PWHL"
+        },
         "Kelly Pannek": {
             "URL": "https://youtu.be/KOMgq8zs97k",
+            "source": "the PWHL"
+        },
+        "Kendall Coyne Schofield": {
+            "URL": "https://youtu.be/Qidru9KVHMk",
             "source": "the PWHL"
         },
         "Kristýna Kaltounková": {

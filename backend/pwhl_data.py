@@ -83,6 +83,18 @@ PWHL_PLAYERS = {
     "nation": "CAN",
     "id": 8001846
   },
+  "Grace Zumwinkle": {
+    "birthdate": "1999-04-23",
+    "team": "MIN",
+    "video": {
+      "URL": "https://youtu.be/1fCkCVWd4io",
+      "source": "the PWHL"
+    },
+    "conference": "Western",
+    "number": 13,
+    "nation": "USA",
+    "id": 8223251
+  },
   "Haley Winn": {
     "birthdate": "2003-07-14",
     "team": "BOS",
@@ -107,6 +119,18 @@ PWHL_PLAYERS = {
     "nation": "USA",
     "id": 8635468
   },
+  "Jenn Gardiner": {
+    "birthdate": "2001-09-18",
+    "team": "VAN",
+    "video": {
+      "URL": "https://youtu.be/4OqQfoHvEgQ",
+      "source": "the PWHL"
+    },
+    "conference": "Western",
+    "number": 12,
+    "nation": "CAN",
+    "id": 8047298
+  },
   "Jessie Eldridge": {
     "birthdate": "1997-12-17",
     "team": "MTL",
@@ -119,6 +143,18 @@ PWHL_PLAYERS = {
     "nation": "CAN",
     "id": 8895341
   },
+  "Julia Gosling": {
+    "birthdate": "2001-02-21",
+    "team": "SEA",
+    "video": {
+      "URL": "https://youtu.be/OZ_nt-L3bjs",
+      "source": "the PWHL"
+    },
+    "conference": "Western",
+    "number": 88,
+    "nation": "CAN",
+    "id": 8526806
+  },
   "Kelly Pannek": {
     "birthdate": "1995-12-29",
     "team": "MIN",
@@ -130,6 +166,18 @@ PWHL_PLAYERS = {
     "number": 12,
     "nation": "USA",
     "id": 8357292
+  },
+  "Kendall Coyne Schofield": {
+    "birthdate": "1992-05-25",
+    "team": "MIN",
+    "video": {
+      "URL": "https://youtu.be/Qidru9KVHMk",
+      "source": "the PWHL"
+    },
+    "conference": "Western",
+    "number": 26,
+    "nation": "USA",
+    "id": 8708355
   },
   "Kristýna Kaltounková": {
     "birthdate": "2002-04-14",
