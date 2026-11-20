@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-17",
+    "updated": "2026-11-19",
     "players": {
         "Abbey Levy": {
             "team": "SJ",
@@ -3745,7 +3745,7 @@
         },
         "Millie Rose Sirum": {
             "team": "SJ",
-            "number": 0,
+            "number": 46,
             "nation": "NOR",
             "age": 26,
             "conference": "Western",
@@ -4238,11 +4238,11 @@
             }
         },
         "Sandra Abstreiter": {
-            "team": "HAM",
+            "team": "SJ",
             "number": 30,
             "nation": "DEU",
             "age": 28,
-            "conference": "Eastern",
+            "conference": "Western",
             "results": {
                 "1": 0,
                 "2": 0,
@@ -4874,7 +4874,7 @@
             "team": "DET",
             "number": 24,
             "nation": "CAN",
-            "age": 22,
+            "age": 23,
             "conference": "Western",
             "results": {
                 "1": 0,
@@ -5008,8 +5008,6 @@
         }
     },
     "unused_daily_players": [
-        "Abby Roque",
-        "Alex Carpenter",
         "Alina Müller",
         "Brianne Jenner",
         "Casey O'Brien",
@@ -5019,9 +5017,13 @@
         "Laura Stacey",
         "Megan Keller",
         "Sarah Nurse",
-        "Taylor Fox"
+        "Taylor Fox",
+        "Grace Zumwinkle",
+        "Jenn Gardiner",
+        "Julia Gosling",
+        "Kendall Coyne Schofield"
     ],
-    "daily_name": "Marie-Philip Poulin",
+    "daily_name": "Abby Roque",
     "daily_history": {
         "1": "Hilary Knight",
         "2": "Britta Curl-Salemme",
@@ -5030,7 +5032,9 @@
         "5": "Sophie Jaques",
         "6": "Haley Winn",
         "7": "Rebecca Leslie",
-        "8": "Marie-Philip Poulin"
+        "8": "Marie-Philip Poulin",
+        "9": "Alex Carpenter",
+        "10": "Abby Roque"
     },
     "video_sources": {
         "Abby Roque": {
