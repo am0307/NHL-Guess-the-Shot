@@ -102,7 +102,7 @@ VIDEO_SOURCES = {"Adam Fantilli": {'URL': 'https://youtu.be/qg5UrHpmjmY', 'sourc
                  "Brandon Hagel": {'URL': 'https://youtu.be/gHL_YCKJyt0', 'source': 'Sportsnet'}, "Brayden Point": {'URL': 'https://youtu.be/MqiH1Xq6FcQ', 'source': 'Sportsnet'}, 
                  "Brock Boeser": {'URL': 'https://youtu.be/DK3jTfckQFE', 'source': 'Sportsnet'}, "Brock Faber": {'URL': 'https://youtu.be/o0AsvxuuUZ4', 'source': 'Sportsnet'}, 
                  "Brock Nelson": {'URL': 'https://youtu.be/A4vfeeqaeJY', 'source': 'Sportsnet'}, "Cale Makar": {'URL': 'https://youtu.be/POu3KUZy_pk', 'source': 'Sportsnet'}, 
-                 "Clayton Keller": {'URL': 'https://youtu.be/L2SsGH0tW5U', 'source': 'Sportsnet'}, "Cole Caufield": {'URL': 'https://youtu.be/XEFu3Q305gI', 'source': 'the NHL'}, 
+                 "Clayton Keller": {'URL': 'https://youtu.be/PfoQjDBZXZQ', 'source': 'Sportsnet'}, "Cole Caufield": {'URL': 'https://youtu.be/hYGyTL8xpWs', 'source': 'Sportsnet'}, 
                  "Connor Bedard": {'URL': 'https://youtu.be/nYXS4imOm8g', 'source': 'Sportsnet'}, "Connor McDavid": {'URL': 'https://youtu.be/m2uGGihNIMA', 'source': 'Sportsnet'}, 
                  "Cutter Gauthier": {'URL': 'https://youtu.be/obMZQ-YT6nI', 'source': 'the NHL'}, "Darren Raddysh": {'URL': 'https://youtu.be/ejiOXU5u8_o', 'source': 'Sportsnet'}, 
                  "David Pastrnak": {'URL': 'https://youtu.be/NABw97A-51k', 'source': 'the NHL'}, "Drake Batherson": {'URL': 'https://youtu.be/pRKLPNkrlRQ', 'source': 'Sportsnet'}, 
