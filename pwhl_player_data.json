@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-19",
+    "updated": "2026-11-24",
     "players": {
         "Abbey Levy": {
             "team": "SJ",
@@ -1013,7 +1013,7 @@
         "Dara Greig": {
             "team": "OTT",
             "number": 77,
-            "nation": "USA",
+            "nation": "CAN",
             "age": 25,
             "conference": "Eastern",
             "results": {
@@ -1053,13 +1053,13 @@
             "id": 8001846,
             "results": {
                 "1": 0,
-                "2": 1,
+                "2": 2,
                 "3": 1,
                 "4": 0,
                 "5": 1,
                 "6": 2,
                 "X": 1,
-                "total_guesses": 6
+                "total_guesses": 7
             }
         },
         "Dayle Ross": {
@@ -1457,7 +1457,7 @@
             "team": "SJ",
             "number": 6,
             "nation": "USA",
-            "age": 23,
+            "age": 24,
             "conference": "Western",
             "results": {
                 "1": 0,
@@ -2702,23 +2702,6 @@
                 "total_guesses": 0
             }
         },
-        "Knight Hilary ": {
-            "team": "DET",
-            "number": 21,
-            "nation": "USA",
-            "age": 37,
-            "conference": "Western",
-            "results": {
-                "1": 0,
-                "2": 0,
-                "3": 0,
-                "4": 0,
-                "5": 0,
-                "6": 0,
-                "X": 0,
-                "total_guesses": 0
-            }
-        },
         "Kristen Campbell": {
             "team": "VAN",
             "number": 50,
@@ -2912,7 +2895,7 @@
             "team": "VGS",
             "number": 37,
             "nation": "USA",
-            "age": 28,
+            "age": 29,
             "conference": "Western",
             "results": {
                 "1": 0,
@@ -3388,7 +3371,7 @@
             "team": "NY",
             "number": 8,
             "nation": "SWE",
-            "age": 25,
+            "age": 26,
             "conference": "Eastern",
             "results": {
                 "1": 0,
@@ -3900,7 +3883,7 @@
             "team": "SEA",
             "number": 17,
             "nation": "CAN",
-            "age": 22,
+            "age": 23,
             "conference": "Western",
             "results": {
                 "1": 0,
@@ -4239,7 +4222,7 @@
         },
         "Sandra Abstreiter": {
             "team": "SJ",
-            "number": 30,
+            "number": 35,
             "nation": "DEU",
             "age": 28,
             "conference": "Western",
@@ -4789,7 +4772,7 @@
             "team": "VAN",
             "number": 23,
             "nation": "SWE",
-            "age": 23,
+            "age": 24,
             "conference": "Western",
             "results": {
                 "1": 0,
@@ -5011,19 +4994,14 @@
         "Alina Müller",
         "Brianne Jenner",
         "Casey O'Brien",
-        "Daryl Watts",
-        "Jessie Eldridge",
-        "Kristýna Kaltounková",
         "Laura Stacey",
         "Megan Keller",
-        "Sarah Nurse",
-        "Taylor Fox",
         "Grace Zumwinkle",
         "Jenn Gardiner",
         "Julia Gosling",
         "Kendall Coyne Schofield"
     ],
-    "daily_name": "Abby Roque",
+    "daily_name": "Jessie Eldridge",
     "daily_history": {
         "1": "Hilary Knight",
         "2": "Britta Curl-Salemme",
@@ -5034,7 +5012,12 @@
         "7": "Rebecca Leslie",
         "8": "Marie-Philip Poulin",
         "9": "Alex Carpenter",
-        "10": "Abby Roque"
+        "10": "Abby Roque",
+        "11": "Sarah Nurse",
+        "12": "Taylor Fox",
+        "13": "Kristýna Kaltounková",
+        "14": "Daryl Watts",
+        "15": "Jessie Eldridge"
     },
     "video_sources": {
         "Abby Roque": {
